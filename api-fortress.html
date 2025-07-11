@@ -110,14 +110,10 @@
 <body>
 
 <header style="display: flex; align-items: center; justify-content: space-between;">
-  <div style="display: flex; align-items: center; gap: 12px;">
-    <a href="https://fortresstechnologieshub.com">
-      <img src="https://i.postimg.cc/4ndh7Ywh/logo.png" alt="Fortress Logo" style="height: 40px;" />
-    </a>
-    <a href="https://fortresstechnologieshub.com/api-fortress" style="text-decoration: none;">
-      <span style="color: #1e40af; font-weight: 800; font-size: 1.3rem;">API Fortress</span>
-    </a>
-  </div>
+  <a href="https://fortresstechnologieshub.com" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+    <img src="https://i.postimg.cc/4ndh7Ywh/logo.png" alt="Fortress Logo" style="height: 40px;" />
+    <span style="color: #1e40af; font-weight: 800; font-size: 1.3rem;">API Fortress</span>
+  </a>
 </header>
 
 <section class="hero">
@@ -152,15 +148,15 @@
     </div>
     <div class="card">
       <h3>AI Auto Blocking</h3>
-      <p>Automatically blocks malicious patterns in real-time, no nonsense.</p>
+      <p>Automatically blocks malicious patterns in real-time with adaptive learning.</p>
     </div>
     <div class="card">
-      <h3>Runtime Application Self-Protection(RASP)</h3>
-      <p>Runtime Application Self-Protection defends your backend from active API abuse in real-time.Specialized tool that acts as an internal security guard for applications, providing real-time protection against a wide range of threats, including those that may not be detectable by external security measures</p>
+      <h3>RASP Protection</h3>
+      <p>Runtime Application Self-Protection defends your backend from active API abuse.</p>
     </div>
     <div class="card">
-      <h3>Web Application Firewall(WAF)</h3>
-      <p>Specialized cybersecurity solution designed to protect web applications from various attacks. It acts as a filter, monitoring and blocking malicious traffic before it reaches the web application.It focusing on application-specific threats like SQL injection, cross-site scripting (XSS), and DDoS attacks.</p>
+      <h3>WAF Protection</h3>
+      <p>Layered firewall security to filter out bad actors and known exploits.</p>
     </div>
     <div class="card">
       <h3>SAST Scan</h3>
@@ -214,10 +210,6 @@
       <h3>CI/CD Integration</h3>
       <p>Scan APIs as part of your CI pipeline and catch risks before deployment.</p>
     </div>
-    <div class="card">
-      <h3>SIEM Integration</h3>
-      <p>Forward logs and threat intelligence to your existing SIEM systems like Splunk or Datadog for centralized monitoring and compliance.</p>
-    </div>
   </div>
 </section>
 
@@ -226,15 +218,10 @@
   <div class="pricing-table">
     <div class="pricing">
       <h3>Tier 1</h3>
-      <p class="price">$299/mo</p>
+      <p class="price">$699/mo</p>
       <ul>
-        <li>Smart View and Interactive dashboard</li>
-        <li>Insight Logs</li>
-        <li>Anomaly Detection</li>
         <li>Manual Blocking</li>
         <li>Smart Suggestions</li>
-        <li>Compliance Mode (GDPR, HIPAA, SOC2)</li>
-        <li>Live Monitoring</li>
         <li>AI Chat Assistant</li>
         <li>Rate Limiting</li>
         <li>Policy Suggestions</li>
@@ -242,14 +229,12 @@
     </div>
     <div class="pricing">
       <h3>Tier 2</h3>
-      <p class="price">$1,699/mo</p>
+      <p class="price">$1,999/mo</p>
       <ul>
         <li>All Tier 1 Features</li>
         <li>API Discovery</li>
-        <li>Web Application Firewall</li>
-        <li>Runtime Application Self-Protection</li>
-        <li>Live Patch Suggestion</li>
-        <li>Input Validation Enforcement</li>
+        <li>WAF Protection</li>
+        <li>RASP Protection</li>
         <li>SAST & Dependency Scan</li>
         <li>Vulnerability, Pen Test</li>
         <li>Auth & Access Control Testing</li>
@@ -258,23 +243,20 @@
     </div>
     <div class="pricing">
       <h3>Tier 3</h3>
-      <p class="price">$3,999/mo</p>
+      <p class="price">$4,999/mo</p>
       <ul>
         <li>All Tier 2 Features</li>
         <li>Token Replay Protection</li>
         <li>Adaptive Defense</li>
-        <li>Abuse Detection</li>
         <li>gRPC & GraphQL Scan</li>
         <li>CI/CD Integration</li>
-        <li>Batch Scan</li>
-        <li>SIEM Integration</li>
+        <li>Batch Scan Scheduling</li>
       </ul>
     </div>
   </div>
 </section>
 
 <section class="cta">
-  <h2>Note: All pricing are in Canadian Dollars</h2>
   <h2>Ready to Fortify Your APIs?</h2>
   <p>Start your journey to zero-breach architecture today.</p>
   <a href="https://api-fortress.fortresstechnologieshub.com">Access API Fortress</a>

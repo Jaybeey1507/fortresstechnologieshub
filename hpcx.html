@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HPCX – Fortress High-Performance Computing Optimizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+    header, .footer {
+      background: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-group img {
+      height: 40px;
+    }
+    .logo-group span {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #1e40af;
+    }
+    .hero {
+      background: linear-gradient(120deg, #e0f2fe, #f0f9ff);
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #475569;
+    }
+    .section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .card h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+    .pricing-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .pricing {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .pricing h3 {
+      margin-bottom: 10px;
+    }
+    .pricing p.price {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+    .pricing ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .pricing ul li {
+      margin-bottom: 10px;
+      color: #374151;
+    }
+    .cta {
+      text-align: center;
+      padding: 60px 40px;
+      background: #e0f2fe;
+    }
+    .cta a {
+      background: #1e40af;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-group">
+    <a href="https://fortresstechnologieshub.com" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+      <img src="https://i.postimg.cc/Pfbb7ZwK/logo.png" alt="Fortress Technologies Hub Logo" />
+    </a>
+    <a href="https://fortresstechnologieshub.com/hpcx" style="margin-left: 16px; font-weight: 900; font-size: 1.3rem; color: #1e3a8a; text-decoration: none;">Fortress HPCX</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Fortress HPCX</h1>
+  <p>Unlock the full power of your infrastructure with AI-optimized job scheduling and resource efficiency.</p>
+  <p>Built for data centers, research labs, compute clusters, and enterprise HPC deployments.</p>
+</section>
+
+<section class="section">
+  <h2>What is Fortress HPCX?</h2>
+  <p style="text-align: center; max-width: 900px; margin: auto;">
+    Fortress HPCX is a high-performance computing (HPC) optimization engine that integrates directly into SLURM, Kubernetes, and other platforms to monitor resource metrics, detect inefficiencies, and automatically apply smart fixes. HPCX gives visibility into system performance, predicts future bottlenecks, and resolves issues in real time — so you can scale with confidence.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Core Features</h2>
+  <div class="grid">
+    <div class="card"><h3>Metrics Monitoring</h3><p>Live tracking of CPU, RAM, power, and job queues with historical view.</p></div>
+    <div class="card"><h3>Job Analytics</h3><p>Intelligent profiling of job delays, energy usage, and performance behavior.</p></div>
+    <div class="card"><h3>Optimization Snapshots</h3><p>Capture before/after states to measure impact of fixes and track improvement.</p></div>
+    <div class="card"><h3>Security Alerts</h3><p>Detect compliance violations, malicious activity, or abnormal system behavior.</p></div>
+    <div class="card"><h3>Health Score</h3><p>Quantitative rating of overall system performance, updated continuously.</p></div>
+    <div class="card"><h3>Forecast Report</h3><p>AI-powered predictions of energy spikes, bottlenecks, and queue buildup.</p></div>
+    <div class="card"><h3>SIEM Integration</h3><p>Send logs and alerts to your existing SIEM for unified security monitoring.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Fix Capabilities</h2>
+  <div class="grid">
+    <div class="card"><h3>Job Rescheduling</h3><p>Reprioritize and shift jobs to eliminate unnecessary delays.</p></div>
+    <div class="card"><h3>Job Rerouting</h3><p>Dynamically reroute jobs to less congested nodes or clusters.</p></div>
+    <div class="card"><h3>Job Throttling</h3><p>Apply smart throttling to avoid thermal spikes and energy overloads.</p></div>
+    <div class="card"><h3>Smart Suggestions</h3><p>Get actionable insights and recommendations tailored to your system.</p></div>
+    <div class="card"><h3>Green Mode</h3><p>Eco-friendly scheduling that reduces energy usage during peak load.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Who Should Use HPCX?</h2>
+  <p style="text-align: center; max-width: 900px; margin: auto;">
+    Fortress HPCX is designed for government agencies, research institutes, universities, data centers, cloud infrastructure teams, and enterprise clusters. If your environment runs hundreds to thousands of batch jobs daily and performance matters — HPCX will make your system smarter, faster, and more sustainable.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Pricing</h2>
+  <div class="pricing-table">
+    <div class="pricing">
+      <h3>Basic</h3>
+      <p class="price">$399/mo</p>
+      <ul>
+        <li>Up to 1,000 jobs/day</li>
+        <li>Full dashboard access</li>
+        <li>Fix suggestions only</li>
+        <li>Email support</li>
+      </ul>
+    </div>
+    <div class="pricing">
+      <h3>Standard</h3>
+      <p class="price">$699/mo</p>
+      <ul>
+        <li>Up to 20,000 jobs/day</li>
+        <li>Full fix capabilities</li>
+        <li>SIEM integration</li>
+        <li>Priority support</li>
+      </ul>
+    </div>
+    <div class="pricing">
+      <h3>Enterprise</h3>
+      <p class="price">$1,099/mo</p>
+      <ul>
+        <li>Everything in Standard</li>
+        <li>Unlimited jobs</li>
+        <li>Advanced SLURM/Kubernetes support</li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top: 20px; color: #475569;"><strong>Note:</strong> All pricing is in Canadian Dollars (CAD).</p>
+</section>
+
+<section class="cta">
+  <h2>Ready to Optimize Your HPC Workflow?</h2>
+  <p>Join the future of performance engineering. Start using Fortress HPCX today.</p>
+  <a href="https://hpcx.fortresstechnologieshub.com">Access Fortress HPCX</a>
+</section>
+
+<div class="footer">
+  &copy; 2025 Fortress Technologies Hub. All rights reserved.
+</div>
+
+</body>
+</html>
