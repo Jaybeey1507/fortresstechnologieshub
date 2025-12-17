@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CoreMind – Intelligent AI Assistant | Fortress Technologies Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #1e3a5f;
+      --primary-dark: #0f2744;
+      --primary-light: #2d5a87;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --glow: rgba(59, 130, 246, 0.4);
+      --dark: #0a1628;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Animated Background */
+    .bg-pattern {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30, 58, 95, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .floating-particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float-up 15s infinite;
+    }
+    
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 40%; animation-delay: 1s; }
+    .particle:nth-child(5) { left: 50%; animation-delay: 3s; }
+    .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+    .particle:nth-child(7) { left: 70%; animation-delay: 2.5s; }
+    .particle:nth-child(8) { left: 80%; animation-delay: 4.5s; }
+    .particle:nth-child(9) { left: 90%; animation-delay: 1.5s; }
+    
+    @keyframes float-up {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 22, 40, 0.9);
+      backdrop-filter: blur(20px);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .logo-section a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    
+    .logo-section img {
+      height: 42px;
+    }
+    
+    .logo-section .brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    
+    .back-link {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--gray-300);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    
+    .nav-cta:hover {
+      box-shadow: 0 4px 20px var(--glow);
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 140px 40px 100px;
+      z-index: 1;
+    }
+    
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 32px;
+      animation: pulse-glow 3s ease-in-out infinite;
+      border-radius: 28px;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 40px var(--glow); }
+      50% { box-shadow: 0 0 80px var(--glow), 0 0 120px rgba(59, 130, 246, 0.2); }
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--white) 0%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero .tagline {
+      font-size: 1.5rem;
+      color: var(--accent-light);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--gray-500);
+      max-width: 650px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      color: white;
+      padding: 16px 40px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 30px var(--glow);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px var(--glow);
+    }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.3s;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent);
+    }
+    
+    /* Section Styles */
+    .section {
+      position: relative;
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: auto;
+      z-index: 1;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    
+    .section-header p {
+      color: var(--gray-500);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Video Demo Section */
+    .video-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 58, 95, 0.1));
+      border-radius: 24px;
+      padding: 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    
+    .video-section h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    
+    .video-section > p {
+      color: var(--gray-500);
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .video-container iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+    
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+    }
+    
+    .video-placeholder .play-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    /* Story Section */
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    .story-content h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    
+    .story-content h2 span {
+      color: var(--accent-light);
+    }
+    
+    .story-content p {
+      color: var(--gray-400);
+      line-height: 1.9;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+    
+    .story-quote {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 58, 95, 0.15));
+      border-left: 4px solid var(--accent);
+      padding: 24px 32px;
+      border-radius: 0 16px 16px 0;
+      margin-top: 32px;
+    }
+    
+    .story-quote p {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--gray-300);
+      margin-bottom: 12px;
+    }
+    
+    .story-quote .author {
+      color: var(--accent-light);
+      font-weight: 600;
+      font-style: normal;
+      font-size: 0.95rem;
+    }
+    
+    .story-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .vision-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+    
+    .vision-card:hover {
+      background: rgba(59, 130, 246, 0.05);
+      border-color: rgba(59, 130, 246, 0.2);
+      transform: translateX(8px);
+    }
+    
+    .vision-card h4 {
+      color: var(--accent-light);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .vision-card p {
+      color: var(--gray-500);
+      margin: 0;
+      line-height: 1.7;
+    }
+    
+    /* Models Section */
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    .model-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 58, 95, 0.2));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .model-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--primary-light));
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    
+    .model-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    
+    .model-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .model-name {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-light);
+      margin-bottom: 8px;
+    }
+    
+    .model-type {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    
+    .model-desc {
+      color: var(--gray-300);
+      line-height: 1.7;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    
+    .feature-card:hover {
+      background: rgba(59, 130, 246, 0.05);
+      border-color: rgba(59, 130, 246, 0.2);
+      transform: translateY(-4px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    
+    .feature-card p {
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+    
+    /* Research Section */
+    .research-section {
+      background: linear-gradient(135deg, rgba(30, 58, 95, 0.3), rgba(10, 22, 40, 0.8));
+      border-radius: 24px;
+      padding: 80px 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .research-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .research-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .research-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--accent-light);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .research-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    
+    .research-header p {
+      color: var(--gray-500);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    
+    .research-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px;
+      transition: all 0.4s;
+    }
+    
+    .research-card:hover {
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.25);
+      transform: translateY(-6px);
+    }
+    
+    .research-card .icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .research-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    
+    .research-card p {
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+    
+    /* Privacy Section */
+    .privacy-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(30, 58, 95, 0.15));
+      border-radius: 24px;
+      padding: 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .privacy-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .privacy-text h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    
+    .privacy-text p {
+      color: var(--gray-400);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    
+    .privacy-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .privacy-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.03);
+      padding: 20px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    
+    .privacy-item span {
+      font-size: 1.5rem;
+    }
+    
+    .privacy-item p {
+      color: var(--gray-300);
+      margin: 0;
+      font-weight: 500;
+    }
+    
+    /* Developer API Section */
+    .api-section {
+      text-align: center;
+    }
+    
+    .api-card {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      border-radius: 24px;
+      padding: 60px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .api-card h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    
+    .api-card > p {
+      color: var(--gray-300);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .api-features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    
+    .api-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+    
+    .code-preview {
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.9rem;
+      color: var(--gray-300);
+      overflow-x: auto;
+      margin-bottom: 32px;
+    }
+    
+    .code-preview .comment { color: var(--gray-500); }
+    .code-preview .keyword { color: #c678dd; }
+    .code-preview .string { color: #98c379; }
+    .code-preview .function { color: #61afef; }
+    
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 80px 40px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent);
+      border-radius: 24px;
+      margin-top: 60px;
+    }
+    
+    .cta-section h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    
+    .cta-section p {
+      color: var(--gray-500);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 968px) {
+      .models-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .privacy-content,
+      .story-section {
+        grid-template-columns: 1fr;
+      }
+      
+      .story-section {
+        gap: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .hero {
+        padding: 120px 20px 60px;
+      }
+      
+      .section {
+        padding: 60px 20px;
+      }
+      
+      .privacy-section,
+      .api-card,
+      .video-section,
+      .research-section {
+        padding: 40px 24px;
+      }
+      
+      .api-features {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+<div class="floating-particles">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
+
+<header>
+  <div class="logo-section">
+    <a href="https://coremindx.ai">
+      <img src="https://i.postimg.cc/c4gLRbVh/CoreMind-logo.png" alt="CoreMind Logo">
+      <span class="brand">CoreMind</span>
+    </a>
+  </div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#models">Models</a>
+    <a href="#research">Research</a>
+    <a href="#api">Developer API</a>
+    <a href="index.html" class="back-link">← Fortress Hub</a>
+    <a href="https://coremindx.ai" class="nav-cta">Try CoreMind</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="https://i.postimg.cc/c4gLRbVh/CoreMind-logo.png" alt="CoreMind" class="hero-logo">
+  <h1>CoreMind</h1>
+  <p class="tagline">Your Intelligent AI Companion</p>
+  <p>Experience the next generation of AI assistance. CoreMind combines powerful language models with multimodal capabilities to help you think deeper, create faster, and accomplish more, all while keeping your privacy first.</p>
+  <div class="hero-cta">
+    <a href="https://coremindx.ai" class="btn-primary">Try CoreMind Free</a>
+    <a href="#api" class="btn-secondary">Developer API</a>
+  </div>
+</section>
+
+<!-- Video Demo Section -->
+<section class="section">
+  <div class="video-section">
+    <h2>See CoreMind in Action</h2>
+    <p>Watch how CoreMind transforms the way you work, think, and create.</p>
+    <div class="video-container">
+      <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+      <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="CoreMind Demo" allowfullscreen></iframe> -->
+      
+      <!-- Placeholder - Remove this div and uncomment iframe above when you have the video -->
+      <div class="video-placeholder">
+        <div class="play-icon">▶</div>
+        <p>Demo Video Coming Soon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Story Section -->
+<section class="section">
+  <div class="story-section">
+    <div class="story-content">
+      <h2>The Story Behind <span>CoreMind</span></h2>
+      <p>CoreMind was born from a simple yet powerful belief: artificial intelligence should enhance human potential, not replace it. In a world racing toward automation, we chose a different path, one where AI serves as a thinking partner that amplifies your creativity, accelerates your research, and deepens your understanding.</p>
+      <p>The journey began with a question that kept me up at night: What if we could build an AI that truly respects its users? One that doesn't harvest your data, doesn't manipulate your attention, and doesn't try to think for you, but instead thinks with you.</p>
+      <p>CoreMind is the answer to that question. Every feature, every model, and every line of code has been crafted with a singular purpose: to help humans reason better, discover more, and create things that matter. We're not building AI to replace human intelligence. We're building AI to unlock it.</p>
+      
+      <div class="story-quote">
+        <p>"The greatest technology doesn't diminish humanity, it reveals what we're truly capable of when given the right tools to think."</p>
+        <span class="author">— Jubril Akanbi, Creator of CoreMind</span>
+      </div>
+    </div>
+    
+    <div class="story-visual">
+      <div class="vision-card">
+        <h4>🎯 Our Mission</h4>
+        <p>To enhance human reasoning, research, and innovation through intelligent AI assistance that respects user privacy and autonomy.</p>
+      </div>
+      <div class="vision-card">
+        <h4>💡 Our Vision</h4>
+        <p>A world where AI and humans collaborate seamlessly,, where technology amplifies human potential rather than replacing human judgment.</p>
+      </div>
+      <div class="vision-card">
+        <h4>🤝 Our Promise</h4>
+        <p>CoreMind will always be a tool that works for you, not the other way around. Your data stays yours. Your thoughts remain your own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="models" class="section">
+  <div class="section-header">
+    <h2>Three Powerful Models</h2>
+    <p>Choose the right model for your needs, from quick tasks to complex reasoning.</p>
+  </div>
+  
+  <div class="models-grid">
+    <div class="model-card">
+      <div class="model-name">CM-1</div>
+      <div class="model-type">Fast & Efficient</div>
+      <p class="model-desc">Lightning-fast responses for everyday tasks. Perfect for quick questions, brainstorming, and general assistance.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-name">CM-1o</div>
+      <div class="model-type">Balanced Power</div>
+      <p class="model-desc">The perfect balance of speed and intelligence. Ideal for detailed conversations, analysis, and creative work.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-name">CM-o1</div>
+      <div class="model-type">Deep Reasoning</div>
+      <p class="model-desc">Our most capable model for complex reasoning, research, and challenging problems that require deep thinking.</p>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <div class="section-header">
+    <h2>Powerful Features</h2>
+    <p>Everything you need to enhance your productivity and creativity.</p>
+  </div>
+  
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🗣️</div>
+      <h3>Voice Conversations</h3>
+      <p>Speak naturally with CoreMind. Have fluid conversations using your voice and hear responses spoken back to you with natural-sounding voices.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎨</div>
+      <h3>Image Generation</h3>
+      <p>Transform your ideas into stunning visuals. Generate images from text descriptions for creative projects, presentations, and more.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎬</div>
+      <h3>Video Creation</h3>
+      <p>Bring your concepts to life with AI-generated videos. Create short clips and visual content directly from your descriptions.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📄</div>
+      <h3>Document Generation</h3>
+      <p>Create professional documents instantly. Generate reports, presentations, and formatted documents ready for download.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <h3>Web Research</h3>
+      <p>Get up-to-date information from the web. CoreMind can search and synthesize information from across the internet in real-time.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧠</div>
+      <h3>Memory & Context</h3>
+      <p>CoreMind remembers your preferences and past conversations, providing increasingly personalized assistance over time.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📁</div>
+      <h3>File Understanding</h3>
+      <p>Upload documents, images, and files for analysis. CoreMind can read, understand, and help you work with your content.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💡</div>
+      <h3>Smart Suggestions</h3>
+      <p>Get intelligent follow-up suggestions and related topics to explore, helping you dive deeper into any subject.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Research Section -->
+<section id="research" class="section">
+  <div class="research-section">
+    <div class="research-header">
+      <div class="research-badge">🔬 CoreMind Labs</div>
+      <h2>Advancing AI Research</h2>
+      <p>At CoreMind Labs, we're pushing the boundaries of what's possible with large language models. Our research focuses on building AI systems that are not just powerful, but also safe, efficient, and aligned with human values.</p>
+    </div>
+    
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="icon">🧬</div>
+        <h3>Model Architecture</h3>
+        <p>We design and develop novel neural network architectures optimized for reasoning, comprehension, and multi-step problem solving. Our models are built from the ground up to understand context deeply and respond thoughtfully.</p>
+      </div>
+      <div class="research-card">
+        <div class="icon">⚡</div>
+        <h3>Efficient Inference</h3>
+        <p>Speed matters. Our research into efficient inference techniques ensures CoreMind responds quickly without sacrificing quality, making advanced AI accessible even on modest hardware configurations.</p>
+      </div>
+      <div class="research-card">
+        <div class="icon">🎯</div>
+        <h3>Alignment & Safety</h3>
+        <p>We invest heavily in ensuring our models behave as intended. Our alignment research focuses on making AI systems that are helpful, harmless, and honest, AI you can trust.</p>
+      </div>
+      <div class="research-card">
+        <div class="icon">🌐</div>
+        <h3>Multimodal Intelligence</h3>
+        <p>The future of AI is multimodal. We're building systems that seamlessly understand and generate text, images, audio, and video, creating truly versatile AI assistants.</p>
+      </div>
+      <div class="research-card">
+        <div class="icon">📊</div>
+        <h3>Reasoning & Logic</h3>
+        <p>CoreMind Labs is pioneering techniques in chain-of-thought reasoning, enabling our models to break down complex problems and arrive at well-reasoned conclusions step by step.</p>
+      </div>
+      <div class="research-card">
+        <div class="icon">🔒</div>
+        <h3>Privacy-Preserving AI</h3>
+        <p>We're developing methods to deliver powerful AI capabilities while minimizing data exposure. Your conversations help you, not our training datasets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="privacy-section">
+    <div class="privacy-content">
+      <div class="privacy-text">
+        <h2>Privacy First, Always</h2>
+        <p>We believe your conversations should stay yours. CoreMind is built from the ground up with privacy as a core principle, not an afterthought.</p>
+        <p>Your data is never sold or shared with third parties. We use industry-leading security practices to ensure your information remains protected at all times.</p>
+      </div>
+      <div class="privacy-features">
+        <div class="privacy-item">
+          <span>🔐</span>
+          <p>End-to-end encryption for all conversations</p>
+        </div>
+        <div class="privacy-item">
+          <span>🚫</span>
+          <p>Your data is never sold or shared</p>
+        </div>
+        <div class="privacy-item">
+          <span>🗑️</span>
+          <p>Delete your data anytime, permanently</p>
+        </div>
+        <div class="privacy-item">
+          <span>✅</span>
+          <p>Transparent privacy practices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="api" class="section api-section">
+  <div class="api-card">
+    <h2>Developer API</h2>
+    <p>Integrate CoreMind's intelligence into your applications. Build powerful AI-driven experiences with our simple, well-documented API.</p>
+    
+    <div class="api-features">
+      <div class="api-feature">
+        <span>✓</span> RESTful API
+      </div>
+      <div class="api-feature">
+        <span>✓</span> All Models Access
+      </div>
+      <div class="api-feature">
+        <span>✓</span> Usage Analytics
+      </div>
+      <div class="api-feature">
+        <span>✓</span> Tiered Pricing
+      </div>
+    </div>
+    
+    <div class="code-preview">
+      <span class="comment">// Simple API integration</span><br>
+      <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://coremindx.ai/api/v1/chat'</span>, {<br>
+      &nbsp;&nbsp;method: <span class="string">'POST'</span>,<br>
+      &nbsp;&nbsp;headers: { <span class="string">'Authorization'</span>: <span class="string">`Bearer ${API_KEY}`</span> },<br>
+      &nbsp;&nbsp;body: JSON.<span class="function">stringify</span>({ model: <span class="string">'cm-1o'</span>, message: <span class="string">'Hello!'</span> })<br>
+      });
+    </div>
+    
+    <a href="https://coremindx.ai/developer" class="btn-primary">Get API Access</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-section">
+    <h2>Ready to Think Smarter?</h2>
+    <p>Join thousands of users who are already enhancing their productivity with CoreMind.</p>
+    <a href="https://coremindx.ai" class="btn-primary">Start Using CoreMind</a>
+  </div>
+</section>
+
+<div class="footer">
+  <p>© 2025 <a href="index.html">Fortress Technologies Hub</a>. All rights reserved.</p>
+</div>
+
+</body>
+</html>

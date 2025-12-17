@@ -4,218 +4,982 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fortress Technologies Hub</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
   <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #111827;
-      line-height: 1.6;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.4);
+      --dark: #0f172a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
     }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Animated Background */
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .glow-orb {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .glow-orb-1 {
+      background: var(--primary);
+      top: -200px;
+      right: -200px;
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .glow-orb-2 {
+      background: var(--accent);
+      bottom: -200px;
+      left: -200px;
+      animation: float 25s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(50px, 50px); }
+    }
+    
+    /* Header */
     header {
-      background: #ffffff;
-      padding: 20px 40px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 16px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    header img {
-      height: 50px;
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
     }
+    
+    .logo-section img {
+      height: 45px;
+    }
+    
+    .logo-section span {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
     nav {
       display: flex;
-      gap: 20px;
+      gap: 32px;
       align-items: center;
     }
+    
     nav a {
       text-decoration: none;
-      color: #1e40af;
+      color: var(--gray-300);
       font-weight: 500;
-      position: relative;
+      font-size: 0.95rem;
+      transition: color 0.3s;
     }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
     .dropdown {
       position: relative;
     }
+    
     .dropdown-content {
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
-      background-color: white;
-      min-width: 180px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-      z-index: 1000;
-      border-radius: 8px;
+      left: -10px;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(20px);
+      min-width: 200px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
       overflow: hidden;
+      margin-top: 10px;
     }
+    
     .dropdown-content a {
       display: block;
-      padding: 10px 16px;
-      text-decoration: none;
-      color: #1e40af;
-      font-weight: 500;
-      background-color: white;
+      padding: 12px 20px;
+      color: var(--gray-300);
+      transition: all 0.3s;
     }
+    
     .dropdown-content a:hover {
-      background-color: #f1f5f9;
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--accent);
     }
+    
     .dropdown:hover .dropdown-content {
       display: block;
     }
-
+    
+    /* Hero Section */
     .hero {
-      padding: 80px 40px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background: linear-gradient(120deg, #e0f2fe, #f0f9ff);
+      padding: 120px 40px 80px;
+      z-index: 1;
     }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 30px;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.2); }
+      50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.4); }
+    }
+    
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--white) 0%, var(--gray-300) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
+    
     .hero p {
-      font-size: 1.2rem;
-      color: #475569;
+      font-size: 1.25rem;
+      color: var(--gray-500);
+      max-width: 600px;
+      margin-bottom: 40px;
     }
-    .section {
-      padding: 60px 40px;
-      max-width: 1200px;
-      margin: auto;
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: var(--accent);
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 80px;
+      flex-wrap: wrap;
+    }
+    
+    .stat {
       text-align: center;
     }
-    .grid {
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+    
+    /* Section Styles */
+    .section {
+      position: relative;
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: auto;
+      z-index: 1;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .section-header p {
+      color: var(--gray-500);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Products Grid */
+    .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 30px;
     }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    
+    .product-card {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(6, 182, 212, 0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
     }
-    .card h3 {
-      color: #1e40af;
+    
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-    .products a {
-      display: inline-block;
-      margin-top: 8px;
-      color: #2563eb;
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(6, 182, 212, 0.3);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.15);
+    }
+    
+    .product-card:hover::before {
+      opacity: 1;
+    }
+    
+    .product-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+    
+    .product-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    
+    .product-card p {
+      color: var(--gray-500);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    
+    .feature-tag {
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
       font-weight: 500;
+    }
+    
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.3s;
+    }
+    
+    .product-link:hover {
+      gap: 12px;
+    }
+    
+    /* Founder Section */
+    .founder-section {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(6, 182, 212, 0.05));
+      border-radius: 24px;
+      padding: 80px 60px;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .founder-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .founder-content {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.4);
+      border: 3px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+    }
+    
+    .founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .founder-info h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    
+    .founder-title {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    
+    .founder-bio p {
+      color: var(--gray-400);
+      line-height: 1.9;
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+    }
+    
+    .founder-quote {
+      background: rgba(6, 182, 212, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 24px 32px;
+      border-radius: 0 16px 16px 0;
+      margin-top: 32px;
+    }
+    
+    .founder-quote p {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gray-300);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    
+    .founder-quote .signature {
+      color: var(--accent);
+      font-weight: 600;
+      font-style: normal;
+      font-size: 0.95rem;
+    }
+    
+    /* Story Section */
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .story-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    
+    .story-content h2 span {
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .story-content p {
+      color: var(--gray-400);
+      line-height: 1.9;
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+    }
+    
+    .story-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .value-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s;
+    }
+    
+    .value-card:hover {
+      background: rgba(6, 182, 212, 0.05);
+      border-color: rgba(6, 182, 212, 0.2);
+      transform: translateY(-4px);
+    }
+    
+    .value-card h4 {
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    
+    .value-card p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    
+    .service-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    
+    .service-card:hover {
+      background: rgba(6, 182, 212, 0.05);
+      border-color: rgba(6, 182, 212, 0.2);
+    }
+    
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    
+    .service-card p {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .about-text h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    
+    .about-text p {
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .about-stat-card {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(6, 182, 212, 0.1));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .about-stat-card .number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    
+    .about-stat-card .label {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(6, 182, 212, 0.05));
+      border-radius: 24px;
+      padding: 60px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .contact-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    
+    .contact-section p {
+      color: var(--gray-500);
+      margin-bottom: 8px;
+    }
+    
+    .contact-section a {
+      color: var(--accent);
       text-decoration: none;
     }
-    .footer {
-      background: #f1f5f9;
+    
+    /* Launch Notice */
+    .launch-notice {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 88, 12, 0.05));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 16px;
+      padding: 24px 40px;
       text-align: center;
-      padding: 30px;
-      margin-top: 60px;
-      font-size: 14px;
+      margin: 60px auto;
+      max-width: 800px;
+    }
+    
+    .launch-notice p {
+      color: #f97316;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Responsive */
+    @media (max-width: 968px) {
+      .founder-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .founder-photo {
+        max-width: 250px;
+        margin: 0 auto;
+      }
+      .founder-quote {
+        text-align: left;
+      }
+      .story-section {
+        grid-template-columns: 1fr;
+      }
+      .story-values {
+        grid-template-columns: 1fr;
+      }
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .hero {
+        padding: 100px 20px 60px;
+      }
+      
+      .stats-bar {
+        gap: 30px;
+      }
+      
+      .section {
+        padding: 60px 20px;
+      }
+      
+      .founder-section {
+        padding: 40px 24px;
+      }
+      
+      .contact-section {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
+<div class="bg-grid"></div>
+<div class="glow-orb glow-orb-1"></div>
+<div class="glow-orb glow-orb-2"></div>
+
 <header>
-  <div style="display: flex; align-items: center; gap: 15px;">
+  <a href="/" class="logo-section">
     <img src="https://i.postimg.cc/4ndh7Ywh/logo.png" alt="Fortress Technologies Hub Logo">
-    <a href="/" style="font-size: 20px; font-weight: 800; color: #1e40af; text-decoration: none;">
-      Fortress Technologies Hub
-    </a>
-  </div>
+    <span>Fortress Technologies Hub</span>
+  </a>
   <nav>
     <div class="dropdown">
       <a href="#products">Products ▾</a>
       <div class="dropdown-content">
-        <a href="/api-fortress.html">API Fortress</a>
-        <a href="/hpcx.html">HPCX</a>
-        <a href="#products">CoreMind</a>
-        <a href="#products">QuantumBridge</a>
+        <a href="coremind.html">CoreMind</a>
+        <a href="api-fortress.html">API Fortress</a>
+        <a href="hpcx.html">HPCX</a>
       </div>
     </div>
     <a href="#services">Services</a>
+    <a href="#founder">Founder</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-  <section class="hero">
-    <h1>Fortress Technologies Hub</h1>
-    <p>The Hub of Technology — Building Canada’s Most Impactful Tech</p>
-    <p>🚀 Official Launch Coming Soon</p>
-  </section>
-
-  <section id="products" class="section products">
-    <h2>Our Products</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>API Fortress</h3>
-        <p>AI-powered API Security platform with scanning, monitoring, and real-time protection.</p>
-        <a href="/api-fortress.html">Learn more →</a>
-      </div>
-      <div class="card">
-        <h3>HPCX</h3>
-        <p>High-Performance Computing software for boosting speed and efficiency at scale.</p>
-        <a href="/hpcx">Learn more →</a>
-      </div>
-      <div class="card">
-        <h3>CoreMind</h3>
-        <p>Decentralized AI Assistant that grows with you. Private, smart, and always available.</p>
-        <p><strong>Coming Soon</strong></p>
-      </div>
-      <div class="card">
-        <h3>QuantumBridge</h3>
-        <p>Accessible quantum simulator designed for schools, researchers, and curious minds.</p>
-        <p><strong>Coming Soon</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>API Security Solutions</h3>
-        <p>End-to-end protection for APIs including scanning, firewalling, and runtime threat defense.</p>
-      </div>
-      <div class="card">
-        <h3>Core AI & Assistant Systems</h3>
-        <p>Innovative AI products like CoreMind that assist with personal productivity and data safety.</p>
-      </div>
-      <div class="card">
-        <h3>Quantum Computing</h3>
-        <p>Exploring and developing tools for quantum education and accessibility.</p>
-      </div>
-      <div class="card">
-        <h3>High-Performance Computing</h3>
-        <p>Software designed to enhance large-scale computing workloads with AI optimization.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <h2>About Fortress Technologies Hub</h2>
-    <p>We are a Canadian-based innovation company dedicated to solving critical challenges through software. From cybersecurity to AI and high-performance computing, we are creating the future — one line of code at a time.</p>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>📧 Email: info@fortresstechnologieshub.com</p>
-    <p>📍 Vancouver, Canada</p>
-  </section>
-
-  <section class="section" style="text-align: center; color: #f97316;">
-    <p><strong>Note:</strong> Fortress Technologies Hub is not yet operational. This website serves as a preview for future innovations and services.</p>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 Fortress Technologies Hub. All rights reserved.
+<section class="hero">
+  <div class="hero-badge">
+    <span>🚀</span>
+    <span>Official Launch Coming Soon</span>
   </div>
+  <h1>The Future of Technology<br/>Starts Here</h1>
+  <p>Building Canada's most impactful technology solutions. From AI-powered security to intelligent computing, we're engineering tomorrow's innovations today.</p>
+  <div class="hero-cta">
+    <a href="#products" class="btn-primary">Explore Products</a>
+    <a href="#contact" class="btn-secondary">Get in Touch</a>
+  </div>
+  
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Products</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Features</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Canadian</div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="section-header">
+    <h2>Our Products</h2>
+    <p>Cutting-edge solutions designed to solve real-world challenges with innovation and precision.</p>
+  </div>
+  
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-icon">🧠</div>
+      <h3>CoreMind</h3>
+      <p>Your intelligent AI companion. A powerful, privacy-focused assistant that helps you think, create, and accomplish more with advanced language models and multimodal capabilities.</p>
+      <div class="product-features">
+        <span class="feature-tag">Multiple AI Models</span>
+        <span class="feature-tag">Voice Interaction</span>
+        <span class="feature-tag">Image Generation</span>
+        <span class="feature-tag">Developer API</span>
+      </div>
+      <a href="coremind.html" class="product-link">Learn more →</a>
+    </div>
+    
+    <div class="product-card">
+      <div class="product-icon">🛡️</div>
+      <h3>API Fortress</h3>
+      <p>Enterprise-grade API security powered by AI. Protect your APIs with intelligent threat detection, real-time monitoring, and automated defense mechanisms.</p>
+      <div class="product-features">
+        <span class="feature-tag">AI Auto-Blocking</span>
+        <span class="feature-tag">Zero Trust</span>
+        <span class="feature-tag">RASP/WAF</span>
+        <span class="feature-tag">Pen Testing</span>
+      </div>
+      <a href="api-fortress.html" class="product-link">Learn more →</a>
+    </div>
+    
+    <div class="product-card">
+      <div class="product-icon">⚡</div>
+      <h3>HPCX</h3>
+      <p>High-performance computing optimization engine. Maximize your infrastructure efficiency with AI-powered job scheduling, resource monitoring, and intelligent workload management.</p>
+      <div class="product-features">
+        <span class="feature-tag">Job Analytics</span>
+        <span class="feature-tag">Smart Scheduling</span>
+        <span class="feature-tag">Green Mode</span>
+        <span class="feature-tag">SLURM/K8s</span>
+      </div>
+      <a href="hpcx.html" class="product-link">Learn more →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Founder Section -->
+<section id="founder" class="section">
+  <div class="founder-section">
+    <div class="founder-content">
+      <div class="founder-image">
+        <div class="founder-photo">
+          <!-- Replace with: <img src="your-photo.jpg" alt="Jubril Akanbi"> -->
+          👤
+        </div>
+      </div>
+      <div class="founder-info">
+        <h2>Jubril Akanbi</h2>
+        <p class="founder-title">Founder & CEO, Fortress Technologies Hub</p>
+        <div class="founder-bio">
+          <p>From the historic town of Iwo in Osun State, Nigeria, to the tech corridors of Toronto, Canada, my journey has been one of relentless curiosity and purposeful innovation.</p>
+          <p>I earned my Bachelor of Technology in Computer Science and Engineering from Ladoke Akintola University of Technology in 2022, where my passion for building impactful software first took root. Seeking to push my boundaries further, I chose Canada for my advanced studies, drawn by its world-class education, vibrant diversity, and culture of inclusivity that welcomes dreamers from every corner of the globe.</p>
+          <p>Now completing my Master of Science in Computer Science at Northeastern University Vancouver, I founded Fortress Technologies Hub with a singular mission: to build technology that genuinely matters. Not technology for technology's sake, but solutions that protect, empower, and elevate what humans can achieve.</p>
+        </div>
+        <div class="founder-quote">
+          <p>"Innovation isn't about replacing human potential, it's about unlocking it. Every product we build at Fortress is designed to make people more capable, more secure, and more connected to what matters."</p>
+          <span class="signature">— Jubril Akanbi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Fortress Exists Section -->
+<section id="story" class="section">
+  <div class="story-section">
+    <div class="story-content">
+      <h2>Why <span>Fortress</span> Exists</h2>
+      <p>Fortress Technologies Hub was born from a simple observation: the world doesn't need more technology, it needs better technology. Technology that respects privacy. Technology that enhances human capability rather than replacing it. Technology built with integrity.</p>
+      <p>We're not chasing trends or building for hype. Every product in our portfolio, from CoreMind's intelligent assistance to API Fortress's security infrastructure to HPCX's computing optimization, exists to solve real problems for real people and organizations.</p>
+      <p>Based in Toronto, we're building a new kind of technology company. One where innovation meets responsibility, where ambition is tempered by ethics, and where every line of code is written with purpose.</p>
+    </div>
+    <div class="story-values">
+      <div class="value-card">
+        <h4>🎯 Purpose-Driven</h4>
+        <p>Every product solves a real problem. We build what matters, not what's trendy.</p>
+      </div>
+      <div class="value-card">
+        <h4>🔒 Privacy-First</h4>
+        <p>Your data is yours. We build systems that protect, not exploit.</p>
+      </div>
+      <div class="value-card">
+        <h4>🤝 Human-Centered</h4>
+        <p>Technology should amplify human potential, never diminish it.</p>
+      </div>
+      <div class="value-card">
+        <h4>🌍 Globally Minded</h4>
+        <p>Built in Canada, designed for the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-header">
+    <h2>Our Services</h2>
+    <p>Comprehensive technology services tailored to your needs.</p>
+  </div>
+  
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>🤖 AI & Assistant Systems</h3>
+      <p>Intelligent AI products that assist with productivity, creativity, and complex problem-solving while keeping your data private and secure.</p>
+    </div>
+    <div class="service-card">
+      <h3>🔒 API Security Solutions</h3>
+      <p>End-to-end protection for APIs including scanning, firewalling, runtime threat defense, and compliance monitoring.</p>
+    </div>
+    <div class="service-card">
+      <h3>🖥️ High-Performance Computing</h3>
+      <p>Software designed to enhance large-scale computing workloads with AI optimization and intelligent resource management.</p>
+    </div>
+    <div class="service-card">
+      <h3>🔧 Custom Solutions</h3>
+      <p>Tailored technology solutions built to address your unique business challenges and operational requirements.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="section-header">
+    <h2>About Fortress Technologies Hub</h2>
+  </div>
+  
+  <div class="about-content">
+    <div class="about-text">
+      <h3>Engineering the Future from Toronto</h3>
+      <p>Fortress Technologies Hub is a Canadian technology company dedicated to solving critical challenges through innovative software solutions. We believe in building technology that matters, tools that protect, optimize, and empower.</p>
+      <p>From cybersecurity to artificial intelligence and high-performance computing, we're creating the future one line of code at a time. Our mission is to deliver world-class technology products that make a real difference.</p>
+      <p>Based in Toronto, we combine deep technical expertise with a commitment to privacy, security, and performance that Canadian businesses and users deserve.</p>
+    </div>
+    <div class="about-stats">
+      <div class="about-stat-card">
+        <div class="number">3</div>
+        <div class="label">Products Built</div>
+      </div>
+      <div class="about-stat-card">
+        <div class="number">2025</div>
+        <div class="label">Launch Year</div>
+      </div>
+      <div class="about-stat-card">
+        <div class="number">🇨🇦</div>
+        <div class="label">Made in Canada</div>
+      </div>
+      <div class="about-stat-card">
+        <div class="number">∞</div>
+        <div class="label">Possibilities</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>📧 Email: <a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a></p>
+    <p>📍 Toronto, Ontario, Canada</p>
+  </div>
+  
+  <div class="launch-notice">
+    <p>⚠️ Fortress Technologies Hub is preparing for official launch. This website serves as a preview of our upcoming innovations and services.</p>
+  </div>
+</section>
+
+<div class="footer">
+  &copy; 2025 Fortress Technologies Hub. All rights reserved.
+</div>
 
 </body>
 </html>
