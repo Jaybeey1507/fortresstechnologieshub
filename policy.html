@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy | Fortress Technologies Hub</title>
+  <meta name="description" content="Privacy Policy for Fortress Technologies Hub Inc. Learn how we collect, use, and protect your personal information.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #06b6d4;
+      --dark: #0f172a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-section img {
+      height: 45px;
+    }
+    
+    .logo-section span {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--gray-300);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 140px 40px 80px;
+    }
+    
+    .content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .last-updated {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+    
+    .content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    
+    .content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .content p {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    
+    .content ul, .content ol {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    
+    .content li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+    
+    .content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    .content a:hover {
+      text-decoration: underline;
+    }
+    
+    .highlight-box {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    
+    .highlight-box p {
+      color: var(--gray-300);
+      margin: 0;
+    }
+    
+    .footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+    
+    .footer a {
+      color: var(--gray-500);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    
+    .footer a:hover {
+      color: var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      .content {
+        padding: 120px 20px 60px;
+      }
+      
+      .content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<header>
+  <a href="/" class="logo-section">
+    <img src="https://i.postimg.cc/4ndh7Ywh/logo.png" alt="Fortress Technologies Hub Logo">
+    <span>Fortress Technologies Hub</span>
+  </a>
+  <nav>
+    <a href="/">← Back to Home</a>
+  </nav>
+</header>
+
+<div class="content">
+  <h1>Privacy Policy</h1>
+  <p class="last-updated">Last Updated: January 28, 2026</p>
+  
+  <div class="highlight-box">
+    <p><strong>Summary:</strong> We respect your privacy. We collect only what we need, protect what we collect, and never sell your personal information to third parties.</p>
+  </div>
+  
+  <h2>1. Introduction</h2>
+  <p>Fortress Technologies Hub Inc. ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our websites, products, and services, including CoreMind and API Fortress (collectively, the "Services").</p>
+  <p>By accessing or using our Services, you agree to this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access or use our Services.</p>
+  
+  <h2>2. Information We Collect</h2>
+  
+  <h3>2.1 Information You Provide</h3>
+  <p>We may collect information that you voluntarily provide to us, including:</p>
+  <ul>
+    <li><strong>Account Information:</strong> Name, email address, password, and other registration details</li>
+    <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely through our payment processors)</li>
+    <li><strong>Communications:</strong> Information you provide when you contact us for support or inquiries</li>
+    <li><strong>User Content:</strong> Content you create, upload, or input while using our Services</li>
+  </ul>
+  
+  <h3>2.2 Information Collected Automatically</h3>
+  <p>When you use our Services, we may automatically collect:</p>
+  <ul>
+    <li><strong>Device Information:</strong> Device type, operating system, browser type, and unique device identifiers</li>
+    <li><strong>Usage Information:</strong> Pages visited, features used, time spent, and interaction patterns</li>
+    <li><strong>Log Data:</strong> IP address, access times, and referring URLs</li>
+    <li><strong>Cookies and Similar Technologies:</strong> Information collected through cookies, pixels, and similar tracking technologies</li>
+  </ul>
+  
+  <h2>3. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, maintain, and improve our Services</li>
+    <li>Process transactions and send related information</li>
+    <li>Send you technical notices, updates, security alerts, and support messages</li>
+    <li>Respond to your comments, questions, and customer service requests</li>
+    <li>Monitor and analyze trends, usage, and activities</li>
+    <li>Detect, prevent, and address technical issues and security threats</li>
+    <li>Comply with legal obligations</li>
+  </ul>
+  
+  <h2>4. How We Share Your Information</h2>
+  <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
+  <ul>
+    <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf (e.g., payment processing, hosting, analytics)</li>
+    <li><strong>Legal Requirements:</strong> When required by law or to respond to legal process</li>
+    <li><strong>Protection of Rights:</strong> To protect the rights, property, and safety of Fortress Technologies Hub, our users, or others</li>
+    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+    <li><strong>With Your Consent:</strong> When you have given us permission to share your information</li>
+  </ul>
+  
+  <h2>5. Data Security</h2>
+  <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+  <ul>
+    <li>Encryption of data in transit and at rest</li>
+    <li>Regular security assessments and audits</li>
+    <li>Access controls and authentication measures</li>
+    <li>Employee training on data protection</li>
+  </ul>
+  <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+  
+  <h2>6. Data Retention</h2>
+  <p>We retain your personal information for as long as necessary to fulfill the purposes for which it was collected, including to satisfy legal, accounting, or reporting requirements. When determining retention periods, we consider the amount, nature, and sensitivity of the information, the potential risk of harm from unauthorized use or disclosure, and applicable legal requirements.</p>
+  
+  <h2>7. Your Rights and Choices</h2>
+  <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+  <ul>
+    <li><strong>Access:</strong> Request access to your personal information</li>
+    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+    <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+    <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+    <li><strong>Withdrawal of Consent:</strong> Withdraw consent where processing is based on consent</li>
+    <li><strong>Opt-Out:</strong> Opt out of marketing communications</li>
+  </ul>
+  <p>To exercise these rights, please contact us at <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a>.</p>
+  
+  <h2>8. Cookies and Tracking Technologies</h2>
+  <p>We use cookies and similar tracking technologies to collect and track information about your use of our Services. You can control cookies through your browser settings and other tools. However, disabling cookies may limit your ability to use certain features of our Services.</p>
+  
+  <h2>9. International Data Transfers</h2>
+  <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that are different from the laws of your country. We take appropriate safeguards to ensure that your personal information remains protected in accordance with this Privacy Policy.</p>
+  
+  <h2>10. Children's Privacy</h2>
+  <p>Our Services are not directed to children under the age of 13 (or other age as required by local law). We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.</p>
+  
+  <h2>11. Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically.</p>
+  
+  <h2>12. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
+  <p>
+    <strong>Fortress Technologies Hub Inc.</strong><br>
+    Suite 2500, 1 Dundas Street West<br>
+    Toronto, Ontario M5G 1Z3<br>
+    Canada<br><br>
+    Email: <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a><br>
+    Phone: <a href="tel:+16043581469">+1 (604) 358-1469</a>
+  </p>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+  <p>
+    <a href="/">Home</a>
+    <a href="privacy-policy">Privacy Policy</a>
+    <a href="terms-of-service">Terms of Service</a>
+    <a href="refund-policy">Refund Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>

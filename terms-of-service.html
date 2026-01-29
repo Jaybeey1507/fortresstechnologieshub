@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service | Fortress Technologies Hub</title>
+  <meta name="description" content="Terms of Service for Fortress Technologies Hub Inc. Read our terms and conditions for using our products and services.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #06b6d4;
+      --dark: #0f172a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-section img {
+      height: 45px;
+    }
+    
+    .logo-section span {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--gray-300);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 140px 40px 80px;
+    }
+    
+    .content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .last-updated {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+    
+    .content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    
+    .content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .content p {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    
+    .content ul, .content ol {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    
+    .content li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+    
+    .content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    .content a:hover {
+      text-decoration: underline;
+    }
+    
+    .highlight-box {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    
+    .highlight-box p {
+      color: var(--gray-300);
+      margin: 0;
+    }
+
+    .warning-box {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .warning-box p {
+      color: #fca5a5;
+      margin: 0;
+    }
+    
+    .footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+    
+    .footer a {
+      color: var(--gray-500);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    
+    .footer a:hover {
+      color: var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      .content {
+        padding: 120px 20px 60px;
+      }
+      
+      .content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<header>
+  <a href="/" class="logo-section">
+    <img src="https://i.postimg.cc/4ndh7Ywh/logo.png" alt="Fortress Technologies Hub Logo">
+    <span>Fortress Technologies Hub</span>
+  </a>
+  <nav>
+    <a href="/">← Back to Home</a>
+  </nav>
+</header>
+
+<div class="content">
+  <h1>Terms of Service</h1>
+  <p class="last-updated">Last Updated: January 28, 2026</p>
+  
+  <div class="highlight-box">
+    <p><strong>Summary:</strong> By using our services, you agree to these terms. Please read them carefully. If you don't agree, please don't use our services.</p>
+  </div>
+  
+  <h2>1. Agreement to Terms</h2>
+  <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("you" or "User") and Fortress Technologies Hub Inc. ("Company," "we," "our," or "us") governing your access to and use of our websites, applications, products, and services (collectively, the "Services"), including but not limited to CoreMind and API Fortress.</p>
+  <p>By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you are using the Services on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.</p>
+  
+  <h2>2. Eligibility</h2>
+  <p>To use our Services, you must:</p>
+  <ul>
+    <li>Be at least 18 years of age (or the age of legal majority in your jurisdiction)</li>
+    <li>Have the legal capacity to enter into a binding agreement</li>
+    <li>Not be prohibited from using the Services under applicable laws</li>
+    <li>Provide accurate and complete registration information</li>
+  </ul>
+  
+  <h2>3. Account Registration and Security</h2>
+  <p>To access certain features of our Services, you may be required to create an account. When you create an account, you agree to:</p>
+  <ul>
+    <li>Provide accurate, current, and complete information</li>
+    <li>Maintain and promptly update your account information</li>
+    <li>Maintain the security and confidentiality of your login credentials</li>
+    <li>Accept responsibility for all activities that occur under your account</li>
+    <li>Notify us immediately of any unauthorized access or use of your account</li>
+  </ul>
+  <p>We reserve the right to suspend or terminate accounts that violate these Terms or for any other reason at our sole discretion.</p>
+  
+  <h2>4. Services Description</h2>
+  
+  <h3>4.1 CoreMind</h3>
+  <p>CoreMind is an AI-powered assistant platform that provides intelligent conversation, content generation, and productivity features. The AI-generated content is provided for informational and creative purposes and should not be relied upon as professional advice.</p>
+  
+  <h3>4.2 API Fortress</h3>
+  <p>API Fortress is an enterprise API security platform that provides threat detection, monitoring, and protection services. API Fortress is provided on an invite-only basis and requires a separate service agreement for enterprise customers.</p>
+  
+  <h2>5. Acceptable Use</h2>
+  <p>You agree to use our Services only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
+  <ul>
+    <li>Use the Services for any illegal or unauthorized purpose</li>
+    <li>Violate any applicable laws, regulations, or third-party rights</li>
+    <li>Attempt to gain unauthorized access to any part of the Services</li>
+    <li>Interfere with or disrupt the integrity or performance of the Services</li>
+    <li>Use the Services to transmit malware, viruses, or harmful code</li>
+    <li>Reverse engineer, decompile, or disassemble any part of the Services</li>
+    <li>Use automated means to access the Services without our permission</li>
+    <li>Resell, sublicense, or redistribute the Services without authorization</li>
+    <li>Use the Services to generate content that is illegal, harmful, or infringes on others' rights</li>
+    <li>Circumvent any security measures or usage limits</li>
+  </ul>
+  
+  <div class="warning-box">
+    <p><strong>Important:</strong> Violation of these acceptable use policies may result in immediate termination of your account and access to our Services, without refund.</p>
+  </div>
+  
+  <h2>6. Intellectual Property</h2>
+  
+  <h3>6.1 Our Intellectual Property</h3>
+  <p>The Services and all content, features, and functionality (including but not limited to software, code, designs, text, graphics, logos, and trademarks) are owned by Fortress Technologies Hub Inc. and are protected by Canadian and international intellectual property laws.</p>
+  
+  <h3>6.2 Your Content</h3>
+  <p>You retain ownership of any content you create, upload, or input through our Services ("User Content"). By using our Services, you grant us a limited, non-exclusive, royalty-free license to use, process, and display your User Content solely for the purpose of providing and improving our Services.</p>
+  
+  <h3>6.3 AI-Generated Content</h3>
+  <p>For content generated by our AI services (such as CoreMind), you own the output generated based on your inputs, subject to these Terms and any applicable laws. You are responsible for reviewing and using AI-generated content appropriately.</p>
+  
+  <h2>7. Payment Terms</h2>
+  
+  <h3>7.1 Fees and Billing</h3>
+  <p>Certain Services require payment of fees. By subscribing to paid Services, you agree to pay all applicable fees as described at the time of purchase. Fees are exclusive of taxes, which may be added where required by law.</p>
+  
+  <h3>7.2 Subscription Renewals</h3>
+  <p>Subscriptions automatically renew at the end of each billing period unless you cancel before the renewal date. You authorize us to charge your payment method for recurring fees.</p>
+  
+  <h3>7.3 Price Changes</h3>
+  <p>We may change our fees at any time. For existing subscriptions, we will provide at least 30 days' notice before any price increase takes effect.</p>
+  
+  <h2>8. Disclaimers</h2>
+  
+  <div class="warning-box">
+    <p><strong>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+  </div>
+  
+  <p>We disclaim all warranties, including but not limited to:</p>
+  <ul>
+    <li>Merchantability and fitness for a particular purpose</li>
+    <li>Accuracy, reliability, or completeness of any content</li>
+    <li>Uninterrupted, secure, or error-free operation</li>
+    <li>Results obtained from using the Services</li>
+  </ul>
+  <p>AI-generated content may contain errors, inaccuracies, or inappropriate material. You are solely responsible for evaluating and using any content generated through our Services.</p>
+  
+  <h2>9. Limitation of Liability</h2>
+  <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, FORTRESS TECHNOLOGIES HUB INC. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
+  <ul>
+    <li>Loss of profits, revenue, data, or business opportunities</li>
+    <li>Service interruptions or system failures</li>
+    <li>Errors or inaccuracies in content</li>
+    <li>Unauthorized access to your account or data</li>
+  </ul>
+  <p>Our total liability for any claims arising from these Terms or your use of the Services shall not exceed the amount you paid to us in the twelve (12) months preceding the claim.</p>
+  
+  <h2>10. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless Fortress Technologies Hub Inc. and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable legal fees) arising from:</p>
+  <ul>
+    <li>Your use of the Services</li>
+    <li>Your violation of these Terms</li>
+    <li>Your violation of any third-party rights</li>
+    <li>Your User Content</li>
+  </ul>
+  
+  <h2>11. Termination</h2>
+  <p>We may suspend or terminate your access to the Services at any time, with or without cause, with or without notice. Upon termination:</p>
+  <ul>
+    <li>Your right to use the Services will immediately cease</li>
+    <li>We may delete your account and User Content</li>
+    <li>Provisions that by their nature should survive termination will survive</li>
+  </ul>
+  <p>You may terminate your account at any time by contacting us or using the account settings in our Services.</p>
+  
+  <h2>12. Governing Law and Dispute Resolution</h2>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law principles.</p>
+  <p>Any disputes arising from these Terms or your use of the Services shall be resolved through binding arbitration in Toronto, Ontario, Canada, in accordance with the Arbitration Act, 1991 (Ontario), unless you and we agree otherwise.</p>
+  
+  <h2>13. Changes to Terms</h2>
+  <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the updated Terms on our website and updating the "Last Updated" date. Your continued use of the Services after such changes constitutes your acceptance of the modified Terms.</p>
+  
+  <h2>14. General Provisions</h2>
+  <ul>
+    <li><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and us regarding the Services.</li>
+    <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in effect.</li>
+    <li><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</li>
+    <li><strong>Assignment:</strong> You may not assign or transfer these Terms without our prior written consent. We may assign these Terms without restriction.</li>
+  </ul>
+  
+  <h2>15. Contact Us</h2>
+  <p>If you have any questions about these Terms of Service, please contact us at:</p>
+  <p>
+    <strong>Fortress Technologies Hub Inc.</strong><br>
+    Suite 2500, 1 Dundas Street West<br>
+    Toronto, Ontario M5G 1Z3<br>
+    Canada<br><br>
+    Email: <a href="mailto:legal@fortresstechnologieshub.com">legal@fortresstechnologieshub.com</a><br>
+    Phone: <a href="tel:+16043581469">+1 (604) 358-1469</a>
+  </p>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+  <p>
+    <a href="/">Home</a>
+    <a href="privacy-policy">Privacy Policy</a>
+    <a href="terms-of-service">Terms of Service</a>
+    <a href="refund-policy">Refund Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>

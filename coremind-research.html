@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research | CoreMind Labs</title>
+  <meta name="description" content="CoreMind Labs conducts research to build AI systems that are safe, capable, and aligned with human values. Explore our research areas and publications.">
+  <meta name="keywords" content="AI research, machine learning, AI safety, language models, CoreMind Labs, Canadian AI research">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #1e3a5f;
+      --primary-dark: #0f2744;
+      --primary-light: #2d5a87;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --glow: rgba(59, 130, 246, 0.4);
+      --dark: #0a1628;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .bg-pattern {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30, 58, 95, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .logo-section a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    
+    .logo-section img {
+      height: 42px;
+    }
+    
+    .logo-section .brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    
+    .logo-section .brand span {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+    
+    nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--gray-300);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    nav a.active {
+      color: var(--accent-light);
+    }
+    
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      color: white !important;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    
+    .nav-cta:hover {
+      box-shadow: 0 4px 20px var(--glow);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 160px 40px 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+    
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--accent-light);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: var(--white);
+      max-width: 800px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--gray-400);
+      max-width: 700px;
+      line-height: 1.8;
+    }
+
+    /* Research Teams Section */
+    .section {
+      position: relative;
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+    
+    .section-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 48px;
+    }
+    
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .team-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    
+    .team-card:hover {
+      background: rgba(59, 130, 246, 0.05);
+      border-color: rgba(59, 130, 246, 0.2);
+      transform: translateY(-4px);
+    }
+    
+    .team-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .team-card h3 .icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    
+    .team-card p {
+      color: var(--gray-400);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Featured Research */
+    .featured-section {
+      background: linear-gradient(135deg, rgba(30, 58, 95, 0.2), rgba(10, 22, 40, 0.5));
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 80px 40px;
+    }
+    
+    .featured-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 48px;
+      transition: all 0.3s;
+    }
+    
+    .featured-card:hover {
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    
+    .featured-image {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 16px;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .featured-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(96, 165, 250, 0.2) 0%, transparent 40%);
+    }
+    
+    .featured-image .placeholder-icon {
+      font-size: 4rem;
+      opacity: 0.5;
+      z-index: 1;
+    }
+    
+    .featured-content .category {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    
+    .featured-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    
+    .featured-content p {
+      color: var(--gray-400);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    
+    .featured-content .meta {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+
+    /* Publications Section */
+    .publications-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .publications-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-tab {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--gray-400);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.3);
+      color: var(--accent-light);
+    }
+    
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    
+    .publication-item {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 24px;
+      padding: 24px 28px;
+      background: var(--dark);
+      align-items: center;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .publication-item:hover {
+      background: rgba(59, 130, 246, 0.05);
+    }
+    
+    .publication-item .date {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+    
+    .publication-item .info h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+      transition: color 0.3s;
+    }
+    
+    .publication-item:hover .info h4 {
+      color: var(--accent-light);
+    }
+    
+    .publication-item .info .category-tag {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+    
+    .publication-item .arrow {
+      color: var(--gray-600);
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    
+    .publication-item:hover .arrow {
+      color: var(--accent-light);
+      transform: translateX(4px);
+    }
+    
+    .coming-soon-overlay {
+      text-align: center;
+      padding: 60px 40px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 16px;
+      border: 1px dashed rgba(255,255,255,0.1);
+    }
+    
+    .coming-soon-overlay .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+    
+    .coming-soon-overlay h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    
+    .coming-soon-overlay p {
+      color: var(--gray-500);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(30, 58, 95, 0.15));
+      border-radius: 24px;
+      padding: 60px;
+      margin-top: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .philosophy-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .philosophy-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    
+    .philosophy-text p {
+      color: var(--gray-400);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    
+    .philosophy-principles {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .principle-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: rgba(255,255,255,0.03);
+      padding: 20px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s;
+    }
+    
+    .principle-item:hover {
+      background: rgba(59, 130, 246, 0.05);
+      border-color: rgba(59, 130, 246, 0.15);
+    }
+    
+    .principle-item .num {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--primary-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    
+    .principle-item .text h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    
+    .principle-item .text p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 60px 40px 40px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .footer-brand p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .address {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-column h4 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .teams-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .featured-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .philosophy-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .hero {
+        padding: 120px 20px 60px;
+      }
+      
+      .section {
+        padding: 60px 20px;
+      }
+      
+      .featured-section {
+        padding: 60px 20px;
+      }
+      
+      .featured-card {
+        padding: 32px 24px;
+      }
+      
+      .philosophy-section {
+        padding: 40px 24px;
+      }
+      
+      .publication-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
+      .publication-item .date {
+        font-size: 0.8rem;
+      }
+      
+      .publication-item .arrow {
+        display: none;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<header>
+  <div class="logo-section">
+    <a href="coremind.html">
+      <img src="https://i.postimg.cc/c4gLRbVh/CoreMind-logo.png" alt="CoreMind Logo">
+      <span class="brand">CoreMind <span>Labs</span></span>
+    </a>
+  </div>
+  <nav>
+    <a href="coremind.html">Product</a>
+    <a href="coremind.html#features">Features</a>
+    <a href="coremind-research.html" class="active">Research</a>
+    <a href="coremind.html#api">API</a>
+    <a href="index.html">Fortress Hub</a>
+    <a href="https://coremindx.ai" class="nav-cta">Try CoreMind</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-label">🔬 CoreMind Labs</div>
+  <h1>Research</h1>
+  <p>Our research teams investigate how to build AI systems that are safe, capable, and aligned with human values — so that artificial intelligence has a positive impact as it becomes increasingly powerful.</p>
+</section>
+
+<!-- Research Teams Section -->
+<section class="section">
+  <div class="section-label">Research Areas</div>
+  <h2 class="section-title">What We Work On</h2>
+  
+  <div class="teams-grid">
+    <div class="team-card">
+      <h3><span class="icon">🎯</span> Alignment & Safety</h3>
+      <p>We work to understand the risks of AI systems and develop techniques to ensure our models remain helpful, honest, and harmless. Our goal is to build AI that reliably does what users intend while avoiding unintended harmful behaviors.</p>
+    </div>
+    
+    <div class="team-card">
+      <h3><span class="icon">🧠</span> Reasoning & Intelligence</h3>
+      <p>We research methods to improve how AI systems reason through complex problems. This includes chain-of-thought processes, logical analysis, and multi-step problem solving that mirrors human cognitive approaches.</p>
+    </div>
+    
+    <div class="team-card">
+      <h3><span class="icon">🌐</span> Multimodal Systems</h3>
+      <p>We develop AI that can seamlessly understand and generate across multiple modalities — text, images, audio, and video. Our research focuses on creating unified systems that perceive the world more like humans do.</p>
+    </div>
+    
+    <div class="team-card">
+      <h3><span class="icon">🔒</span> Privacy-Preserving AI</h3>
+      <p>We pioneer techniques that deliver powerful AI capabilities while protecting user privacy. Our research explores how to build systems that learn and improve without compromising the confidentiality of user data.</p>
+    </div>
+    
+    <div class="team-card">
+      <h3><span class="icon">⚡</span> Efficient Inference</h3>
+      <p>Speed and accessibility matter. We research optimization techniques that allow our models to respond quickly and run efficiently, making advanced AI practical for real-world applications without sacrificing quality.</p>
+    </div>
+    
+    <div class="team-card">
+      <h3><span class="icon">🤝</span> Human-AI Collaboration</h3>
+      <p>We study how AI can best augment human capabilities rather than replace them. Our research focuses on building systems that enhance human creativity, productivity, and decision-making through thoughtful collaboration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Research -->
+<section class="featured-section">
+  <div class="featured-inner">
+    <div class="section-label">Featured</div>
+    <h2 class="section-title">Latest Research</h2>
+    
+    <div class="featured-card">
+      <div class="featured-image">
+        <span class="placeholder-icon">🔬</span>
+      </div>
+      <div class="featured-content">
+        <span class="category">Alignment & Safety</span>
+        <h3>Building AI Systems That Understand Intent</h3>
+        <p>Our approach to alignment focuses on creating AI that deeply understands user intent and context. Rather than simply following instructions literally, we're developing systems that grasp the underlying goals and respond appropriately — even when requests are ambiguous or incomplete.</p>
+        <span class="meta">CoreMind Labs • Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publications Section -->
+<section class="section">
+  <div class="publications-header">
+    <h2>Publications</h2>
+    <div class="filter-tabs">
+      <button class="filter-tab active">All</button>
+      <button class="filter-tab">Alignment</button>
+      <button class="filter-tab">Reasoning</button>
+      <button class="filter-tab">Multimodal</button>
+      <button class="filter-tab">Privacy</button>
+    </div>
+  </div>
+  
+  <div class="coming-soon-overlay">
+    <div class="icon">📄</div>
+    <h3>Publications Coming Soon</h3>
+    <p>Our research team is working on several papers that we plan to share with the community. Check back soon for our first publications on AI safety, reasoning, and multimodal intelligence.</p>
+  </div>
+</section>
+
+<!-- Research Philosophy Section -->
+<section class="section">
+  <div class="philosophy-section">
+    <div class="philosophy-content">
+      <div class="philosophy-text">
+        <h2>Our Research Philosophy</h2>
+        <p>At CoreMind Labs, we believe that building powerful AI and building safe AI are not opposing goals — they are deeply intertwined. The most capable AI systems will be those that humans can trust and rely on.</p>
+        <p>We take an empirical, iterative approach to research. We build systems, study their behaviors carefully, identify areas for improvement, and refine our techniques. This cycle of building and learning drives our progress toward AI that genuinely benefits humanity.</p>
+      </div>
+      
+      <div class="philosophy-principles">
+        <div class="principle-item">
+          <span class="num">1</span>
+          <div class="text">
+            <h4>Safety as a Foundation</h4>
+            <p>Safety isn't an afterthought — it's built into everything we do from the beginning.</p>
+          </div>
+        </div>
+        
+        <div class="principle-item">
+          <span class="num">2</span>
+          <div class="text">
+            <h4>Privacy by Design</h4>
+            <p>User data protection is a core principle, not a feature to be added later.</p>
+          </div>
+        </div>
+        
+        <div class="principle-item">
+          <span class="num">3</span>
+          <div class="text">
+            <h4>Human-Centered Development</h4>
+            <p>AI should amplify human potential, not diminish human agency or autonomy.</p>
+          </div>
+        </div>
+        
+        <div class="principle-item">
+          <span class="num">4</span>
+          <div class="text">
+            <h4>Transparent Progress</h4>
+            <p>We share our learnings openly to contribute to the broader AI safety community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>CoreMind Labs</h3>
+      <p>Research dedicated to building AI systems that are safe, capable, and aligned with human values.</p>
+      <div class="address">
+        <strong>Fortress Technologies Hub Inc.</strong><br>
+        Suite 2500, 1 Dundas Street West<br>
+        Toronto, Ontario M5G 1Z3<br>
+        Canada
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="#alignment">Alignment & Safety</a></li>
+        <li><a href="#reasoning">Reasoning</a></li>
+        <li><a href="#multimodal">Multimodal Systems</a></li>
+        <li><a href="#privacy">Privacy-Preserving AI</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="coremind.html">CoreMind</a></li>
+        <li><a href="coremind.html#features">Features</a></li>
+        <li><a href="coremind.html#models">Models</a></li>
+        <li><a href="coremind.html#api">Developer API</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Fortress Hub</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#founder">Founder</a></li>
+        <li><a href="mailto:research@coremindx.ai">Contact Research</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

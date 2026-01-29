@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Refund Policy | Fortress Technologies Hub</title>
+  <meta name="description" content="Refund Policy for Fortress Technologies Hub Inc. Learn about our refund and cancellation policies for CoreMind and API Fortress.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #06b6d4;
+      --dark: #0f172a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-section img {
+      height: 45px;
+    }
+    
+    .logo-section span {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--gray-300);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 140px 40px 80px;
+    }
+    
+    .content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .last-updated {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+    
+    .content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    
+    .content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .content p {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    
+    .content ul, .content ol {
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    
+    .content li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+    
+    .content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    .content a:hover {
+      text-decoration: underline;
+    }
+    
+    .highlight-box {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    
+    .highlight-box p {
+      color: var(--gray-300);
+      margin: 0;
+    }
+
+    .policy-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+
+    .policy-card h4 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .policy-card p {
+      margin-bottom: 8px;
+    }
+
+    .policy-card ul {
+      margin-bottom: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    th {
+      color: var(--white);
+      font-weight: 600;
+      background: rgba(30, 64, 175, 0.1);
+    }
+
+    td {
+      color: var(--gray-400);
+    }
+
+    tr:hover td {
+      background: rgba(6, 182, 212, 0.05);
+    }
+    
+    .footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+    
+    .footer a {
+      color: var(--gray-500);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    
+    .footer a:hover {
+      color: var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+      }
+      
+      .content {
+        padding: 120px 20px 60px;
+      }
+      
+      .content h1 {
+        font-size: 2rem;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th, td {
+        padding: 12px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<header>
+  <a href="/" class="logo-section">
+    <img src="https://i.postimg.cc/4ndh7Ywh/logo.png" alt="Fortress Technologies Hub Logo">
+    <span>Fortress Technologies Hub</span>
+  </a>
+  <nav>
+    <a href="/">← Back to Home</a>
+  </nav>
+</header>
+
+<div class="content">
+  <h1>Refund Policy</h1>
+  <p class="last-updated">Last Updated: January 28, 2026</p>
+  
+  <div class="highlight-box">
+    <p><strong>Our Commitment:</strong> We want you to be satisfied with our services. If you're not happy, we offer fair refund options depending on the product and circumstances.</p>
+  </div>
+  
+  <h2>1. Overview</h2>
+  <p>This Refund Policy outlines the terms and conditions for refunds and cancellations for products and services offered by Fortress Technologies Hub Inc. ("we," "our," or "us"). This policy applies to our consumer product CoreMind and our enterprise product API Fortress.</p>
+  
+  <h2>2. CoreMind Refund Policy</h2>
+  
+  <h3>2.1 Subscription Plans</h3>
+  <p>CoreMind offers various subscription plans. Our refund policy for subscriptions is as follows:</p>
+  
+  <table>
+    <tr>
+      <th>Request Timing</th>
+      <th>Refund Amount</th>
+      <th>Conditions</th>
+    </tr>
+    <tr>
+      <td>Within 7 days of initial purchase</td>
+      <td>Full refund (100%)</td>
+      <td>No questions asked</td>
+    </tr>
+    <tr>
+      <td>8-14 days after purchase</td>
+      <td>50% refund</td>
+      <td>Must provide reason</td>
+    </tr>
+    <tr>
+      <td>After 14 days</td>
+      <td>No refund</td>
+      <td>May cancel for future billing</td>
+    </tr>
+  </table>
+  
+  <h3>2.2 Annual Subscriptions</h3>
+  <p>For annual subscription plans:</p>
+  <ul>
+    <li><strong>Within 14 days:</strong> Full refund available</li>
+    <li><strong>After 14 days:</strong> Pro-rated refund for unused months may be available at our discretion</li>
+    <li><strong>After 3 months:</strong> No refund, but you may cancel to prevent future renewal</li>
+  </ul>
+  
+  <h3>2.3 Free Trial</h3>
+  <p>If you signed up for a free trial and were subsequently charged, you may request a full refund within 7 days of being charged, provided you did not make significant use of the paid features during that period.</p>
+  
+  <div class="policy-card">
+    <h4>💡 How to Cancel Your CoreMind Subscription</h4>
+    <p>You can cancel your subscription at any time through:</p>
+    <ul>
+      <li>Your account settings in the CoreMind dashboard</li>
+      <li>Emailing <a href="mailto:support@fortresstechnologieshub.com">support@fortresstechnologieshub.com</a></li>
+      <li>Calling us at +1 (604) 358-1469</li>
+    </ul>
+    <p>Cancellation will take effect at the end of your current billing period.</p>
+  </div>
+  
+  <h2>3. API Fortress Refund Policy</h2>
+  
+  <h3>3.1 Enterprise Subscriptions</h3>
+  <p>API Fortress is an enterprise product with customized pricing and terms. Refund policies for API Fortress are governed by your individual service agreement. Generally:</p>
+  <ul>
+    <li>Refunds are evaluated on a case-by-case basis</li>
+    <li>Annual contracts may include early termination provisions</li>
+    <li>Please refer to your specific service agreement for details</li>
+  </ul>
+  
+  <h3>3.2 Pilot Programs</h3>
+  <p>If you are participating in a pilot or trial program for API Fortress, the terms of that program will specify any applicable refund policies.</p>
+  
+  <h2>4. Non-Refundable Items</h2>
+  <p>The following are generally not eligible for refunds:</p>
+  <ul>
+    <li>Services that have been fully delivered or consumed</li>
+    <li>Accounts terminated due to violation of our Terms of Service</li>
+    <li>Charges older than 90 days</li>
+    <li>Third-party fees or taxes</li>
+    <li>Custom development or consulting services already performed</li>
+  </ul>
+  
+  <h2>5. How to Request a Refund</h2>
+  <p>To request a refund, please:</p>
+  <ol>
+    <li><strong>Email us</strong> at <a href="mailto:billing@fortresstechnologieshub.com">billing@fortresstechnologieshub.com</a> with the subject line "Refund Request"</li>
+    <li><strong>Include</strong> your account email, order/transaction ID, and reason for the refund request</li>
+    <li><strong>Wait</strong> for our response within 2-3 business days</li>
+  </ol>
+  
+  <div class="policy-card">
+    <h4>⏱️ Refund Processing Time</h4>
+    <p>Once approved, refunds are typically processed within:</p>
+    <ul>
+      <li><strong>Credit/Debit Cards:</strong> 5-10 business days</li>
+      <li><strong>Bank Transfers:</strong> 7-14 business days</li>
+      <li><strong>Other Methods:</strong> Varies by payment provider</li>
+    </ul>
+    <p>Please note that your bank or payment provider may take additional time to reflect the refund in your account.</p>
+  </div>
+  
+  <h2>6. Chargebacks</h2>
+  <p>We encourage you to contact us directly before initiating a chargeback with your bank or credit card company. We are committed to resolving issues fairly and promptly. Initiating a chargeback without first contacting us may result in:</p>
+  <ul>
+    <li>Suspension of your account pending investigation</li>
+    <li>Inability to create new accounts with our services</li>
+    <li>Additional fees if the chargeback is found to be invalid</li>
+  </ul>
+  
+  <h2>7. Service Credits</h2>
+  <p>In some cases, we may offer service credits instead of monetary refunds. Service credits:</p>
+  <ul>
+    <li>Can be applied to future purchases or subscription renewals</li>
+    <li>Do not expire for 12 months from the date of issuance</li>
+    <li>Are non-transferable and have no cash value</li>
+  </ul>
+  
+  <h2>8. Exceptions and Special Circumstances</h2>
+  <p>We understand that special circumstances may arise. If you believe your situation warrants an exception to this policy, please contact us and explain your circumstances. We will review each case individually and may, at our sole discretion, offer accommodations.</p>
+  <p>Examples of circumstances we may consider:</p>
+  <ul>
+    <li>Extended service outages caused by us</li>
+    <li>Billing errors on our part</li>
+    <li>Medical or family emergencies (with documentation)</li>
+    <li>Significant changes to our service that materially affect your use</li>
+  </ul>
+  
+  <h2>9. Changes to This Policy</h2>
+  <p>We reserve the right to modify this Refund Policy at any time. Changes will be effective when posted on our website. Your continued use of our services after changes are posted constitutes acceptance of the modified policy. For active subscriptions, the policy in effect at the time of your purchase will generally apply.</p>
+  
+  <h2>10. Contact Us</h2>
+  <p>If you have any questions about our Refund Policy or need assistance with a refund request, please contact us:</p>
+  <p>
+    <strong>Fortress Technologies Hub Inc.</strong><br>
+    Suite 2500, 1 Dundas Street West<br>
+    Toronto, Ontario M5G 1Z3<br>
+    Canada<br><br>
+    Billing Inquiries: <a href="mailto:billing@fortresstechnologieshub.com">billing@fortresstechnologieshub.com</a><br>
+    General Support: <a href="mailto:support@fortresstechnologieshub.com">support@fortresstechnologieshub.com</a><br>
+    Phone: <a href="tel:+16043581469">+1 (604) 358-1469</a>
+  </p>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+  <p>
+    <a href="/">Home</a>
+    <a href="privacy-policy">Privacy Policy</a>
+    <a href="terms-of-service">Terms of Service</a>
+    <a href="refund-policy">Refund Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>

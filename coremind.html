@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CoreMind – Intelligent AI Assistant | Fortress Technologies Hub</title>
+  <meta name="description" content="CoreMind is an intelligent AI assistant that helps you think deeper, create faster, and accomplish more. Privacy-first, multimodal AI with voice, image generation, and powerful language models.">
+  <meta name="keywords" content="AI assistant, artificial intelligence, language model, voice AI, image generation, privacy-first AI, CoreMind, Canadian AI">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +35,6 @@
       overflow-x: hidden;
     }
     
-    /* Animated Background */
     .bg-pattern {
       position: fixed;
       top: 0;
@@ -83,7 +84,6 @@
       100% { transform: translateY(-100vh) scale(1); opacity: 0; }
     }
     
-    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -162,7 +162,6 @@
       box-shadow: 0 4px 20px var(--glow);
     }
     
-    /* Hero Section */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -255,7 +254,6 @@
       border-color: var(--accent);
     }
     
-    /* Section Styles */
     .section {
       position: relative;
       padding: 100px 40px;
@@ -283,7 +281,6 @@
       margin: 0 auto;
     }
     
-    /* Video Demo Section */
     .video-section {
       background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 58, 95, 0.1));
       border-radius: 24px;
@@ -346,7 +343,6 @@
       border: 2px solid rgba(255,255,255,0.2);
     }
     
-    /* Story Section */
     .story-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -430,7 +426,6 @@
       line-height: 1.7;
     }
     
-    /* Models Section */
     .models-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -490,7 +485,6 @@
       line-height: 1.7;
     }
     
-    /* Features Grid */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -528,7 +522,6 @@
       line-height: 1.7;
     }
     
-    /* Research Section */
     .research-section {
       background: linear-gradient(135deg, rgba(30, 58, 95, 0.3), rgba(10, 22, 40, 0.8));
       border-radius: 24px;
@@ -579,7 +572,25 @@
       color: var(--gray-500);
       font-size: 1.1rem;
       max-width: 700px;
-      margin: 0 auto;
+      margin: 0 auto 32px;
+    }
+    
+    .research-cta {
+      display: inline-block;
+      background: rgba(255,255,255,0.05);
+      color: var(--accent-light);
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      transition: all 0.3s;
+    }
+    
+    .research-cta:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.5);
+      transform: translateY(-2px);
     }
     
     .research-grid {
@@ -626,7 +637,6 @@
       line-height: 1.8;
     }
     
-    /* Privacy Section */
     .privacy-section {
       background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(30, 58, 95, 0.15));
       border-radius: 24px;
@@ -680,7 +690,6 @@
       font-weight: 500;
     }
     
-    /* Developer API Section */
     .api-section {
       text-align: center;
     }
@@ -743,7 +752,6 @@
     .code-preview .string { color: #98c379; }
     .code-preview .function { color: #61afef; }
     
-    /* CTA Section */
     .cta-section {
       text-align: center;
       padding: 80px 40px;
@@ -767,21 +775,107 @@
     
     /* Footer */
     .footer {
-      text-align: center;
-      padding: 40px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--gray-500);
-      font-size: 0.9rem;
       position: relative;
       z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 60px 40px 40px;
     }
-    
-    .footer a {
-      color: var(--accent);
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .footer-brand p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .address {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-column h4 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: var(--gray-500);
       text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--accent);
     }
     
-    /* Responsive */
+    @media (max-width: 1100px) {
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
     @media (max-width: 968px) {
       .models-grid {
         grid-template-columns: 1fr;
@@ -824,6 +918,21 @@
       .api-features {
         gap: 20px;
       }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -852,7 +961,7 @@
   <nav>
     <a href="#features">Features</a>
     <a href="#models">Models</a>
-    <a href="#research">Research</a>
+    <a href="coremind-research.html">Research</a>
     <a href="#api">Developer API</a>
     <a href="index.html" class="back-link">← Fortress Hub</a>
     <a href="https://coremindx.ai" class="nav-cta">Try CoreMind</a>
@@ -876,10 +985,6 @@
     <h2>See CoreMind in Action</h2>
     <p>Watch how CoreMind transforms the way you work, think, and create.</p>
     <div class="video-container">
-      <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
-      <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="CoreMind Demo" allowfullscreen></iframe> -->
-      
-      <!-- Placeholder - Remove this div and uncomment iframe above when you have the video -->
       <div class="video-placeholder">
         <div class="play-icon">▶</div>
         <p>Demo Video Coming Soon</p>
@@ -893,13 +998,13 @@
   <div class="story-section">
     <div class="story-content">
       <h2>The Story Behind <span>CoreMind</span></h2>
-      <p>CoreMind was born from a simple yet powerful belief: artificial intelligence should enhance human potential, not replace it. In a world racing toward automation, we chose a different path, one where AI serves as a thinking partner that amplifies your creativity, accelerates your research, and deepens your understanding.</p>
-      <p>The journey began with a question that kept me up at night: What if we could build an AI that truly respects its users? One that doesn't harvest your data, doesn't manipulate your attention, and doesn't try to think for you, but instead thinks with you.</p>
-      <p>CoreMind is the answer to that question. Every feature, every model, and every line of code has been crafted with a singular purpose: to help humans reason better, discover more, and create things that matter. We're not building AI to replace human intelligence. We're building AI to unlock it.</p>
+      <p>CoreMind was built on a fundamental belief: artificial intelligence should enhance human potential, not replace it. In a world racing toward automation, we chose a different path. One where AI serves as a thinking partner that amplifies your creativity, accelerates your research, and deepens your understanding.</p>
+      <p>The idea started with a simple question: What if we could build an AI that truly respects its users? One that doesn't harvest your data, doesn't manipulate your attention, and doesn't try to think for you, but instead thinks with you.</p>
+      <p>Every feature in CoreMind has been designed with a singular purpose: to help humans reason better, discover more, and create things that matter. We're not building AI to replace human intelligence. We're building AI to unlock it.</p>
       
       <div class="story-quote">
-        <p>"The greatest technology doesn't diminish humanity, it reveals what we're truly capable of when given the right tools to think."</p>
-        <span class="author">— Jubril Akanbi, Creator of CoreMind</span>
+        <p>"The greatest technology doesn't diminish humanity. It reveals what we're truly capable of when given the right tools to think."</p>
+        <span class="author">Jubril Akanbi, Founder, President & CEO</span>
       </div>
     </div>
     
@@ -910,7 +1015,7 @@
       </div>
       <div class="vision-card">
         <h4>💡 Our Vision</h4>
-        <p>A world where AI and humans collaborate seamlessly,, where technology amplifies human potential rather than replacing human judgment.</p>
+        <p>A world where AI and humans collaborate seamlessly, where technology amplifies human potential rather than replacing human judgment.</p>
       </div>
       <div class="vision-card">
         <h4>🤝 Our Promise</h4>
@@ -1002,33 +1107,24 @@
       <div class="research-badge">🔬 CoreMind Labs</div>
       <h2>Advancing AI Research</h2>
       <p>At CoreMind Labs, we're pushing the boundaries of what's possible with large language models. Our research focuses on building AI systems that are not just powerful, but also safe, efficient, and aligned with human values.</p>
+      <a href="coremind-research.html" class="research-cta">Explore Our Research →</a>
     </div>
     
     <div class="research-grid">
       <div class="research-card">
-        <div class="icon">🧬</div>
-        <h3>Model Architecture</h3>
-        <p>We design and develop novel neural network architectures optimized for reasoning, comprehension, and multi-step problem solving. Our models are built from the ground up to understand context deeply and respond thoughtfully.</p>
-      </div>
-      <div class="research-card">
-        <div class="icon">⚡</div>
-        <h3>Efficient Inference</h3>
-        <p>Speed matters. Our research into efficient inference techniques ensures CoreMind responds quickly without sacrificing quality, making advanced AI accessible even on modest hardware configurations.</p>
-      </div>
-      <div class="research-card">
         <div class="icon">🎯</div>
         <h3>Alignment & Safety</h3>
-        <p>We invest heavily in ensuring our models behave as intended. Our alignment research focuses on making AI systems that are helpful, harmless, and honest, AI you can trust.</p>
+        <p>We invest heavily in ensuring our models behave as intended. Our alignment research focuses on making AI systems that are helpful, harmless, and honest.</p>
+      </div>
+      <div class="research-card">
+        <div class="icon">🧠</div>
+        <h3>Reasoning & Logic</h3>
+        <p>CoreMind Labs is pioneering techniques in chain-of-thought reasoning, enabling our models to break down complex problems step by step.</p>
       </div>
       <div class="research-card">
         <div class="icon">🌐</div>
         <h3>Multimodal Intelligence</h3>
-        <p>The future of AI is multimodal. We're building systems that seamlessly understand and generate text, images, audio, and video, creating truly versatile AI assistants.</p>
-      </div>
-      <div class="research-card">
-        <div class="icon">📊</div>
-        <h3>Reasoning & Logic</h3>
-        <p>CoreMind Labs is pioneering techniques in chain-of-thought reasoning, enabling our models to break down complex problems and arrive at well-reasoned conclusions step by step.</p>
+        <p>We're building systems that seamlessly understand and generate text, images, audio, and video, creating truly versatile AI assistants.</p>
       </div>
       <div class="research-card">
         <div class="icon">🔒</div>
@@ -1104,15 +1200,59 @@
 
 <section class="section">
   <div class="cta-section">
-    <h2>Ready to Think Smarter?</h2>
-    <p>Join thousands of users who are already enhancing their productivity with CoreMind.</p>
+    <h2>Experience the Future of AI</h2>
+    <p>Discover how CoreMind can enhance your productivity and unlock your creative potential.</p>
     <a href="https://coremindx.ai" class="btn-primary">Start Using CoreMind</a>
   </div>
 </section>
 
-<div class="footer">
-  <p>© 2025 <a href="index.html">Fortress Technologies Hub</a>. All rights reserved.</p>
-</div>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>CoreMind</h3>
+      <p>Your intelligent AI companion. Think deeper, create faster, and accomplish more with privacy-first AI assistance.</p>
+      <div class="address">
+        <strong>Fortress Technologies Hub Inc.</strong><br>
+        Suite 2500, 1 Dundas Street West<br>
+        Toronto, Ontario M5G 1Z3<br>
+        Canada
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#models">Models</a></li>
+        <li><a href="coremind-research.html">Research</a></li>
+        <li><a href="#api">Developer API</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Fortress Hub</a></li>
+        <li><a href="api-fortress.html">API Fortress</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#founder">Founder</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a></li>
+        <li><a href="tel:+16043581469">+1 (604) 358-1469</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="refund-policy.html">Refund Policy</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

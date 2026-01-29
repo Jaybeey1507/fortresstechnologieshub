@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>API Fortress – Enterprise API Security | Fortress Technologies Hub</title>
+  <meta name="description" content="Enterprise-grade API security powered by AI. Protect your APIs with intelligent threat detection, real-time monitoring, and zero-trust architecture.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +36,6 @@
       overflow-x: hidden;
     }
     
-    /* Animated Background */
     .bg-grid {
       position: fixed;
       top: 0;
@@ -90,7 +90,6 @@
       50% { transform: scale(1.05); }
     }
     
-    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -162,7 +161,6 @@
       box-shadow: 0 4px 20px var(--accent-glow);
     }
     
-    /* Hero Section */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -224,6 +222,8 @@
       text-decoration: none;
       transition: all 0.3s;
       box-shadow: 0 4px 30px var(--accent-glow);
+      border: none;
+      cursor: pointer;
     }
     
     .btn-primary:hover {
@@ -248,7 +248,6 @@
       border-color: var(--accent);
     }
     
-    /* Stats Section */
     .stats-section {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -291,7 +290,6 @@
       line-height: 1.5;
     }
     
-    /* Section Styles */
     .section {
       position: relative;
       padding: 100px 40px;
@@ -318,8 +316,74 @@
       max-width: 600px;
       margin: 0 auto;
     }
+
+    /* Video Section */
+    .video-section {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(30, 64, 175, 0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 60px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .video-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .video-section > p {
+      color: var(--gray-500);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-placeholder {
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px dashed rgba(16, 185, 129, 0.3);
+      border-radius: 16px;
+      padding: 80px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      transition: all 0.3s;
+    }
+
+    .video-placeholder:hover {
+      border-color: var(--accent);
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .video-placeholder .play-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .video-placeholder h3 {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .video-placeholder p {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+    }
     
-    /* Breach Stories Section */
     .breach-section {
       background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(15, 23, 42, 0.95));
       border-radius: 24px;
@@ -404,7 +468,6 @@
       line-height: 1.7;
     }
     
-    /* Story Section */
     .story-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -500,7 +563,6 @@
       margin: 0;
     }
     
-    /* Features Grid */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -547,6 +609,62 @@
     }
     
     /* Pricing Section */
+    .pricing-toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+
+    .pricing-toggle span {
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    .pricing-toggle span.active {
+      color: var(--white);
+    }
+
+    .toggle-switch {
+      width: 60px;
+      height: 32px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .toggle-switch.annual {
+      background: var(--accent);
+    }
+
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background: var(--white);
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: all 0.3s;
+    }
+
+    .toggle-switch.annual::after {
+      left: 31px;
+    }
+
+    .save-badge {
+      background: var(--accent);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -603,13 +721,36 @@
       font-size: 3rem;
       font-weight: 800;
       color: var(--accent);
-      margin: 20px 0;
+      margin: 20px 0 5px;
     }
     
     .pricing-card .price span {
       font-size: 1rem;
       color: var(--gray-500);
       font-weight: 500;
+    }
+
+    .pricing-card .price-annual {
+      display: none;
+    }
+
+    .pricing-card .annual-note {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    .pricing-card.show-annual .price-monthly {
+      display: none;
+    }
+
+    .pricing-card.show-annual .price-annual {
+      display: block;
+    }
+
+    .pricing-card.show-annual .annual-note {
+      display: block;
     }
     
     .pricing-card .features-list {
@@ -639,8 +780,105 @@
       display: block;
       text-align: center;
     }
+
+    /* Contact Form Section */
+    .contact-section {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(30, 64, 175, 0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 80px 60px;
+      margin-top: 60px;
+    }
+
+    .contact-section h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .contact-section > p {
+      color: var(--gray-400);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      color: var(--gray-300);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--white);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray-500);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .contact-form .btn-primary {
+      margin-top: 10px;
+    }
     
-    /* CTA Section */
     .cta-section {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(30, 64, 175, 0.1));
       border-radius: 24px;
@@ -684,21 +922,111 @@
     
     /* Footer */
     .footer {
-      text-align: center;
-      padding: 40px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--gray-500);
-      font-size: 0.9rem;
       position: relative;
       z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 60px 40px 40px;
     }
-    
-    .footer a {
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .footer-brand h3 span {
       color: var(--accent);
+    }
+
+    .footer-brand p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .address {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-column h4 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: var(--gray-500);
       text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--accent);
     }
     
-    /* Responsive */
+    @media (max-width: 1100px) {
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
     @media (max-width: 1024px) {
       .stats-section {
         grid-template-columns: repeat(2, 1fr);
@@ -719,6 +1047,12 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
     }
     
     @media (max-width: 768px) {
@@ -738,8 +1072,26 @@
         grid-template-columns: 1fr;
         padding: 40px 20px;
       }
-      .breach-section, .cta-section {
+      .breach-section, .cta-section, .contact-section {
         padding: 40px 24px;
+      }
+      .video-section {
+        padding: 40px 20px;
+      }
+      .video-placeholder {
+        padding: 60px 20px;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
@@ -761,7 +1113,7 @@
     <a href="#features">Features</a>
     <a href="#why">Why API Security</a>
     <a href="#pricing">Pricing</a>
-    <a href="index.html">← Fortress Hub</a>
+    <a href="/">← Fortress Hub</a>
     <a href="https://api-fortress.fortresstechnologieshub.com" class="nav-cta">Get Protected</a>
   </nav>
 </header>
@@ -770,14 +1122,13 @@
   <div class="hero-shield">🛡️</div>
   <h1>API Fortress</h1>
   <p class="tagline">Enterprise-Grade API Security</p>
-  <p>Protect your APIs from breaches, attacks, and vulnerabilities with AI-powered threat detection, real-time monitoring, and zero-trust architecture. Because one exposed endpoint can cost millions.</p>
+  <p>Protect your APIs from breaches, attacks, and vulnerabilities with AI-powered threat detection, real-time monitoring, and zero-trust architecture. One exposed endpoint can cost millions.</p>
   <div class="hero-cta">
     <a href="https://api-fortress.fortresstechnologieshub.com" class="btn-primary">Start Protecting Now</a>
     <a href="#features" class="btn-secondary">Explore Features</a>
   </div>
 </section>
 
-<!-- Stats Section -->
 <section class="stats-section">
   <div class="stat-card">
     <div class="number danger">91%</div>
@@ -794,6 +1145,19 @@
   <div class="stat-card">
     <div class="number">41</div>
     <div class="label">days average time to identify a breach</div>
+  </div>
+</section>
+
+<!-- Demo Video Section -->
+<section class="section">
+  <div class="video-section">
+    <h2>See API Fortress in Action</h2>
+    <p>Watch how API Fortress protects your APIs from threats in real-time with AI-powered security and zero-trust architecture.</p>
+    <div class="video-placeholder">
+      <div class="play-icon">▶</div>
+      <h3>Product Demo Video</h3>
+      <p>Coming Soon: A complete walkthrough of API Fortress features, threat detection, and security dashboard.</p>
+    </div>
   </div>
 </section>
 
@@ -850,14 +1214,14 @@
   <div class="story-section">
     <div class="story-content">
       <h2>Why I Built <span>API Fortress</span></h2>
-      <p>Every week, I read about another massive data breach. Another company apologizing. Another million users whose data is now for sale on the dark web. And almost always, the root cause is the same: an insecure API.</p>
-      <p>APIs are the backbone of modern software, they power everything from mobile apps to banking systems to healthcare platforms. Yet they remain one of the most overlooked attack vectors in cybersecurity. Companies spend millions on firewalls while leaving their APIs wide open.</p>
-      <p>I built API Fortress because I believe security shouldn't be an afterthought. It shouldn't require a dedicated security team or a six-figure budget. Every developer, every startup, every enterprise deserves access to world-class API protection.</p>
-      <p>API Fortress combines AI-powered threat detection, real-time monitoring, and zero-trust architecture into a single platform that's as easy to deploy as it is powerful. Because in 2025, unsecured APIs aren't just a technical problem, they're a business risk that can destroy companies overnight.</p>
+      <p>APIs are the backbone of modern software. They power everything from mobile apps to banking systems to healthcare platforms. Yet they remain one of the most overlooked attack vectors in cybersecurity.</p>
+      <p>Companies spend millions on firewalls while leaving their APIs wide open. The result? Breach after breach, with millions of users paying the price.</p>
+      <p>I built API Fortress because security shouldn't require a dedicated team or a six-figure budget. Every developer, startup, and enterprise deserves access to world-class API protection.</p>
+      <p>API Fortress combines AI-powered threat detection, real-time monitoring, and zero-trust architecture into a single platform. In 2026, unsecured APIs aren't just a technical problem. They're a business risk that can destroy companies overnight.</p>
       
       <div class="story-quote">
-        <p>"The best security is invisible, it protects without friction, defends without disruption, and never sleeps. That's what API Fortress delivers."</p>
-        <span class="author">— Jubril Akanbi, Creator of API Fortress</span>
+        <p>"The best security is invisible. It protects without friction, defends without disruption, and never sleeps. That's what API Fortress delivers."</p>
+        <span class="author">Jubril Akanbi, Founder, President & CEO</span>
       </div>
     </div>
     
@@ -967,7 +1331,7 @@
     <div class="feature-card">
       <div class="icon">⚙️</div>
       <h3>CI/CD Integration</h3>
-      <p>Shift-left security, scan APIs in your pipeline and catch issues before deployment.</p>
+      <p>Shift-left security. Scan APIs in your pipeline and catch issues before deployment.</p>
     </div>
   </div>
 </section>
@@ -978,11 +1342,20 @@
     <h2>Simple, Transparent Pricing</h2>
     <p>Choose the protection level that fits your needs. All plans include core security features.</p>
   </div>
+
+  <div class="pricing-toggle">
+    <span class="active" id="monthly-label">Monthly</span>
+    <div class="toggle-switch" id="pricing-toggle" onclick="togglePricing()"></div>
+    <span id="annual-label">Annual</span>
+    <span class="save-badge">Save 17%</span>
+  </div>
   
   <div class="pricing-grid">
-    <div class="pricing-card">
+    <div class="pricing-card" id="starter-card">
       <h3>Starter</h3>
-      <div class="price">$699<span>/mo</span></div>
+      <div class="price price-monthly">$699<span>/mo</span></div>
+      <div class="price price-annual">$6,990<span>/year</span></div>
+      <div class="annual-note">Billed annually (Save $1,398)</div>
       <ul class="features-list">
         <li>Manual Blocking</li>
         <li>Smart Suggestions</li>
@@ -995,9 +1368,11 @@
       <a href="https://api-fortress.fortresstechnologieshub.com" class="btn-primary">Get Started</a>
     </div>
     
-    <div class="pricing-card featured">
+    <div class="pricing-card featured" id="professional-card">
       <h3>Professional</h3>
-      <div class="price">$1,999<span>/mo</span></div>
+      <div class="price price-monthly">$1,999<span>/mo</span></div>
+      <div class="price price-annual">$19,990<span>/year</span></div>
+      <div class="annual-note">Billed annually (Save $3,998)</div>
       <ul class="features-list">
         <li>Everything in Starter</li>
         <li>API Discovery</li>
@@ -1012,9 +1387,11 @@
       <a href="https://api-fortress.fortresstechnologieshub.com" class="btn-primary">Get Started</a>
     </div>
     
-    <div class="pricing-card">
+    <div class="pricing-card" id="enterprise-card">
       <h3>Enterprise</h3>
-      <div class="price">$4,999<span>/mo</span></div>
+      <div class="price price-monthly">$4,999<span>/mo</span></div>
+      <div class="price price-annual">$49,990<span>/year</span></div>
+      <div class="annual-note">Billed annually (Save $9,998)</div>
       <ul class="features-list">
         <li>Everything in Professional</li>
         <li>Token Replay Protection</li>
@@ -1026,8 +1403,62 @@
         <li>Dedicated Support</li>
         <li>SLA Guarantee</li>
       </ul>
-      <a href="https://api-fortress.fortresstechnologieshub.com" class="btn-primary">Contact Sales</a>
+      <a href="#contact" class="btn-primary">Contact Sales</a>
     </div>
+  </div>
+
+  <!-- Contact Form for Enterprise -->
+  <div class="contact-section" id="contact">
+    <h2>Contact Our Sales Team</h2>
+    <p>Interested in API Fortress Enterprise? Fill out the form below and our team will get back to you within 24 hours.</p>
+    
+    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" placeholder="John Smith" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email *</label>
+          <input type="email" id="email" name="email" placeholder="john@company.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="company">Organization Name *</label>
+          <input type="text" id="company" name="company" placeholder="Company Inc." required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="plan">Interested Plan</label>
+          <select id="plan" name="plan">
+            <option value="enterprise">Enterprise</option>
+            <option value="professional">Professional</option>
+            <option value="starter">Starter</option>
+            <option value="custom">Custom Solution</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="apis">Number of APIs to Protect</label>
+          <select id="apis" name="apis">
+            <option value="1-10">1-10 APIs</option>
+            <option value="11-50">11-50 APIs</option>
+            <option value="51-100">51-100 APIs</option>
+            <option value="100+">100+ APIs</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell us about your security needs *</label>
+        <textarea id="message" name="message" placeholder="Describe your API security requirements, current challenges, or any specific features you're interested in..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
   </div>
 </section>
 
@@ -1040,9 +1471,74 @@
   </div>
 </section>
 
-<div class="footer">
-  <p>© 2025 <a href="index.html">Fortress Technologies Hub</a>. All rights reserved.</p>
-</div>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>API <span>Fortress</span></h3>
+      <p>Enterprise-grade API security powered by AI. Protect your APIs with intelligent threat detection, real-time monitoring, and zero-trust architecture.</p>
+      <div class="address">
+        <strong>Fortress Technologies Hub Inc.</strong><br>
+        Suite 2500, 1 Dundas Street West<br>
+        Toronto, Ontario M5G 1Z3<br>
+        Canada
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#why">Why API Security</a></li>
+        <li><a href="#contact">Contact Sales</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/">Fortress Hub</a></li>
+        <li><a href="/coremind">CoreMind</a></li>
+        <li><a href="/#about">About Us</a></li>
+        <li><a href="/#founder">Founder</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:sales@fortresstechnologieshub.com">sales@fortresstechnologieshub.com</a></li>
+        <li><a href="tel:+16043581469">+1 (604) 358-1469</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+      <a href="/refund-policy">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function togglePricing() {
+    const toggle = document.getElementById('pricing-toggle');
+    const monthlyLabel = document.getElementById('monthly-label');
+    const annualLabel = document.getElementById('annual-label');
+    const cards = document.querySelectorAll('.pricing-card');
+    
+    toggle.classList.toggle('annual');
+    
+    if (toggle.classList.contains('annual')) {
+      monthlyLabel.classList.remove('active');
+      annualLabel.classList.add('active');
+      cards.forEach(card => card.classList.add('show-annual'));
+    } else {
+      monthlyLabel.classList.add('active');
+      annualLabel.classList.remove('active');
+      cards.forEach(card => card.classList.remove('show-annual'));
+    }
+  }
+</script>
 
 </body>
 </html>

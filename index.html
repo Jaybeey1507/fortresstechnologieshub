@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fortress Technologies Hub</title>
+  <title>Fortress Technologies Hub | Canadian AI & Cybersecurity Company</title>
+  <meta name="description" content="Fortress Technologies Hub is a Canadian technology company building AI-powered solutions and enterprise cybersecurity products. Home of CoreMind and API Fortress.">
+  <meta name="keywords" content="AI, artificial intelligence, cybersecurity, API security, Canadian tech company, CoreMind, API Fortress, Toronto">
+  <meta name="author" content="Fortress Technologies Hub Inc.">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -312,7 +315,7 @@
     /* Products Grid */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 30px;
     }
     
@@ -401,6 +404,73 @@
     
     .product-link:hover {
       gap: 12px;
+    }
+
+    /* Video Section */
+    .video-section {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(6, 182, 212, 0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 60px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .video-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .video-section > p {
+      color: var(--gray-500);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-placeholder {
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 80px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      transition: all 0.3s;
+    }
+
+    .video-placeholder:hover {
+      border-color: var(--accent);
+      background: rgba(6, 182, 212, 0.05);
+    }
+
+    .video-placeholder .play-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .video-placeholder h3 {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .video-placeholder p {
+      color: var(--gray-500);
+      font-size: 0.95rem;
     }
     
     /* Founder Section */
@@ -610,6 +680,23 @@
       margin-bottom: 16px;
       line-height: 1.8;
     }
+
+    .corporation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+
+    .corporation-badge span {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
     
     .about-stats {
       display: grid;
@@ -649,18 +736,33 @@
     .contact-section h2 {
       font-size: 2rem;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
       color: var(--white);
     }
     
-    .contact-section p {
-      color: var(--gray-500);
-      margin-bottom: 8px;
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
     }
-    
-    .contact-section a {
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gray-400);
+      font-size: 1rem;
+    }
+
+    .contact-item a {
       color: var(--accent);
       text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: var(--white);
     }
     
     /* Launch Notice */
@@ -682,16 +784,111 @@
     
     /* Footer */
     .footer {
-      text-align: center;
-      padding: 40px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--gray-500);
-      font-size: 0.9rem;
       position: relative;
       z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 60px 40px 40px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .address {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-column h4 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--accent);
     }
     
     /* Responsive */
+    @media (max-width: 1100px) {
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
     @media (max-width: 968px) {
       .founder-content {
         grid-template-columns: 1fr;
@@ -711,6 +908,9 @@
         grid-template-columns: 1fr;
       }
       .about-content {
+        grid-template-columns: 1fr;
+      }
+      .products-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -743,6 +943,29 @@
       .contact-section {
         padding: 40px 20px;
       }
+
+      .video-section {
+        padding: 40px 20px;
+      }
+
+      .video-placeholder {
+        padding: 60px 20px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -761,9 +984,8 @@
     <div class="dropdown">
       <a href="#products">Products ▾</a>
       <div class="dropdown-content">
-        <a href="coremind.html">CoreMind</a>
-        <a href="api-fortress.html">API Fortress</a>
-        <a href="hpcx.html">HPCX</a>
+        <a href="coremind">CoreMind</a>
+        <a href="api-fortress">API Fortress</a>
       </div>
     </div>
     <a href="#services">Services</a>
@@ -779,7 +1001,7 @@
     <span>Official Launch Coming Soon</span>
   </div>
   <h1>The Future of Technology<br/>Starts Here</h1>
-  <p>Building Canada's most impactful technology solutions. From AI-powered security to intelligent computing, we're engineering tomorrow's innovations today.</p>
+  <p>Building Canada's most impactful technology solutions. From AI-powered assistants to enterprise cybersecurity, we're engineering tomorrow's innovations today.</p>
   <div class="hero-cta">
     <a href="#products" class="btn-primary">Explore Products</a>
     <a href="#contact" class="btn-secondary">Get in Touch</a>
@@ -787,7 +1009,7 @@
   
   <div class="stats-bar">
     <div class="stat">
-      <div class="stat-number">3</div>
+      <div class="stat-number">2</div>
       <div class="stat-label">Products</div>
     </div>
     <div class="stat">
@@ -818,7 +1040,7 @@
         <span class="feature-tag">Image Generation</span>
         <span class="feature-tag">Developer API</span>
       </div>
-      <a href="coremind.html" class="product-link">Learn more →</a>
+      <a href="coremind" class="product-link">Learn more →</a>
     </div>
     
     <div class="product-card">
@@ -831,20 +1053,20 @@
         <span class="feature-tag">RASP/WAF</span>
         <span class="feature-tag">Pen Testing</span>
       </div>
-      <a href="api-fortress.html" class="product-link">Learn more →</a>
+      <a href="api-fortress" class="product-link">Learn more →</a>
     </div>
-    
-    <div class="product-card">
-      <div class="product-icon">⚡</div>
-      <h3>HPCX</h3>
-      <p>High-performance computing optimization engine. Maximize your infrastructure efficiency with AI-powered job scheduling, resource monitoring, and intelligent workload management.</p>
-      <div class="product-features">
-        <span class="feature-tag">Job Analytics</span>
-        <span class="feature-tag">Smart Scheduling</span>
-        <span class="feature-tag">Green Mode</span>
-        <span class="feature-tag">SLURM/K8s</span>
-      </div>
-      <a href="hpcx.html" class="product-link">Learn more →</a>
+  </div>
+</section>
+
+<!-- Company Video Section -->
+<section id="video" class="section">
+  <div class="video-section">
+    <h2>See Fortress Technologies Hub in Action</h2>
+    <p>Watch our company overview to learn about our mission, products, and the technology we're building to shape the future.</p>
+    <div class="video-placeholder">
+      <div class="play-icon">▶</div>
+      <h3>Company Overview Video</h3>
+      <p>Coming Soon — A walkthrough of our products, vision, and the team behind Fortress Technologies Hub.</p>
     </div>
   </div>
 </section>
@@ -861,11 +1083,11 @@
       </div>
       <div class="founder-info">
         <h2>Jubril Akanbi</h2>
-        <p class="founder-title">Founder & CEO, Fortress Technologies Hub</p>
+        <p class="founder-title">Founder, President & CEO</p>
         <div class="founder-bio">
-          <p>From the historic town of Iwo in Osun State, Nigeria, to the tech corridors of Toronto, Canada, my journey has been one of relentless curiosity and purposeful innovation.</p>
-          <p>I earned my Bachelor of Technology in Computer Science and Engineering from Ladoke Akintola University of Technology in 2022, where my passion for building impactful software first took root. Seeking to push my boundaries further, I chose Canada for my advanced studies, drawn by its world-class education, vibrant diversity, and culture of inclusivity that welcomes dreamers from every corner of the globe.</p>
-          <p>Now completing my Master of Science in Computer Science at Northeastern University Vancouver, I founded Fortress Technologies Hub with a singular mission: to build technology that genuinely matters. Not technology for technology's sake, but solutions that protect, empower, and elevate what humans can achieve.</p>
+          <p>I'm a computer scientist specializing in artificial intelligence and cybersecurity, with a passion for building technology that protects and empowers. With a Master of Science in Computer Science from Northeastern University and years of experience developing enterprise security solutions, I founded Fortress Technologies Hub to solve real problems, not chase trends.</p>
+          <p>Before starting Fortress, I worked as a Senior Software Engineer where I built cybersecurity solutions that protected enterprise systems and generated over $1 million in revenue. That experience taught me that the best security is invisible: it protects without friction and defends without disruption.</p>
+          <p>Today, I'm focused on building CoreMind and API Fortress, products designed to make people more capable and businesses more secure. Based in Toronto, I'm committed to creating world-class technology right here in Canada.</p>
         </div>
         <div class="founder-quote">
           <p>"Innovation isn't about replacing human potential, it's about unlocking it. Every product we build at Fortress is designed to make people more capable, more secure, and more connected to what matters."</p>
@@ -881,8 +1103,8 @@
   <div class="story-section">
     <div class="story-content">
       <h2>Why <span>Fortress</span> Exists</h2>
-      <p>Fortress Technologies Hub was born from a simple observation: the world doesn't need more technology, it needs better technology. Technology that respects privacy. Technology that enhances human capability rather than replacing it. Technology built with integrity.</p>
-      <p>We're not chasing trends or building for hype. Every product in our portfolio, from CoreMind's intelligent assistance to API Fortress's security infrastructure to HPCX's computing optimization, exists to solve real problems for real people and organizations.</p>
+      <p>Fortress Technologies Hub Inc. was born from a simple observation: the world doesn't need more technology, it needs better technology. Technology that respects privacy. Technology that enhances human capability rather than replacing it. Technology built with integrity.</p>
+      <p>We're not chasing trends or building for hype. Every product in our portfolio exists to solve real problems for real people and organizations. CoreMind delivers intelligent AI assistance, while API Fortress provides enterprise-grade security infrastructure.</p>
       <p>Based in Toronto, we're building a new kind of technology company. One where innovation meets responsibility, where ambition is tempered by ethics, and where every line of code is written with purpose.</p>
     </div>
     <div class="story-values">
@@ -922,12 +1144,12 @@
       <p>End-to-end protection for APIs including scanning, firewalling, runtime threat defense, and compliance monitoring.</p>
     </div>
     <div class="service-card">
-      <h3>🖥️ High-Performance Computing</h3>
-      <p>Software designed to enhance large-scale computing workloads with AI optimization and intelligent resource management.</p>
-    </div>
-    <div class="service-card">
       <h3>🔧 Custom Solutions</h3>
       <p>Tailored technology solutions built to address your unique business challenges and operational requirements.</p>
+    </div>
+    <div class="service-card">
+      <h3>📊 Consulting & Advisory</h3>
+      <p>Expert guidance on AI implementation, cybersecurity strategy, and digital transformation for your organization.</p>
     </div>
   </div>
 </section>
@@ -940,17 +1162,20 @@
   <div class="about-content">
     <div class="about-text">
       <h3>Engineering the Future from Toronto</h3>
-      <p>Fortress Technologies Hub is a Canadian technology company dedicated to solving critical challenges through innovative software solutions. We believe in building technology that matters, tools that protect, optimize, and empower.</p>
-      <p>From cybersecurity to artificial intelligence and high-performance computing, we're creating the future one line of code at a time. Our mission is to deliver world-class technology products that make a real difference.</p>
-      <p>Based in Toronto, we combine deep technical expertise with a commitment to privacy, security, and performance that Canadian businesses and users deserve.</p>
+      <p>Fortress Technologies Hub Inc. is a federally incorporated Canadian technology company dedicated to solving critical challenges through innovative software solutions. We believe in building technology that matters, tools that protect, optimize, and empower.</p>
+      <p>From cybersecurity to artificial intelligence, we're creating the future one line of code at a time. Our mission is to deliver world-class technology products that make a real difference.</p>
+      <p>Based in Toronto, Ontario, we combine deep technical expertise with a commitment to privacy, security, and performance that Canadian businesses and users deserve.</p>
+      <div class="corporation-badge">
+        <span>🏛️ Federally Incorporated in Canada | Registered in Ontario</span>
+      </div>
     </div>
     <div class="about-stats">
       <div class="about-stat-card">
-        <div class="number">3</div>
+        <div class="number">2</div>
         <div class="label">Products Built</div>
       </div>
       <div class="about-stat-card">
-        <div class="number">2025</div>
+        <div class="number">2026</div>
         <div class="label">Launch Year</div>
       </div>
       <div class="about-stat-card">
@@ -968,8 +1193,22 @@
 <section id="contact" class="section">
   <div class="contact-section">
     <h2>Get in Touch</h2>
-    <p>📧 Email: <a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a></p>
-    <p>📍 Toronto, Ontario, Canada</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <span>📧</span>
+        <span>Email:</span>
+        <a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a>
+      </div>
+      <div class="contact-item">
+        <span>📞</span>
+        <span>Phone:</span>
+        <a href="tel:+16043581469">+1 (604) 358-1469</a>
+      </div>
+      <div class="contact-item">
+        <span>📍</span>
+        <span>Suite 2500, 1 Dundas Street West, Toronto, Ontario M5G 1Z3, Canada</span>
+      </div>
+    </div>
   </div>
   
   <div class="launch-notice">
@@ -977,9 +1216,51 @@
   </div>
 </section>
 
-<div class="footer">
-  &copy; 2025 Fortress Technologies Hub. All rights reserved.
-</div>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>Fortress Technologies Hub</h3>
+      <p>Building Canada's most impactful technology solutions. From AI-powered assistants to enterprise cybersecurity, we're engineering tomorrow's innovations today.</p>
+      <div class="address">
+        <strong>Fortress Technologies Hub Inc.</strong><br>
+        Suite 2500, 1 Dundas Street West<br>
+        Toronto, Ontario M5G 1Z3<br>
+        Canada
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="coremind">CoreMind</a></li>
+        <li><a href="api-fortress">API Fortress</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a></li>
+        <li><a href="tel:+16043581469">+1 (604) 358-1469</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="terms-of-service">Terms of Service</a>
+      <a href="refund-policy">Refund Policy</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
