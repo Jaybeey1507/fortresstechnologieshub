@@ -2128,7 +2128,8 @@
     <h2>Talk to Our Sales Team</h2>
     <p>Interested in API Fortress for your organization? Fill out the form below and our team will get back to you within 24 hours.</p>
 
-    <form class="contact-form" id="contact-form" name="api-fortress-contact" method="POST">
+    <form class="contact-form" id="contact-form" name="api-fortress-contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="api-fortress-contact">
       <div class="form-row">
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -2321,7 +2322,7 @@
 
     const formData = new FormData(form);
 
-    fetch('/', {
+    fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString()
