@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partner Onboarding | Fortress Technologies Hub Inc.</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Secure partner onboarding form for Fortress Technologies Hub Inc.">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.4);
+      --dark: #0f172a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+      --green: #10b981;
+      --red: #ef4444;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .bg-grid {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image:
+        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-orb {
+      position: fixed;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.13;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-orb-1 { background: var(--primary); top: -200px; right: -200px; animation: float 20s ease-in-out infinite; }
+    .glow-orb-2 { background: var(--accent); bottom: -200px; left: -200px; animation: float 25s ease-in-out infinite reverse; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(50px, 50px); }
+    }
+
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      padding: 14px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-section img { height: 42px; }
+
+    .logo-section span {
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section {
+      position: relative;
+      padding: 100px 40px;
+      max-width: 800px;
+      margin: auto;
+      z-index: 1;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .secure-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 32px;
+    }
+
+    .secure-banner svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--green);
+      flex-shrink: 0;
+    }
+
+    .secure-banner p {
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .form-section {
+      background: linear-gradient(145deg, rgba(30, 64, 175, 0.08), rgba(6, 182, 212, 0.04));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .form-section-header { margin-bottom: 40px; }
+
+    .form-section-header h2 {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
+    }
+
+    .form-section-header p {
+      color: var(--gray-500);
+      font-size: 0.97rem;
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    .partner-name-highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .onboarding-form {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .form-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin: 8px 0;
+    }
+
+    .form-section-title {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      color: var(--gray-300);
+      font-size: 0.87rem;
+      font-weight: 600;
+    }
+
+    .form-group label .required {
+      color: var(--accent);
+      margin-left: 3px;
+    }
+
+    .form-group input {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 10px;
+      padding: 13px 16px;
+      color: var(--white);
+      font-size: 0.93rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(6, 182, 212, 0.04);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.08);
+    }
+
+    .form-group input::placeholder { color: var(--gray-500); }
+
+    .form-hint {
+      color: var(--gray-500);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .form-hint.warning {
+      color: var(--gray-400);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .submit-area {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 15px 36px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.28);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.42);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .submit-note {
+      color: var(--gray-500);
+      font-size: 0.83rem;
+      line-height: 1.5;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 60px 40px;
+    }
+
+    .form-success.show { display: block; }
+
+    .success-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--green), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 22px;
+    }
+
+    .form-success h3 {
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .form-success p {
+      color: var(--gray-400);
+      font-size: 0.97rem;
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .invalid-section {
+      display: none;
+      text-align: center;
+      padding: 160px 40px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .invalid-section.show { display: block; }
+
+    .invalid-icon {
+      width: 72px; height: 72px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 22px;
+    }
+
+    .invalid-section h2 {
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .invalid-section p {
+      color: var(--gray-400);
+      font-size: 0.97rem;
+      line-height: 1.75;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .invalid-section a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 40px 40px;
+      text-align: center;
+    }
+
+    .footer p { color: var(--gray-500); font-size: 0.83rem; }
+
+    .footer a {
+      color: var(--gray-500);
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 0.83rem;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; }
+      .section { padding: 100px 20px 60px; }
+      .form-section { padding: 36px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script defer src="https://analytics.coremindx.ai/script.js" data-website-id="22276c35-cfa6-4c15-a811-74e71f872617"></script>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="glow-orb glow-orb-1"></div>
+<div class="glow-orb glow-orb-2"></div>
+
+<header>
+  <a href="https://fortresstechnologieshub.com" class="logo-section">
+    <img src="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892772/logo_xoq717.png" alt="Fortress Technologies Hub Logo">
+    <span>Fortress Technologies Hub</span>
+  </a>
+</header>
+
+<!-- ===== INVALID STATE ===== -->
+<div class="invalid-section" id="invalid-section">
+  <div class="invalid-icon">&#10007;</div>
+  <h2>Invalid Link</h2>
+  <p>This onboarding link is not valid. If you believe this is an error, please contact us at <a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a>.</p>
+</div>
+
+<!-- ===== MAIN FORM ===== -->
+<section class="section" id="main-section" style="display: none; padding-top: 120px;">
+
+  <div class="secure-banner">
+    <svg viewBox="0 0 24 24"><path d="M12 1C8.676 1 6 3.676 6 7v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm0 10a2 2 0 0 1 1 3.722V19a1 1 0 1 1-2 0v-2.278A2 2 0 0 1 12 13z"/></svg>
+    <p>This is a secure, private form. Your information is transmitted over HTTPS and sent directly to Fortress Technologies Hub. This page is not publicly listed or indexed.</p>
+  </div>
+
+  <div class="form-section">
+    <div class="form-section-header">
+      <span class="section-label">Partner Onboarding</span>
+      <h2>Banking &amp; Tax Information</h2>
+      <p>Welcome, <span class="partner-name-highlight" id="partner-name-display">Partner</span>. Please provide your banking and tax details below so we can process your commission payments. This information will be stored securely and used solely for payment purposes.</p>
+    </div>
+
+    <form
+      class="onboarding-form"
+      id="onboarding-form"
+      name="partner-onboarding"
+      method="POST"
+      data-netlify="true"
+    >
+      <input type="hidden" name="form-name" value="partner-onboarding" />
+      <input type="hidden" name="partner_name" id="form-partner-name" value="" />
+
+      <!-- TAX INFORMATION -->
+      <div class="form-section-title">Tax Information</div>
+
+      <div class="form-group">
+        <label for="legal_name">Full Legal Name <span class="required">*</span></label>
+        <input type="text" id="legal_name" name="legal_name" placeholder="Your full legal name as it appears on your SIN card or tax documents" required />
+      </div>
+
+      <div class="form-group">
+        <label for="sin">Social Insurance Number (SIN) <span class="required">*</span></label>
+        <input type="text" id="sin" name="sin" placeholder="XXX-XXX-XXX" maxlength="11" required autocomplete="off" />
+        <span class="form-hint">Required for T4A issuance per CRA regulations. Format: XXX-XXX-XXX</span>
+      </div>
+
+      <hr class="form-divider" />
+
+      <!-- BANKING INFORMATION -->
+      <div class="form-section-title">Banking Information</div>
+
+      <div class="form-group">
+        <label for="account_name">Account Holder Name <span class="required">*</span></label>
+        <input type="text" id="account_name" name="account_name" placeholder="Name as it appears on your bank account" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="institution_number">Institution Number <span class="required">*</span></label>
+          <input type="text" id="institution_number" name="institution_number" placeholder="3 digits (e.g. 001)" maxlength="3" pattern="[0-9]{3}" required />
+          <span class="form-hint">3-digit code identifying your bank (e.g. 001 for BMO, 002 for Scotiabank, 003 for RBC, 004 for TD, 010 for CIBC)</span>
+        </div>
+        <div class="form-group">
+          <label for="transit_number">Transit Number <span class="required">*</span></label>
+          <input type="text" id="transit_number" name="transit_number" placeholder="5 digits" maxlength="5" pattern="[0-9]{5}" required />
+          <span class="form-hint">5-digit branch number found on your cheque or banking app</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="account_number">Account Number <span class="required">*</span></label>
+        <input type="text" id="account_number" name="account_number" placeholder="7 to 12 digits" maxlength="12" required autocomplete="off" />
+        <span class="form-hint">Your account number, typically 7 to 12 digits</span>
+      </div>
+
+      <div class="form-hint warning">
+        <strong>Privacy Notice:</strong> The information you provide on this form will be used exclusively for processing commission payments under your Independent Sales Partner Agreement with Fortress Technologies Hub Inc. Your SIN will be used solely for T4A reporting as required by the Canada Revenue Agency. This data will be stored securely and will not be shared with any third party.
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="submit-btn" id="submit-btn">Submit Securely</button>
+        <p class="submit-note">Your information is encrypted in transit via HTTPS and delivered directly to Fortress Technologies Hub.</p>
+      </div>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <div class="success-icon">&#10003;</div>
+      <h3>Information Received</h3>
+      <p>Thank you. Your banking and tax details have been securely submitted to Fortress Technologies Hub. You do not need to take any further action. Your commission payments will be processed using the details you provided.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+  <div style="margin-top: 10px;">
+    <a href="https://fortresstechnologieshub.com/privacy-policy">Privacy Policy</a>
+    <a href="https://fortresstechnologieshub.com/terms-of-service">Terms of Service</a>
+  </div>
+</footer>
+
+<script>
+  // Read partner name directly from URL
+  // Usage: fortresstechnologieshub.com/partner-onboarding?partner=Maudud+Choudhury
+  const urlParams = new URLSearchParams(window.location.search);
+  const partnerName = urlParams.get('partner');
+
+  const mainSection = document.getElementById('main-section');
+  const invalidSection = document.getElementById('invalid-section');
+  const partnerNameDisplay = document.getElementById('partner-name-display');
+  const formPartnerName = document.getElementById('form-partner-name');
+
+  if (partnerName && partnerName.trim().length > 0) {
+    const cleanName = decodeURIComponent(partnerName.trim());
+    mainSection.style.display = 'block';
+    invalidSection.style.display = 'none';
+    partnerNameDisplay.textContent = cleanName;
+    formPartnerName.value = cleanName;
+  } else {
+    mainSection.style.display = 'none';
+    invalidSection.classList.add('show');
+  }
+
+  // SIN auto-formatting
+  const sinInput = document.getElementById('sin');
+  sinInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 9) value = value.substring(0, 9);
+    if (value.length > 6) {
+      value = value.substring(0, 3) + '-' + value.substring(3, 6) + '-' + value.substring(6);
+    } else if (value.length > 3) {
+      value = value.substring(0, 3) + '-' + value.substring(3);
+    }
+    e.target.value = value;
+  });
+
+  // Digits only for banking fields
+  document.getElementById('institution_number').addEventListener('input', function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+  });
+
+  document.getElementById('transit_number').addEventListener('input', function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+  });
+
+  document.getElementById('account_number').addEventListener('input', function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '').substring(0, 12);
+  });
+
+  // Form submission
+  const form = document.getElementById('onboarding-form');
+  const formSuccess = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const sinValue = sinInput.value.replace(/\D/g, '');
+    if (sinValue.length !== 9) {
+      sinInput.focus();
+      sinInput.style.borderColor = 'var(--red)';
+      return;
+    }
+
+    const instValue = document.getElementById('institution_number').value;
+    if (instValue.length !== 3) {
+      document.getElementById('institution_number').focus();
+      return;
+    }
+
+    const transitValue = document.getElementById('transit_number').value;
+    if (transitValue.length !== 5) {
+      document.getElementById('transit_number').focus();
+      return;
+    }
+
+    submitBtn.textContent = 'Submitting Securely...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      form.style.display = 'none';
+      formSuccess.classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(() => {
+      submitBtn.textContent = 'Submit Securely';
+      submitBtn.disabled = false;
+      alert('There was an error submitting your information. Please contact info@fortresstechnologieshub.com directly.');
+    });
+  });
+</script>
+
+</body>
+</html>
