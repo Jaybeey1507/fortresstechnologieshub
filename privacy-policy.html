@@ -4,333 +4,447 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy | Fortress Technologies Hub</title>
-  <meta name="description" content="Privacy Policy for Fortress Technologies Hub Inc. Learn how we collect, use, and protect your personal information.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+  <meta name="description" content="Privacy Policy for Fortress Technologies Hub Inc. Learn how we collect, use, and protect your personal information across CoreMind and API Fortress.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script defer src="https://analytics.coremindx.ai/script.js" data-website-id="22276c35-cfa6-4c15-a811-74e71f872617"></script>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    :root {
-      --primary: #1e40af;
-      --primary-dark: #1e3a8a;
-      --primary-light: #3b82f6;
-      --accent: #06b6d4;
-      --dark: #0f172a;
-      --gray-900: #111827;
-      --gray-700: #374151;
-      --gray-500: #6b7280;
-      --gray-400: #9ca3af;
-      --gray-300: #d1d5db;
-      --gray-100: #f3f4f6;
-      --white: #ffffff;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --ink:       #050912;
+      --ink-1:     #080f1e;
+      --ink-2:     #0c1526;
+      --rule:      rgba(255,255,255,0.06);
+      --rule-2:    rgba(255,255,255,0.10);
+      --blue:      #1447e6;
+      --blue-hi:   #2563f0;
+      --ice:       #e8f0ff;
+      --ice-dim:   #8ba4d8;
+      --ice-mute:  #3d5280;
+      --white:     #ffffff;
+      --mono:      'JetBrains Mono', monospace;
     }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--dark);
-      color: var(--white);
-      line-height: 1.6;
+
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Outfit',sans-serif;
+      background:var(--ink);
+      color:var(--ice);
+      line-height:1.6;
+      overflow-x:hidden;
     }
-    
-    .bg-grid {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: 0;
+
+    /* GRID */
+    .grid-bg{
+      position:fixed;inset:0;pointer-events:none;z-index:0;
+      background-image:
+        linear-gradient(var(--rule) 1px,transparent 1px),
+        linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+      background-size:80px 80px;
     }
-    
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(20px);
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    /* GLOWS */
+    .glow{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(160px);}
+    .glow-a{width:900px;height:600px;background:rgba(20,71,230,0.13);top:-200px;right:-300px;}
+    .glow-b{width:700px;height:700px;background:rgba(20,71,230,0.09);bottom:-250px;left:-200px;}
+
+    /* HEADER */
+    header{
+      position:fixed;top:0;width:100%;z-index:900;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 56px;height:64px;
+      background:rgba(5,9,18,0.85);
+      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--rule);
     }
-    
-    .logo-section {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo img{height:36px;}
+    .logo-name{font-size:.95rem;font-weight:700;color:var(--white);letter-spacing:-.1px;}
+    .back-btn{
+      display:inline-flex;align-items:center;gap:7px;
+      color:var(--ice-mute);text-decoration:none;
+      font-family:var(--mono);font-size:.72rem;letter-spacing:1px;
+      padding:7px 14px;border-radius:6px;
+      border:1px solid var(--rule);
+      transition:all .2s;
     }
-    
-    .logo-section img {
-      height: 45px;
+    .back-btn:hover{color:var(--white);border-color:var(--rule-2);background:rgba(255,255,255,0.04);}
+
+    /* CONTENT */
+    .content{
+      position:relative;z-index:1;
+      max-width:860px;
+      margin:0 auto;
+      padding:104px 40px 100px;
     }
-    
-    .logo-section span {
-      font-size: 1.3rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--white), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+    /* PAGE HEADER */
+    .page-header{
+      padding-bottom:48px;
+      border-bottom:1px solid var(--rule);
+      margin-bottom:64px;
     }
-    
-    nav a {
-      text-decoration: none;
-      color: var(--gray-300);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.3s;
+    .page-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-family:var(--mono);font-size:.68rem;color:var(--ice-mute);
+      letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;
     }
-    
-    nav a:hover {
-      color: var(--accent);
+    .page-eyebrow::before{content:'';width:20px;height:1px;background:var(--blue);}
+    .page-header h1{
+      font-size:clamp(2.2rem,5vw,3.5rem);
+      font-weight:900;letter-spacing:-1.5px;
+      color:var(--white);line-height:1.05;
+      margin-bottom:16px;
     }
-    
-    .content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 140px 40px 80px;
+    .last-updated{
+      font-family:var(--mono);font-size:.72rem;
+      color:var(--ice-mute);letter-spacing:1px;
     }
-    
-    .content h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, var(--white), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+    /* SUMMARY BOX */
+    .summary-box{
+      background:rgba(20,71,230,0.07);
+      border:1px solid rgba(20,71,230,0.2);
+      border-radius:8px;
+      padding:24px 28px;
+      margin-bottom:64px;
+      position:relative;
     }
-    
-    .last-updated {
-      color: var(--gray-500);
-      font-size: 0.9rem;
-      margin-bottom: 40px;
+    .summary-box::before{content:'';position:absolute;top:0;left:0;width:10px;height:10px;border-top:1px solid rgba(20,71,230,0.5);border-left:1px solid rgba(20,71,230,0.5);border-radius:2px 0 0 0;}
+    .summary-box::after{content:'';position:absolute;top:0;right:0;width:10px;height:10px;border-top:1px solid rgba(20,71,230,0.5);border-right:1px solid rgba(20,71,230,0.5);border-radius:0 2px 0 0;}
+    .summary-box p{color:var(--ice-dim);font-size:.93rem;line-height:1.75;margin:0;}
+    .summary-box strong{color:var(--white);}
+
+    /* SECTIONS */
+    section{margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--rule);}
+    section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+
+    h2{
+      font-size:1.3rem;font-weight:800;color:var(--white);
+      letter-spacing:-.3px;margin-bottom:20px;
+      display:flex;align-items:center;gap:14px;
     }
-    
-    .content h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-top: 40px;
-      margin-bottom: 16px;
+    h2 .sec-num{
+      font-family:var(--mono);font-size:.65rem;color:var(--blue);
+      letter-spacing:1px;padding-top:2px;flex-shrink:0;
     }
-    
-    .content h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: 24px;
-      margin-bottom: 12px;
+
+    h3{
+      font-size:1rem;font-weight:700;color:var(--ice);
+      margin-top:28px;margin-bottom:12px;
+      font-family:var(--mono);font-size:.78rem;letter-spacing:1.5px;
+      text-transform:uppercase;color:var(--blue);
     }
-    
-    .content p {
-      color: var(--gray-400);
-      margin-bottom: 16px;
-      line-height: 1.8;
+
+    p{color:var(--ice-dim);font-size:.93rem;line-height:1.85;margin-bottom:14px;}
+    p:last-child{margin-bottom:0;}
+    strong{color:var(--white);font-weight:600;}
+
+    ul{
+      list-style:none;padding:0;margin-bottom:14px;
+      display:flex;flex-direction:column;gap:8px;
     }
-    
-    .content ul, .content ol {
-      color: var(--gray-400);
-      margin-bottom: 16px;
-      padding-left: 24px;
+    ul li{
+      color:var(--ice-dim);font-size:.9rem;line-height:1.75;
+      padding-left:20px;position:relative;
     }
-    
-    .content li {
-      margin-bottom: 8px;
-      line-height: 1.7;
+    ul li::before{
+      content:'';position:absolute;left:0;top:10px;
+      width:4px;height:4px;border-radius:50%;background:var(--blue);
     }
-    
-    .content a {
-      color: var(--accent);
-      text-decoration: none;
+
+    a{color:var(--blue);text-decoration:none;transition:color .2s;}
+    a:hover{color:var(--white);}
+
+    /* PRODUCT BADGE */
+    .product-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      font-family:var(--mono);font-size:.63rem;letter-spacing:1.5px;
+      text-transform:uppercase;padding:4px 10px;border-radius:4px;
+      margin-bottom:16px;
     }
-    
-    .content a:hover {
-      text-decoration: underline;
+    .badge-cm{background:rgba(20,71,230,0.1);border:1px solid rgba(20,71,230,0.25);color:var(--ice-dim);}
+    .badge-af{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);color:#86efac;}
+
+    /* HIGHLIGHT */
+    .hl{color:var(--white);font-weight:600;}
+
+    /* FOOTER */
+    footer{
+      position:relative;z-index:1;
+      padding:40px 56px;
+      border-top:1px solid var(--rule);
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:16px;
     }
-    
-    .highlight-box {
-      background: rgba(6, 182, 212, 0.1);
-      border: 1px solid rgba(6, 182, 212, 0.2);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 24px 0;
-    }
-    
-    .highlight-box p {
-      color: var(--gray-300);
-      margin: 0;
-    }
-    
-    .footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 40px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--gray-500);
-      font-size: 0.9rem;
-    }
-    
-    .footer a {
-      color: var(--gray-500);
-      text-decoration: none;
-      margin: 0 12px;
-    }
-    
-    .footer a:hover {
-      color: var(--accent);
-    }
-    
-    @media (max-width: 768px) {
-      header {
-        padding: 16px 20px;
-      }
-      
-      .content {
-        padding: 120px 20px 60px;
-      }
-      
-      .content h1 {
-        font-size: 2rem;
-      }
+    footer p{color:var(--ice-mute);font-size:.8rem;margin:0;}
+    .legal{display:flex;gap:20px;flex-wrap:wrap;}
+    .legal a{color:var(--ice-mute);font-size:.8rem;text-decoration:none;transition:color .2s;}
+    .legal a:hover{color:var(--white);}
+
+    @media(max-width:768px){
+      header{padding:0 20px;}
+      .content{padding:88px 20px 80px;}
+      footer{padding:32px 20px;flex-direction:column;text-align:center;}
+      .legal{justify-content:center;}
     }
   </style>
-  <script defer src="https://analytics.coremindx.ai/script.js" data-website-id="22276c35-cfa6-4c15-a811-74e71f872617"></script>
 </head>
 <body>
 
-<div class="bg-grid"></div>
+<div class="grid-bg"></div>
+<div class="glow glow-a"></div>
+<div class="glow glow-b"></div>
 
 <header>
-  <a href="/" class="logo-section">
+  <a href="/" class="logo">
     <img src="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892772/logo_xoq717.png" alt="Fortress Technologies Hub Logo">
-    <span>Fortress Technologies Hub</span>
+    <span class="logo-name">Fortress Technologies Hub</span>
   </a>
-  <nav>
-    <a href="/">← Back to Home</a>
-  </nav>
+  <a href="/" class="back-btn">← Back to Home</a>
 </header>
 
 <div class="content">
-  <h1>Privacy Policy</h1>
-  <p class="last-updated">Last Updated: January 28, 2026</p>
-  
-  <div class="highlight-box">
-    <p><strong>Summary:</strong> We respect your privacy. We collect only what we need, protect what we collect, and never sell your personal information to third parties.</p>
+
+  <div class="page-header">
+    <div class="page-eyebrow">Legal &nbsp;·&nbsp; Fortress Technologies Hub Inc.</div>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last Updated: May 31, 2026 &nbsp;·&nbsp; Version 2.0</p>
   </div>
-  
-  <h2>1. Introduction</h2>
-  <p>Fortress Technologies Hub Inc. ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our websites, products, and services, including CoreMind and API Fortress (collectively, the "Services").</p>
-  <p>By accessing or using our Services, you agree to this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access or use our Services.</p>
-  
-  <h2>2. Information We Collect</h2>
-  
-  <h3>2.1 Information You Provide</h3>
-  <p>We may collect information that you voluntarily provide to us, including:</p>
-  <ul>
-    <li><strong>Account Information:</strong> Name, email address, password, and other registration details</li>
-    <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely through our payment processors)</li>
-    <li><strong>Communications:</strong> Information you provide when you contact us for support or inquiries</li>
-    <li><strong>User Content:</strong> Content you create, upload, or input while using our Services</li>
-  </ul>
-  
-  <h3>2.2 Information Collected Automatically</h3>
-  <p>When you use our Services, we may automatically collect:</p>
-  <ul>
-    <li><strong>Device Information:</strong> Device type, operating system, browser type, and unique device identifiers</li>
-    <li><strong>Usage Information:</strong> Pages visited, features used, time spent, and interaction patterns</li>
-    <li><strong>Log Data:</strong> IP address, access times, and referring URLs</li>
-    <li><strong>Cookies and Similar Technologies:</strong> Information collected through cookies, pixels, and similar tracking technologies</li>
-  </ul>
-  
-  <h2>3. How We Use Your Information</h2>
-  <p>We use the information we collect to:</p>
-  <ul>
-    <li>Provide, maintain, and improve our Services</li>
-    <li>Process transactions and send related information</li>
-    <li>Send you technical notices, updates, security alerts, and support messages</li>
-    <li>Respond to your comments, questions, and customer service requests</li>
-    <li>Monitor and analyze trends, usage, and activities</li>
-    <li>Detect, prevent, and address technical issues and security threats</li>
-    <li>Comply with legal obligations</li>
-  </ul>
-  
-  <h2>4. How We Share Your Information</h2>
-  <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
-  <ul>
-    <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf (e.g., payment processing, hosting, analytics)</li>
-    <li><strong>Legal Requirements:</strong> When required by law or to respond to legal process</li>
-    <li><strong>Protection of Rights:</strong> To protect the rights, property, and safety of Fortress Technologies Hub, our users, or others</li>
-    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-    <li><strong>With Your Consent:</strong> When you have given us permission to share your information</li>
-  </ul>
-  
-  <h2>5. Data Security</h2>
-  <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
-  <ul>
-    <li>Encryption of data in transit and at rest</li>
-    <li>Regular security assessments and audits</li>
-    <li>Access controls and authentication measures</li>
-    <li>Employee training on data protection</li>
-  </ul>
-  <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
-  
-  <h2>6. Data Retention</h2>
-  <p>We retain your personal information for as long as necessary to fulfill the purposes for which it was collected, including to satisfy legal, accounting, or reporting requirements. When determining retention periods, we consider the amount, nature, and sensitivity of the information, the potential risk of harm from unauthorized use or disclosure, and applicable legal requirements.</p>
-  
-  <h2>7. Your Rights and Choices</h2>
-  <p>Depending on your location, you may have certain rights regarding your personal information:</p>
-  <ul>
-    <li><strong>Access:</strong> Request access to your personal information</li>
-    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
-    <li><strong>Deletion:</strong> Request deletion of your personal information</li>
-    <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
-    <li><strong>Withdrawal of Consent:</strong> Withdraw consent where processing is based on consent</li>
-    <li><strong>Opt-Out:</strong> Opt out of marketing communications</li>
-  </ul>
-  <p>To exercise these rights, please contact us at <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a>.</p>
-  
-  <h2>8. Cookies and Tracking Technologies</h2>
-  <p>We use cookies and similar tracking technologies to collect and track information about your use of our Services. You can control cookies through your browser settings and other tools. However, disabling cookies may limit your ability to use certain features of our Services.</p>
-  
-  <h2>9. International Data Transfers</h2>
-  <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that are different from the laws of your country. We take appropriate safeguards to ensure that your personal information remains protected in accordance with this Privacy Policy.</p>
-  
-  <h2>10. Children's Privacy</h2>
-  <p>Our Services are not directed to children under the age of 13 (or other age as required by local law). We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.</p>
-  
-  <h2>11. Changes to This Privacy Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically.</p>
-  
-  <h2>12. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
-  <p>
-    <strong>Fortress Technologies Hub Inc.</strong><br>
-    Suite 2500, 1 Dundas Street West<br>
-    Toronto, Ontario M5G 1Z3<br>
-    Canada<br><br>
-    Email: <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a><br>
-    Phone: <a href="tel:+16043581469">+1 (604) 358-1469</a>
-  </p>
+
+  <div class="summary-box">
+    <p><strong>Summary:</strong> We respect your privacy. We collect only what we need to operate our products, protect what we collect on Canadian infrastructure, and never sell your personal information to third parties. Your data is subject to Canadian law — not the US CLOUD Act.</p>
+  </div>
+
+  <!-- Section 1 -->
+  <section>
+    <h2><span class="sec-num">01</span> Introduction</h2>
+    <p>Fortress Technologies Hub Inc. ("we," "our," or "us") is a federally incorporated Canadian technology company based in Toronto, Ontario. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our websites, products, and services — including <strong>CoreMind</strong> (coremindx.ai) and <strong>API Fortress</strong> (api-fortress.fortresstechnologieshub.com), as well as our corporate website at fortresstechnologieshub.com (collectively, the "Services").</p>
+    <p>By accessing or using our Services, you agree to this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access or use our Services.</p>
+    <p>This Privacy Policy applies to all users of our Services, including visitors, registered users, subscribers, and enterprise clients. It does not apply to third-party websites or services linked to or integrated with our Services.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2><span class="sec-num">02</span> Canadian Data Sovereignty</h2>
+    <p><strong class="hl">Data Location:</strong> Fortress Technologies Hub is proudly built and operated in Canada. All user data, account information, and product data across our Services is stored and processed on servers located exclusively within Canada.</p>
+    <p><strong class="hl">No CLOUD Act Exposure:</strong> As a Canadian company operating on Canadian-owned infrastructure, your data is not subject to the US CLOUD Act or any foreign surveillance legislation. The US government cannot compel us to hand over data stored on our systems.</p>
+    <p><strong class="hl">Canadian Jurisdiction:</strong> Your data is governed by Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial privacy legislation.</p>
+    <p><strong class="hl">Infrastructure:</strong> Our primary hosting, including AI model inference, databases, voice processing, embeddings, and all core product data, runs on Canadian-owned servers located in Canada. Our commitment to Canadian data sovereignty drives every infrastructure decision we make.</p>
+    <p><strong class="hl">Limited Third-Party Processing:</strong> Certain narrow third-party services may process limited data in other jurisdictions. Specifically, payment processing for CoreMind subscriptions is handled by Stripe (which may process payment data in the United States), and image and video generation requests on CoreMind are processed by third-party AI generation providers operating under their own privacy policies. These are the only exceptions, and they are fully disclosed in Section 6 of this Policy.</p>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2><span class="sec-num">03</span> Information We Collect</h2>
+
+    <h3>3.1 Corporate Website Visitors</h3>
+    <p>When you visit fortresstechnologieshub.com, we automatically collect basic usage data including browser type, device type, pages visited, time spent, and referring URLs. We use self-hosted analytics on Canadian infrastructure. We do not use third-party advertising trackers or cross-site tracking cookies.</p>
+
+    <h3>3.2 CoreMind Users</h3>
+    <div class="product-badge badge-cm">CoreMind</div>
+    <ul>
+      <li><strong>Account Information:</strong> Name, email address, and password (securely hashed) when you register</li>
+      <li><strong>Google Sign-In:</strong> If you use Google Sign-In, we receive your name, email address, and profile picture from Google. We do not receive or store your Google password</li>
+      <li><strong>Profile and Preferences:</strong> Settings, customizations, and preferences you configure</li>
+      <li><strong>User Content:</strong> Prompts, messages, uploaded files, and any content you create using the Service</li>
+      <li><strong>Payment Information:</strong> Processed securely through Stripe. We store only payment confirmation, subscription status, billing history, and the last four digits of your card. We do not store full card details on our servers</li>
+      <li><strong>Usage Data:</strong> Features used, actions taken, time spent, and interaction patterns</li>
+      <li><strong>Device and Log Data:</strong> IP address, browser type, operating system, access times, and referring URLs</li>
+    </ul>
+
+    <h3>3.3 API Fortress Enterprise Clients</h3>
+    <div class="product-badge badge-af">API Fortress</div>
+    <p>API Fortress is a B2B enterprise API security platform. It does not process, store, or handle your end users' personal data. The only information we collect from enterprise clients is what is necessary to operate the security service:</p>
+    <ul>
+      <li><strong>Company Name:</strong> The name of your organization</li>
+      <li><strong>Point of Contact Email:</strong> The email address of your company representative</li>
+      <li><strong>Backend API URL:</strong> Your company's public-facing API endpoint submitted for protection and scanning</li>
+      <li><strong>Security Data:</strong> WAF logs, RASP events, pentest results, behavior analysis, and endpoint scan reports generated by the platform — stored in your dashboard on our Canadian infrastructure</li>
+    </ul>
+    <p>Security scan data (WAF logs, RASP events, endpoint reports) consists of technical security metadata — not personal data. This data is stored exclusively on our Canadian servers and is accessible only to your authorized team through your dashboard.</p>
+    <p>API Fortress does not collect, access, or process the personal data of your end users. It operates at the API layer to detect and block threats, not to inspect or retain underlying business data passing through your APIs.</p>
+    <p><strong class="hl">Payment:</strong> API Fortress is a B2B service billed via bank transfer or e-transfer directly to Fortress Technologies Hub. No third-party payment processor is involved.</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2><span class="sec-num">04</span> How We Use Your Information</h2>
+    <p>We use the information we collect only for the following purposes:</p>
+    <ul>
+      <li>Provide, maintain, and improve our Services</li>
+      <li>Create and manage your account or enterprise client profile</li>
+      <li>Process transactions and manage subscriptions or service agreements</li>
+      <li>Personalize your experience where applicable (CoreMind)</li>
+      <li>Send technical notices, security alerts, service updates, and support communications</li>
+      <li>Respond to your inquiries and provide customer support</li>
+      <li>Monitor and analyze usage to improve product performance and reliability</li>
+      <li>Detect, prevent, and address fraud, abuse, and security threats</li>
+      <li>Enforce our Terms of Service and other policies</li>
+      <li>Comply with applicable Canadian legal obligations</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling for sale to third parties, or any purpose not listed above.</p>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2><span class="sec-num">05</span> AI Memory and Personalization (CoreMind)</h2>
+    <div class="product-badge badge-cm">CoreMind</div>
+    <p>CoreMind may use conversation history and context to provide personalized responses and remember information across sessions ("Memory"). This feature is designed to improve your experience by remembering your preferences, providing contextually relevant responses, and reducing the need to repeat information.</p>
+    <p><strong class="hl">Your Control Over Memory:</strong></p>
+    <ul>
+      <li>You can enable or disable Memory in your Privacy Settings at any time</li>
+      <li>You can view all stored memories from your account</li>
+      <li>You can delete specific memories or all memories at any time</li>
+      <li>Disabling Memory does not delete previously stored data unless you explicitly delete it</li>
+    </ul>
+    <p><strong class="hl">No AI Training on Your Data:</strong> We do not use your conversations, prompts, or outputs to train our AI models without your explicit consent. Your data is used solely to provide the Service to you.</p>
+  </section>
+
+  <!-- Section 6 -->
+  <section>
+    <h2><span class="sec-num">06</span> Data Sharing and Disclosure</h2>
+    <p><strong class="hl">We do not sell your personal data.</strong> We may share your information only in the following limited circumstances:</p>
+
+    <h3>6.1 Service Providers</h3>
+    <ul>
+      <li><strong>Stripe</strong> — Payment processing for CoreMind subscriptions. Stripe may process payment data in the United States and operates under its own privacy policy. We share only what is necessary to process your payment</li>
+      <li><strong>Canadian cloud and infrastructure providers</strong> — For hosting, storage, and compute. All on Canadian soil</li>
+      <li><strong>Email service providers</strong> — For transactional communications such as account verification and billing receipts</li>
+      <li><strong>Third-party AI generation providers</strong> — For CoreMind image and video generation requests only. When you request image or video generation, the prompt or input is sent to third-party providers who process it under their own privacy policies. These providers do not receive your account information or conversation history. This applies only to image and video generation</li>
+    </ul>
+
+    <h3>6.2 Legal Requirements</h3>
+    <p>We may disclose your information if required to do so by Canadian law, or in response to valid requests by Canadian public authorities, including to meet national security or law enforcement requirements. As a Canadian company on Canadian infrastructure, we are not subject to US government data requests.</p>
+
+    <h3>6.3 Business Transfers</h3>
+    <p>If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any change in ownership or use of your personal information.</p>
+
+    <h3>6.4 With Your Consent</h3>
+    <p>We may share your information with third parties when you have given us your explicit consent to do so.</p>
+  </section>
+
+  <!-- Section 7 -->
+  <section>
+    <h2><span class="sec-num">07</span> Data Storage and Security</h2>
+    <p><strong class="hl">Data Location:</strong> All user data across our Services is stored on secure servers located exclusively in Canada. We do not store personal data outside of Canada, with the narrow exception of payment processing via Stripe as disclosed in Section 6.</p>
+    <p><strong class="hl">Security Measures:</strong> We implement industry-standard security measures to protect your data, including:</p>
+    <ul>
+      <li>Encryption of data in transit (TLS/SSL) and at rest</li>
+      <li>Field-level encryption for sensitive data (chat messages, memories) on CoreMind</li>
+      <li>Secure password hashing using bcrypt</li>
+      <li>Access controls and authentication requirements</li>
+      <li>Rate limiting on authentication endpoints</li>
+      <li>Regular security monitoring and audits</li>
+      <li>Secure development practices</li>
+    </ul>
+    <p><strong class="hl">No Guarantee:</strong> While we strive to protect your data, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section>
+    <h2><span class="sec-num">08</span> Data Retention</h2>
+    <p>We retain your personal data for as long as necessary to provide the Services, comply with our legal obligations, resolve disputes, and enforce our agreements.</p>
+    <p><strong class="hl">Retention Periods:</strong></p>
+    <ul>
+      <li><strong>CoreMind account data:</strong> Retained while your account is active</li>
+      <li><strong>CoreMind conversation history:</strong> Retained until you delete it or your account</li>
+      <li><strong>CoreMind billing records:</strong> Retained for 7 years for tax and legal compliance</li>
+      <li><strong>API Fortress client account data:</strong> Retained for the duration of the service agreement and up to 2 years after termination</li>
+      <li><strong>API Fortress security logs and scan data:</strong> Retained for the duration of your active service</li>
+      <li><strong>Security and system logs:</strong> Retained for up to 2 years</li>
+    </ul>
+    <p><strong class="hl">Account Deletion (CoreMind):</strong> When you delete your account using the "Forget Me" feature, your personal data will be permanently deleted within 30 days, except where retention is required by law.</p>
+  </section>
+
+  <!-- Section 9 -->
+  <section>
+    <h2><span class="sec-num">09</span> Cookies and Tracking Technologies</h2>
+    <p>We use cookies and similar technologies on our websites for the following purposes:</p>
+    <ul>
+      <li><strong>Essential Cookies:</strong> Required for authentication and session management</li>
+      <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+      <li><strong>Analytics:</strong> We use self-hosted analytics on Canadian infrastructure to understand how users interact with our Services</li>
+    </ul>
+    <p><strong class="hl">We do not use</strong> third-party advertising cookies, cross-site tracking cookies, or any analytics tools that send your data to US-based analytics providers.</p>
+    <p><strong class="hl">Cookie Control:</strong> You can control cookies through your browser settings. Disabling essential cookies may affect your ability to use certain features of our Services.</p>
+  </section>
+
+  <!-- Section 10 -->
+  <section>
+    <h2><span class="sec-num">10</span> Your Rights and Choices</h2>
+    <p>As a Canadian company, we comply with the Personal Information Protection and Electronic Documents Act (PIPEDA). Under PIPEDA and applicable privacy legislation, you have the right to:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+      <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+      <li><strong>Data Portability:</strong> Request your data in a portable format</li>
+      <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
+      <li><strong>Object:</strong> Object to processing of your data in certain circumstances</li>
+      <li><strong>Complaint:</strong> Lodge a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a></li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a> or use the relevant features in your account settings. We will respond within 30 days, or as required by applicable law.</p>
+
+    <h3>European Users (GDPR)</h3>
+    <p>If you are located in the European Economic Area, United Kingdom, or Switzerland, you have additional rights under the GDPR, including the right to lodge a complaint with your local data protection authority. We process your data based on: (a) your consent, (b) performance of our contract with you, (c) compliance with legal obligations, and (d) our legitimate interests in providing and improving the Services.</p>
+
+    <h3>California Residents (CCPA)</h3>
+    <p>If you are a California resident, you have the right to know what personal information is collected, the right to delete your data, and the right to opt out of the sale of personal information. We do not sell your personal data. To exercise your rights, contact us at <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a>.</p>
+  </section>
+
+  <!-- Section 11 -->
+  <section>
+    <h2><span class="sec-num">11</span> International Data Transfers</h2>
+    <p>As a Canadian company committed to data sovereignty, we store and process all user data in Canada. The only instances where limited data may be processed outside Canada are:</p>
+    <ul>
+      <li>Payment processing for CoreMind subscriptions via Stripe (United States)</li>
+      <li>Image and video generation requests on CoreMind, processed by third-party generation providers under their own privacy policies</li>
+    </ul>
+    <p>In both cases, only the minimum data necessary for the specific function is shared. We ensure appropriate safeguards are in place to protect your information in accordance with this Privacy Policy and applicable Canadian privacy laws.</p>
+    <p>All other data — including your account data, conversations, memories, API Fortress security data, and all core product data — never leaves Canada.</p>
+  </section>
+
+  <!-- Section 12 -->
+  <section>
+    <h2><span class="sec-num">12</span> Children's Privacy</h2>
+    <p>Our Services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a>. If we learn that we have collected personal information from a child under 13, we will take steps to delete that information as quickly as possible.</p>
+  </section>
+
+  <!-- Section 13 -->
+  <section>
+    <h2><span class="sec-num">13</span> Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last Updated" date at the top of this page, send an email notification to registered users where applicable, and display a prominent notice within the relevant Service.</p>
+    <p>Your continued use of our Services after any changes indicates your acceptance of the updated Privacy Policy. We encourage you to review this Privacy Policy periodically.</p>
+  </section>
+
+  <!-- Section 14 -->
+  <section>
+    <h2><span class="sec-num">14</span> Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+    <p>
+      <strong class="hl">Fortress Technologies Hub Inc.</strong><br>
+      Suite 2500, 1 Dundas Street West<br>
+      Toronto, Ontario M5G 1Z3, Canada
+    </p>
+    <p style="margin-top:16px;">
+      Privacy Inquiries: <a href="mailto:privacy@fortresstechnologieshub.com">privacy@fortresstechnologieshub.com</a><br>
+      General: <a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a><br>
+      Phone: <a href="tel:+16043581469">+1 (604) 358-1469</a>
+    </p>
+  </section>
+
 </div>
 
-<footer class="footer">
-  <p>&copy; 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
-  <p>
+<footer>
+  <p>© 2026 Fortress Technologies Hub Inc. All rights reserved.</p>
+  <div class="legal">
     <a href="/">Home</a>
     <a href="privacy-policy">Privacy Policy</a>
     <a href="terms-of-service">Terms of Service</a>
     <a href="refund-policy">Refund Policy</a>
-  </p>
+  </div>
 </footer>
 
 </body>
