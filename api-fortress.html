@@ -892,7 +892,7 @@ form.addEventListener('submit',function(e){
   e.preventDefault();
   const btn=form.querySelector('button[type=submit]');
   btn.textContent='Sending...';btn.disabled=true;
-  fetch(window.location.pathname,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
   .then(()=>{form.style.display='none';fsuc.classList.add('show');})
   .catch(()=>{btn.textContent='Send Message →';btn.disabled=false;alert('Error sending. Please email info@fortresstechnologieshub.com directly.');});
 });
