@@ -3,24 +3,28 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CoreMind – Privacy-First AI Assistant | Fortress Technologies Hub</title>
-<meta name="description" content="CoreMind is a privacy-first AI assistant built on 100% Canadian infrastructure. Powerful language models, voice interaction, image generation, and a full developer API. Your data never leaves Canada.">
+<title>CoreMind | Privacy-First AI Assistant | Fortress Technologies Hub</title>
+<meta name="description" content="CoreMind is a privacy-first AI assistant built in Canada. Our own language models run on Canadian-owned infrastructure, with voice, vision, memory, visible reasoning, and a full developer API.">
 <meta name="keywords" content="AI assistant, artificial intelligence, Canadian AI, privacy-first AI, language model, voice AI, image generation, CoreMind, Fortress Technologies Hub, Canadian data sovereignty, developer API">
 <meta name="author" content="Fortress Technologies Hub Inc.">
-<meta property="og:title" content="CoreMind – Privacy-First AI Assistant Built in Canada">
-<meta property="og:description" content="Powerful AI assistance with 100% Canadian data sovereignty. Voice, image generation, memory, and a full developer API. Your data never leaves Canada.">
+<meta property="og:title" content="CoreMind: Privacy-First AI Assistant Built in Canada">
+<meta property="og:description" content="Privacy-first AI with your core conversations kept in Canada. Voice, vision, memory, visible reasoning, and a full developer API.">
 <meta property="og:image" content="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png">
 <meta property="og:url" content="https://coremindx.ai">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@fortresstechhub">
-<meta name="twitter:title" content="CoreMind – Privacy-First AI Assistant Built in Canada">
-<meta name="twitter:description" content="Powerful AI with 100% Canadian data sovereignty. Voice, image generation, memory, and developer API access.">
+<meta name="twitter:title" content="CoreMind: Privacy-First AI Assistant Built in Canada">
+<meta name="twitter:description" content="Privacy-first AI built in Canada. Voice, vision, memory, visible reasoning, and developer API access.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png">
+<meta name="theme-color" content="#050912">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script defer src="https://analytics.coremindx.ai/script.js" data-website-id="22276c35-cfa6-4c15-a811-74e71f872617"></script>
+<script>document.documentElement.classList.add('js');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -34,7 +38,11 @@
   --blue-hi:#2563f0;
   --ice:    #e8f0ff;
   --ice-dim:#8ba4d8;
-  --ice-mute:#3d5280;
+  --ice-mute:#6b80ad;
+  --ice-faint:#3d5280;
+  --blue-soft:#7aa2ff;
+  --green:#22c55e;
+  --red:#f87171;
   --white:  #ffffff;
   --mono:   'JetBrains Mono',monospace;
 }
@@ -77,12 +85,12 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 
 /* ── SHARED ── */
 .s{position:relative;z-index:1;}
-.s-label{font-family:var(--mono);font-size:.65rem;color:var(--blue);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
+.s-label{font-family:var(--mono);font-size:.68rem;color:var(--blue-soft);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
 .live-pip{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pip 2s ease-in-out infinite;display:inline-block;}
 @keyframes pip{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ── HERO ── */
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px 80px;border-bottom:1px solid var(--rule);}
+.hero{position:relative;z-index:1;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px 80px;border-bottom:1px solid var(--rule);}
 .hero-deco{position:absolute;right:-20px;top:50%;transform:translateY(-55%);font-family:var(--mono);font-size:32vw;font-weight:700;color:rgba(20,71,230,0.035);line-height:1;pointer-events:none;user-select:none;letter-spacing:-3vw;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;color:var(--ice-mute);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;flex-wrap:wrap;}
 .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--blue);flex-shrink:0;}
@@ -107,7 +115,7 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 .ribbon{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid var(--rule);}
 .ribbon-item{padding:22px 28px;border-right:1px solid var(--rule);display:flex;align-items:center;gap:8px;}
 .ribbon-item:last-child{border-right:none;}
-.r-icon{font-size:1rem;flex-shrink:0;}
+.r-icon{width:18px;height:18px;flex-shrink:0;color:var(--blue-soft);}
 .r-text{font-size:.82rem;color:var(--ice-dim);font-weight:500;}
 
 /* ── STORY ── */
@@ -157,7 +165,7 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 .feat-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
 .feat-cell:hover::before{transform:scaleX(1);}
 .feat-num{font-family:var(--mono);font-size:.63rem;color:var(--blue);letter-spacing:1px;margin-bottom:18px;display:block;}
-.feat-icon{font-size:1.4rem;margin-bottom:14px;display:block;}
+.feat-icon{width:24px;height:24px;margin-bottom:16px;display:block;color:var(--blue-soft);}
 .feat-cell h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:10px;}
 .feat-cell p{color:var(--ice-mute);font-size:.83rem;line-height:1.7;margin:0;}
 
@@ -187,7 +195,7 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 .research-cell:hover{background:rgba(20,71,230,.04);}
 .research-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
 .research-cell:hover::before{transform:scaleX(1);}
-.r-cell-icon{font-size:1.4rem;margin-bottom:16px;display:block;}
+.r-cell-icon{width:24px;height:24px;margin-bottom:16px;display:block;color:var(--blue-soft);}
 .research-cell h3{font-size:.97rem;font-weight:700;color:var(--white);margin-bottom:10px;}
 .research-cell p{color:var(--ice-mute);font-size:.83rem;line-height:1.7;margin:0;}
 
@@ -209,7 +217,7 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 .code-block.active{display:block;}
 .c{color:var(--ice-mute);}
 .k{color:#c678dd;}
-.s{color:#98c379;}
+.str{color:#98c379;}
 .f{color:#61afef;}
 .n{color:#e5c07b;}
 
@@ -231,7 +239,7 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 .cta-right{display:flex;flex-direction:column;gap:0;}
 .cta-check{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);}
 .cta-check:last-child{border-bottom:none;padding-bottom:0;}
-.cta-check .ck-icon{font-size:1rem;flex-shrink:0;}
+.cta-check .ck-icon{width:20px;height:20px;flex-shrink:0;color:var(--blue-soft);}
 .cta-check p{color:var(--ice-dim);font-size:.9rem;line-height:1.5;margin:0;}
 .cta-check strong{color:var(--white);display:block;font-size:.92rem;margin-bottom:2px;}
 
@@ -257,8 +265,8 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 .legal a:hover{color:var(--white);}
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
-.reveal.in{opacity:1;transform:translateY(0);}
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.js .reveal.in{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -298,7 +306,8 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   .sov-split{grid-template-columns:1fr;}
   .sov-left{border-right:none;border-bottom:1px solid var(--rule);padding:72px 24px;}
   .sov-right{padding:72px 24px;}
-  .api-inner{grid-template-columns:1fr;}
+  .api-inner{grid-template-columns:minmax(0,1fr);}
+  .api-right,.api-left{min-width:0;}
   .api-left{border-right:none;border-bottom:1px solid var(--rule);padding:72px 24px;}
   .api-right{padding:72px 24px;}
   .cta-inner{grid-template-columns:1fr;gap:48px;padding:72px 24px;}
@@ -330,12 +339,121 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   .models-header,.feat-header,.video-inner{padding-top:60px;}
   .legal{flex-wrap:wrap;justify-content:center;}
 }
+
+.icon{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.sov-pt p a{color:var(--ice-dim);}
+
+/* ── SHOWCASE ── */
+.show-s{border-bottom:1px solid var(--rule);padding:110px 56px;}
+.show-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px;}
+.show-head h2{font-size:clamp(2rem,4.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-1.5px;color:var(--white);}
+.show-head h2 .ghost{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.28);}
+.show-head p{color:var(--ice-dim);font-size:1.02rem;line-height:1.8;max-width:560px;}
+.show-grid{display:grid;grid-template-columns:340px minmax(0,1fr);border:1px solid var(--rule-2);border-radius:18px;overflow:hidden;background:rgba(8,15,30,.6);}
+.demo-tabs{display:flex;flex-direction:column;border-right:1px solid var(--rule-2);}
+.demo-tab{all:unset;cursor:pointer;display:block;padding:22px 26px;border-bottom:1px solid var(--rule);position:relative;transition:background .25s;}
+.demo-tab:last-child{border-bottom:none;}
+.demo-tab:hover{background:rgba(255,255,255,.02);}
+.demo-tab:focus-visible{outline:2px solid var(--blue-soft);outline-offset:-2px;}
+.demo-tab[aria-selected="true"]{background:rgba(20,71,230,.08);}
+.demo-tab[aria-selected="true"]::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--blue);}
+.dt-product{font-family:var(--mono);font-size:.62rem;color:var(--blue-soft);letter-spacing:1.8px;text-transform:uppercase;display:block;margin-bottom:8px;}
+.dt-title{font-size:1.02rem;font-weight:700;color:var(--white);display:block;margin-bottom:4px;}
+.dt-desc{font-size:.84rem;color:var(--ice-mute);line-height:1.55;display:block;}
+.demo-tab[aria-selected="true"] .dt-desc{color:var(--ice-dim);}
+.dt-bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:linear-gradient(90deg,var(--blue),transparent);}
+.demo-window{display:flex;flex-direction:column;min-width:0;}
+.dw-top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--rule-2);background:rgba(5,9,18,.5);}
+.dw-dots{display:flex;gap:6px;}
+.dw-dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.12);display:block;}
+.dw-name{font-family:var(--mono);font-size:.68rem;color:var(--ice-dim);letter-spacing:1px;}
+.dw-badge{font-family:var(--mono);font-size:.62rem;color:var(--ice-mute);border:1px solid var(--rule-2);border-radius:20px;padding:3px 9px;}
+.dw-body{height:540px;overflow-y:auto;padding:28px 28px 32px;display:flex;flex-direction:column;gap:18px;}
+.dw-body::-webkit-scrollbar{width:6px}
+.dw-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:3px}
+.msg{max-width:88%;animation:rise .35s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.msg.user{align-self:flex-end;background:var(--ink-3);border:1px solid var(--rule-2);border-radius:16px 16px 4px 16px;padding:14px 16px;color:var(--ice);font-size:.95rem;line-height:1.6;}
+.msg.ai{align-self:flex-start;color:var(--ice);font-size:.95rem;line-height:1.7;display:flex;flex-direction:column;gap:10px;}
+.ai-head{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.66rem;color:var(--ice-mute);letter-spacing:1px;}
+.ai-dot{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--blue-soft),var(--blue));}
+.msg.ai ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.msg.ai li{position:relative;padding-left:18px;color:var(--ice-dim);}
+.msg.ai li::before{content:'';position:absolute;left:2px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--blue-soft);}
+.msg.ai li b{color:var(--white);font-weight:600;}
+.chip{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;color:var(--blue-soft);background:rgba(20,71,230,.1);border:1px solid rgba(20,71,230,.3);border-radius:8px;padding:6px 10px;}
+.codeblk{font-family:var(--mono);font-size:.78rem;color:var(--ice-dim);background:var(--ink-1);border:1px solid var(--rule-2);border-radius:10px;padding:14px 16px;white-space:pre;overflow-x:auto;line-height:1.7;}
+.thinking{align-self:flex-start;border:1px solid var(--rule-2);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;min-width:260px;max-width:92%;animation:rise .35s ease both;}
+.th-title{font-family:var(--mono);font-size:.66rem;color:var(--ice-mute);letter-spacing:1.5px;text-transform:uppercase;}
+.th-step{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--ice-mute);}
+.th-step i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ice-faint);border-top-color:var(--blue-soft);animation:spin .8s linear infinite;flex-shrink:0;}
+.th-step.done{color:var(--ice-dim);}
+.th-step.done i{animation:none;border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 2px var(--ink-2);}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wave{display:flex;align-items:center;gap:3px;height:28px;margin-bottom:10px;}
+.wave i{display:block;width:3px;height:30%;border-radius:2px;background:var(--blue-soft);animation:wv 1s ease-in-out infinite;}
+.wave.stopped i{animation:none;height:25%;opacity:.45;}
+@keyframes wv{0%,100%{height:20%}50%{height:100%}}
+.speak{display:flex;align-items:flex-start;gap:14px;}
+.sbars{display:flex;gap:3px;align-items:center;height:24px;flex-shrink:0;margin-top:1px;}
+.sbars i{display:block;width:3px;height:40%;background:var(--green);border-radius:2px;animation:wv .9s ease-in-out infinite;}
+.speak.done .sbars i{animation:none;height:30%;opacity:.5;}
+.speak p{margin:0;}
+.shot{background:#0a0f1a;border:1px solid var(--rule-2);border-radius:10px;overflow:hidden;margin-bottom:10px;}
+.shot-bar{display:flex;gap:5px;padding:8px 10px;border-bottom:1px solid var(--rule);}
+.shot-bar i{display:block;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.15);}
+.shot pre{font-family:var(--mono);font-size:.7rem;color:var(--red);padding:12px;white-space:pre-wrap;margin:0;line-height:1.6;}
+.doccard{background:var(--ice);color:#0b1220;border-radius:10px;padding:20px 22px;max-width:480px;animation:rise .35s ease both;}
+.doccard h5{font-size:1rem;font-weight:800;margin-bottom:4px;}
+.dc-meta{font-family:var(--mono);font-size:.66rem;color:#475569;margin-bottom:12px;letter-spacing:.5px;}
+.dc-row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:8px 0;border-top:1px solid #d6deee;font-size:.84rem;line-height:1.5;}
+.dc-row b{font-weight:700;color:#0b1220;}
+.dc-row span{color:#334155;}
+.demo-note{font-family:var(--mono);font-size:.65rem;color:var(--ice-mute);letter-spacing:1px;margin-top:18px;}
+.video-frame{border-radius:14px;overflow:hidden;border:1px solid var(--rule-2);max-width:1000px;}
+.video-frame video{display:block;width:100%;height:auto;}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  .js .reveal{opacity:1;transform:none;}
+}
+@media(max-width:1100px){
+  .show-grid{grid-template-columns:minmax(0,1fr);}
+  .demo-tabs{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid var(--rule-2);}
+  .demo-tab{min-width:220px;border-bottom:none;border-right:1px solid var(--rule);}
+  .demo-tab[aria-selected="true"]::before{top:auto;bottom:0;left:0;right:0;width:auto;height:2px;}
+}
+@media(max-width:960px){
+  .show-s{padding:72px 24px;}
+}
+@media(max-width:600px){
+  .dw-body{height:560px;padding:20px 16px 24px;}
+  .msg{max-width:96%;}
+  .dc-row{grid-template-columns:1fr;gap:2px;}
+}
 </style>
 </head>
 <body>
 <div class="grid-bg"></div>
 <div class="glow glow-a"></div>
 <div class="glow glow-b"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+  <symbol id="i-steps" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><path d="M8 6h4a4 4 0 0 1 4 4M16 14a4 4 0 0 1-4 4H8"/></symbol>
+  <symbol id="i-memory" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+</svg>
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -344,6 +462,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <span class="logo-name">CoreMind</span>
   </a>
   <nav>
+    <a href="#demos">See it work</a>
     <a href="#features">Features</a>
     <a href="#models">Models</a>
     <a href="#sovereignty">Data Sovereignty</a>
@@ -363,6 +482,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 </header>
 
 <div class="mob-menu" id="mobMenu">
+  <a href="#demos">See it work</a>
   <a href="#features">Features</a>
   <a href="#models">Models</a>
   <a href="#sovereignty">Data Sovereignty</a>
@@ -384,12 +504,12 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="hero-eyebrow"><span class="live-pip"></span>Live and Available Now &nbsp;·&nbsp; Privacy-First AI</div>
   <img src="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png" alt="CoreMind" class="hero-logo">
   <h1>The AI that thinks<br>with you, <em>not</em><br><span class="blue-word">about you.</span></h1>
-  <p class="hero-tagline">Your Privacy-First AI Companion — Built on Canadian Soil</p>
+  <p class="hero-tagline">Your privacy-first AI companion, built in Canada.</p>
   <div class="hero-bottom">
-    <p class="hero-desc">Powerful language models, voice interaction, image generation, and a full developer API — all running on 100% Canadian infrastructure where your data never crosses the border.</p>
+    <p class="hero-desc">Our own language models, voice, vision, memory, and a full developer API. Your core conversations run on Canadian-owned infrastructure, under Canadian law.</p>
     <div class="hero-actions">
       <a href="https://coremindx.ai" target="_blank" class="btn-solid">Try CoreMind Free →</a>
-      <a href="#api" class="btn-outline">Developer API</a>
+      <a href="#demos" class="btn-outline">See it work</a>
     </div>
   </div>
   <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
@@ -397,13 +517,55 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 
 <!-- ══ RIBBON ══ -->
 <div class="ribbon s">
-  <div class="ribbon-item"><span class="r-icon">🇨🇦</span><span class="r-text">Canadian-Owned Servers</span></div>
-  <div class="ribbon-item"><span class="r-icon">🧠</span><span class="r-text">Three AI Models</span></div>
-  <div class="ribbon-item"><span class="r-icon">🎙️</span><span class="r-text">Voice Interaction</span></div>
-  <div class="ribbon-item"><span class="r-icon">🎨</span><span class="r-text">Image Generation</span></div>
-  <div class="ribbon-item"><span class="r-icon">💻</span><span class="r-text">Developer API</span></div>
-  <div class="ribbon-item"><span class="r-icon">🔒</span><span class="r-text">No CLOUD Act Exposure</span></div>
+  <div class="ribbon-item"><svg class="icon r-icon"><use href="#i-pin"/></svg><span class="r-text">Canadian-Owned Servers</span></div>
+  <div class="ribbon-item"><svg class="icon r-icon"><use href="#i-layers"/></svg><span class="r-text">Three AI Models</span></div>
+  <div class="ribbon-item"><svg class="icon r-icon"><use href="#i-mic"/></svg><span class="r-text">Voice Interaction</span></div>
+  <div class="ribbon-item"><svg class="icon r-icon"><use href="#i-eye"/></svg><span class="r-text">Vision and Files</span></div>
+  <div class="ribbon-item"><svg class="icon r-icon"><use href="#i-code"/></svg><span class="r-text">Developer API</span></div>
+  <div class="ribbon-item"><svg class="icon r-icon"><use href="#i-scale"/></svg><span class="r-text">Governed by Canadian Law</span></div>
 </div>
+
+<!-- ══ SHOWCASE ══ -->
+<section id="demos" class="s show-s">
+  <div class="show-head reveal">
+    <div>
+      <span class="s-label">See it work</span>
+      <h2>Watch CoreMind think.<br><span class="ghost">Then try it yourself.</span></h2>
+    </div>
+    <p>Talk to it, show it a screenshot, hand it a messy idea, or give it a problem that needs real reasoning. Pick a moment below and watch it work.</p>
+  </div>
+  <div class="show-grid reveal">
+    <div class="demo-tabs" role="tablist" aria-label="CoreMind demos" id="demoTabs"></div>
+    <div class="demo-window">
+      <div class="dw-top">
+        <div class="dw-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="dw-name" id="dwName">CoreMind</span>
+        <span class="dw-badge" id="dwBadge">CM-1</span>
+      </div>
+      <div class="dw-body" id="demoBody" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="demo-note">Illustrative demos. Names, files, and data are fictional.</p>
+</section>
+
+<!-- REAL DEMO VIDEO SLOT
+     When your CoreMind screen recording is ready, paste its link in place of VIDEO_URL
+     (and a captions file in place of CAPTIONS_URL, or delete that track line), then remove
+     the two comment lines around this section.
+<section class="s video-wrap reveal">
+  <div class="video-inner">
+    <span class="s-label">The real thing</span>
+    <h2>CoreMind, unedited</h2>
+    <p>A real session, recorded start to finish.</p>
+    <div class="video-frame">
+      <video controls playsinline preload="metadata">
+        <source src="VIDEO_URL" type="video/mp4">
+        <track kind="captions" src="CAPTIONS_URL" srclang="en" label="English" default>
+      </video>
+    </div>
+  </div>
+</section>
+END OF VIDEO SLOT -->
 
 <!-- ══ STORY ══ -->
 <section class="s story-wrap reveal">
@@ -411,13 +573,13 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <div class="story-left">
       <span class="s-label">Our Story</span>
       <h2 style="font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:28px;">The Story Behind CoreMind</h2>
-      <p>CoreMind was built on a fundamental belief: artificial intelligence should enhance human potential, not replace it. In a world racing toward automation, we chose a different path — one where AI serves as a thinking partner that amplifies your creativity, accelerates your research, and deepens your understanding.</p>
-      <p>The idea started with a simple question: what if we could build an AI that truly respects its users? One that does not harvest your data, does not manipulate your attention, and does not try to think for you — but instead thinks with you.</p>
-      <p>And then we asked a harder question: what if that AI ran entirely in Canada, on Canadian infrastructure, outside the reach of the US CLOUD Act and foreign surveillance laws? CoreMind is the answer to both of those questions.</p>
+      <p>CoreMind was built on a fundamental belief: artificial intelligence should enhance human potential, not replace it. In a world racing toward automation, we chose a different path: one where AI serves as a thinking partner that amplifies your creativity, accelerates your research, and deepens your understanding.</p>
+      <p>The idea started with a simple question: what if we could build an AI that truly respects its users? One that does not harvest your data, does not manipulate your attention, and does not try to think for you, but instead thinks with you.</p>
+      <p>And then we asked a harder question: what if that AI ran in Canada, on Canadian-owned infrastructure, under Canadian law? CoreMind is the answer to both of those questions.</p>
       <p>Every feature has been designed with a singular purpose: to help humans reason better, discover more, and create things that matter. We are not building AI to replace human intelligence. We are building AI to unlock it.</p>
       <div class="story-quote">
         <blockquote>"The greatest technology does not diminish humanity. It reveals what we are truly capable of when given the right tools to think."</blockquote>
-        <cite>— Jubril Akanbi, Founder, President and CEO, Fortress Technologies Hub</cite>
+        <cite>Jubril Akanbi, Founder, President and CEO, Fortress Technologies Hub</cite>
       </div>
     </div>
     <div class="story-right">
@@ -426,7 +588,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
         <div class="vision-row"><span class="v-num">01</span><div><h4>Our Mission</h4><p>To enhance human reasoning, research, and innovation through intelligent AI assistance that respects user privacy and keeps Canadian data in Canada.</p></div></div>
         <div class="vision-row"><span class="v-num">02</span><div><h4>Our Vision</h4><p>A world where AI and humans collaborate seamlessly, where technology amplifies human potential rather than replacing human judgment.</p></div></div>
         <div class="vision-row"><span class="v-num">03</span><div><h4>Our Promise</h4><p>CoreMind will always be a tool that works for you, not against you. Your data stays in Canada. Your conversations remain private. Your thoughts are your own.</p></div></div>
-        <div class="vision-row"><span class="v-num">04</span><div><h4>Our Difference</h4><p>Unlike every major AI company, CoreMind runs entirely on Canadian-owned servers in Canada. No US CLOUD Act. No foreign data requests. No exceptions.</p></div></div>
+        <div class="vision-row"><span class="v-num">04</span><div><h4>Our Difference</h4><p>CoreMind's own models, your conversations, and your memory run on Canadian-owned servers in Canada, operated by a Canadian company under Canadian law.</p></div></div>
       </div>
     </div>
   </div>
@@ -487,15 +649,15 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <p>CoreMind is more than a chat interface. It is a full-stack intelligent assistant built for the way people actually work and think.</p>
   </div>
   <div class="feat-grid">
-    <div class="feat-cell"><span class="feat-num">01</span><span class="feat-icon">🗣️</span><h3>Voice Conversations</h3><p>Speak naturally with CoreMind. Fluid voice-to-voice conversations with advanced noise filtering and natural-sounding text-to-speech via our self-hosted voice engine.</p></div>
-    <div class="feat-cell"><span class="feat-num">02</span><span class="feat-icon">🎨</span><h3>Image Generation</h3><p>Transform your ideas into stunning visuals. Generate images from text descriptions for creative projects, mockups, social content, and more in seconds.</p></div>
-    <div class="feat-cell"><span class="feat-num">03</span><span class="feat-icon">🎬</span><h3>Video Creation</h3><p>Bring concepts to life with AI-generated video. Create short clips and visual content directly from text descriptions for presentations and storytelling.</p></div>
-    <div class="feat-cell"><span class="feat-num">04</span><span class="feat-icon">🧠</span><h3>Reasoning Mode</h3><p>Watch CoreMind think through complex problems step by step with visible chain-of-thought reasoning that shows its work before delivering the final answer.</p></div>
-    <div class="feat-cell"><span class="feat-num">05</span><span class="feat-icon">💾</span><h3>Memory and Context</h3><p>CoreMind remembers your preferences, past conversations, and important context, providing increasingly personalized and relevant assistance over time.</p></div>
-    <div class="feat-cell"><span class="feat-num">06</span><span class="feat-icon">🔍</span><h3>Web Research</h3><p>Access up-to-date information from across the web. CoreMind searches, reads, and synthesizes current sources to answer questions beyond its training data.</p></div>
-    <div class="feat-cell"><span class="feat-num">07</span><span class="feat-icon">📄</span><h3>Document Generation</h3><p>Create professional documents, reports, and presentations instantly. Generate formatted, ready-to-use content for work, school, or personal projects.</p></div>
-    <div class="feat-cell"><span class="feat-num">08</span><span class="feat-icon">📁</span><h3>File Understanding</h3><p>Upload documents, images, and files for analysis. CoreMind reads, understands, and helps you work with your content across a wide range of formats.</p></div>
-    <div class="feat-cell"><span class="feat-num">09</span><span class="feat-icon">👁️</span><h3>Vision and Image Analysis</h3><p>Share images and screenshots with CoreMind for detailed analysis, description, text extraction, and intelligent commentary on visual content.</p></div>
+    <div class="feat-cell"><span class="feat-num">01</span><svg class="icon feat-icon"><use href="#i-mic"/></svg><h3>Voice Conversations</h3><p>Speak naturally with CoreMind. Fluid voice-to-voice conversations with advanced noise filtering and natural-sounding text-to-speech via our self-hosted voice engine.</p></div>
+    <div class="feat-cell"><span class="feat-num">02</span><svg class="icon feat-icon"><use href="#i-image"/></svg><h3>Image Generation</h3><p>Transform your ideas into stunning visuals. Generate images from text descriptions for creative projects, mockups, social content, and more in seconds. Uses a trusted external service.</p></div>
+    <div class="feat-cell"><span class="feat-num">03</span><svg class="icon feat-icon"><use href="#i-film"/></svg><h3>Video Creation</h3><p>Bring concepts to life with AI-generated video. Create short clips and visual content directly from text descriptions for presentations and storytelling. Uses a trusted external service.</p></div>
+    <div class="feat-cell"><span class="feat-num">04</span><svg class="icon feat-icon"><use href="#i-steps"/></svg><h3>Reasoning Mode</h3><p>Watch CoreMind think through complex problems step by step with visible chain-of-thought reasoning that shows its work before delivering the final answer.</p></div>
+    <div class="feat-cell"><span class="feat-num">05</span><svg class="icon feat-icon"><use href="#i-memory"/></svg><h3>Memory and Context</h3><p>CoreMind remembers your preferences, past conversations, and important context, providing increasingly personalized and relevant assistance over time.</p></div>
+    <div class="feat-cell"><span class="feat-num">06</span><svg class="icon feat-icon"><use href="#i-search"/></svg><h3>Web Research</h3><p>Access up-to-date information from across the web. CoreMind searches, reads, and synthesizes current sources to answer questions beyond its training data. Uses a trusted external search service.</p></div>
+    <div class="feat-cell"><span class="feat-num">07</span><svg class="icon feat-icon"><use href="#i-doc"/></svg><h3>Document Generation</h3><p>Create professional documents, reports, and presentations instantly. Generate formatted, ready-to-use content for work, school, or personal projects.</p></div>
+    <div class="feat-cell"><span class="feat-num">08</span><svg class="icon feat-icon"><use href="#i-folder"/></svg><h3>File Understanding</h3><p>Upload documents, images, and files for analysis. CoreMind reads, understands, and helps you work with your content across a wide range of formats.</p></div>
+    <div class="feat-cell"><span class="feat-num">09</span><svg class="icon feat-icon"><use href="#i-eye"/></svg><h3>Vision and Image Analysis</h3><p>Share images and screenshots with CoreMind for detailed analysis, description, text extraction, and intelligent commentary on visual content.</p></div>
   </div>
 </section>
 
@@ -504,17 +666,17 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="sov-split">
     <div class="sov-left">
       <span class="s-label">Canadian Data Sovereignty</span>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:28px;">Your Data Stays<br>in Canada.</h2>
-      <p>Every other major AI assistant is American. That means your conversations with ChatGPT, Gemini, and Copilot are subject to the US CLOUD Act — which allows American authorities to compel those companies to hand over your data regardless of where it is stored.</p>
-      <p>CoreMind made a different choice from day one. We built our entire infrastructure in Canada, using Canadian-owned providers, so your conversations are governed by Canadian law and nothing else.</p>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:28px;">Your Core Data Stays<br>in Canada.</h2>
+      <p>Most AI assistants are run by foreign companies, which can place your conversations under foreign laws no matter where the data is stored.</p>
+      <p>CoreMind made a different choice from day one. We built CoreMind's core in Canada, on Canadian-owned infrastructure, so your everyday conversations are governed by Canadian law.</p>
       <p>This is not just a privacy feature. For Canadian businesses, healthcare providers, legal professionals, and government organizations, it is a compliance requirement.</p>
     </div>
     <div class="sov-right">
       <div class="sov-points">
-        <div class="sov-pt"><span class="sov-num">01</span><div><h4>Canadian-Owned Hosting</h4><p>CoreMind runs on Canadian-owned servers located in Canada. Not AWS, not Azure, not Google Cloud.</p></div></div>
-        <div class="sov-pt"><span class="sov-num">02</span><div><h4>Self-Hosted AI Models</h4><p>Our core language models, embeddings, and voice processing all run on our own servers. Your conversations are never sent to American AI providers.</p></div></div>
-        <div class="sov-pt"><span class="sov-num">03</span><div><h4>No CLOUD Act Exposure</h4><p>As a Canadian company on Canadian infrastructure, CoreMind is not subject to US government data requests under the CLOUD Act.</p></div></div>
-        <div class="sov-pt"><span class="sov-num">04</span><div><h4>Built for Regulated Industries</h4><p>Ideal for Canadian healthcare, legal, financial, and government organizations that need AI assistance without cross-border data exposure.</p></div></div>
+        <div class="sov-pt"><span class="sov-num">01</span><div><h4>Canadian-Owned Hosting</h4><p>CoreMind's core runs on Canadian-owned servers located in Canada, chosen so your data stays under Canadian jurisdiction.</p></div></div>
+        <div class="sov-pt"><span class="sov-num">02</span><div><h4>Our Own AI Models</h4><p>Our core language models, embeddings, and voice processing run on our own servers. Your everyday conversations are not sent to outside AI providers.</p></div></div>
+        <div class="sov-pt"><span class="sov-num">03</span><div><h4>Built for Regulated Industries</h4><p>Designed for Canadian healthcare, legal, financial, and public sector teams that need AI assistance without cross-border exposure.</p></div></div>
+        <div class="sov-pt"><span class="sov-num">04</span><div><h4>Clear About the Exceptions</h4><p>A few optional features, such as live web search, image generation, and video generation, rely on trusted external services. They are disclosed in our <a href="/privacy-policy">Privacy Policy</a>, and you choose when to use them.</p></div></div>
       </div>
     </div>
   </div>
@@ -524,17 +686,17 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 <section id="research" class="s research-wrap reveal">
   <div class="research-header">
     <div class="research-header-left">
-      <span class="s-label">🔬 CoreMind Labs</span>
+      <span class="s-label">CoreMind Labs</span>
       <h2>Advancing AI Research</h2>
       <p>At CoreMind Labs, we push the boundaries of what is possible with large language models. Our research focuses on AI that is not just powerful, but safe, efficient, and aligned with human values.</p>
     </div>
     <a href="/coremind-research" class="btn-outline" style="flex-shrink:0;">Explore Research →</a>
   </div>
   <div class="research-grid">
-    <div class="research-cell"><span class="r-cell-icon">🎯</span><h3>Alignment and Safety</h3><p>We invest heavily in ensuring our models behave as intended — helpful, harmless, and honest across diverse use cases and user populations.</p></div>
-    <div class="research-cell"><span class="r-cell-icon">🧠</span><h3>Reasoning and Logic</h3><p>CoreMind Labs advances chain-of-thought reasoning techniques that enable models to break down complex problems step by step and show their work transparently.</p></div>
-    <div class="research-cell"><span class="r-cell-icon">🌐</span><h3>Multimodal Intelligence</h3><p>We build systems that seamlessly understand and generate text, images, audio, and video — engaging with the full richness of human communication.</p></div>
-    <div class="research-cell"><span class="r-cell-icon">🔒</span><h3>Privacy-Preserving AI</h3><p>We develop methods to deliver powerful AI capabilities while minimizing data exposure. Your conversations help you accomplish tasks, not train models without your knowledge.</p></div>
+    <div class="research-cell"><svg class="icon r-cell-icon"><use href="#i-target"/></svg><h3>Alignment and Safety</h3><p>We invest heavily in ensuring our models behave as intended: helpful, harmless, and honest across diverse use cases and user populations.</p></div>
+    <div class="research-cell"><svg class="icon r-cell-icon"><use href="#i-steps"/></svg><h3>Reasoning and Logic</h3><p>CoreMind Labs advances chain-of-thought reasoning techniques that enable models to break down complex problems step by step and show their work transparently.</p></div>
+    <div class="research-cell"><svg class="icon r-cell-icon"><use href="#i-globe"/></svg><h3>Multimodal Intelligence</h3><p>We build systems that seamlessly understand and generate text, images, audio, and video, engaging with the full richness of human communication.</p></div>
+    <div class="research-cell"><svg class="icon r-cell-icon"><use href="#i-lock"/></svg><h3>Privacy-Preserving AI</h3><p>We develop methods to deliver powerful AI capabilities while minimizing data exposure. Your conversations help you accomplish tasks, not train models without your knowledge.</p></div>
   </div>
 </section>
 
@@ -545,13 +707,13 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <span class="s-label">Developer API</span>
       <h2 style="font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:20px;">Build on CoreMind</h2>
       <p>Integrate CoreMind's intelligence directly into your applications. A clean, well-documented RESTful API gives you access to all three models with streaming, file uploads, memory, and usage analytics built in.</p>
-      <p>Whether you are building a productivity tool, a customer support system, or a custom AI experience, the CoreMind API gives you the same Canadian-sovereign infrastructure that powers our own platform.</p>
+      <p>Whether you are building a productivity tool, a customer support system, or a custom AI experience, the CoreMind API gives you the same Canadian infrastructure that powers our own platform.</p>
       <div class="api-feat-list">
         <div class="api-feat">RESTful API with streaming support</div>
         <div class="api-feat">Access to all three CoreMind models</div>
         <div class="api-feat">File and image upload support</div>
         <div class="api-feat">Usage analytics and rate limit dashboard</div>
-        <div class="api-feat">100% Canadian-sovereign infrastructure</div>
+        <div class="api-feat">Runs on Canadian-owned infrastructure</div>
         <div class="api-feat">Tiered pricing for every scale</div>
       </div>
       <a href="https://coremindx.ai/developer" class="btn-solid">Get API Access →</a>
@@ -563,35 +725,35 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
         <button class="code-tab" onclick="switchTab('curl',this)">cURL</button>
       </div>
       <div class="code-block active" id="tab-js"><span class="c">// Send a message to CoreMind</span>
-<span class="k">const</span> response = <span class="k">await</span> <span class="f">fetch</span>(<span class="s">'https://api.coremindx.ai/v1/chat/completions'</span>, {
-  method: <span class="s">'POST'</span>,
+<span class="k">const</span> response = <span class="k">await</span> <span class="f">fetch</span>(<span class="str">'https://api.coremindx.ai/v1/chat/completions'</span>, {
+  method: <span class="str">'POST'</span>,
   headers: {
-    <span class="s">'Authorization'</span>: <span class="s">`Bearer <span class="n">${API_KEY}</span>`</span>,
-    <span class="s">'Content-Type'</span>: <span class="s">'application/json'</span>
+    <span class="str">'Authorization'</span>: <span class="str">`Bearer <span class="n">${API_KEY}</span>`</span>,
+    <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
   },
   body: <span class="n">JSON</span>.<span class="f">stringify</span>({
-    model: <span class="s">'cm-1o'</span>,
-    messages: [{ role: <span class="s">'user'</span>, content: <span class="s">'Hello!'</span> }],
+    model: <span class="str">'cm-1o'</span>,
+    messages: [{ role: <span class="str">'user'</span>, content: <span class="str">'Hello!'</span> }],
     stream: <span class="k">true</span>
   })
 });</div>
       <div class="code-block" id="tab-python"><span class="k">import</span> requests
 
 response = requests.<span class="f">post</span>(
-  <span class="s">'https://api.coremindx.ai/v1/chat/completions'</span>,
-  headers={<span class="s">'Authorization'</span>: <span class="s">f'Bearer {API_KEY}'</span>},
+  <span class="str">'https://api.coremindx.ai/v1/chat/completions'</span>,
+  headers={<span class="str">'Authorization'</span>: <span class="str">f'Bearer {API_KEY}'</span>},
   json={
-    <span class="s">'model'</span>: <span class="s">'cm-1o'</span>,
-    <span class="s">'messages'</span>: [
-      {<span class="s">'role'</span>: <span class="s">'user'</span>, <span class="s">'content'</span>: <span class="s">'Hello!'</span>}
+    <span class="str">'model'</span>: <span class="str">'cm-1o'</span>,
+    <span class="str">'messages'</span>: [
+      {<span class="str">'role'</span>: <span class="str">'user'</span>, <span class="str">'content'</span>: <span class="str">'Hello!'</span>}
     ],
-    <span class="s">'stream'</span>: <span class="k">True</span>
+    <span class="str">'stream'</span>: <span class="k">True</span>
   }
 )</div>
       <div class="code-block" id="tab-curl"><span class="f">curl</span> https://api.coremindx.ai/v1/chat/completions \
-  -H <span class="s">"Authorization: Bearer $API_KEY"</span> \
-  -H <span class="s">"Content-Type: application/json"</span> \
-  -d <span class="s">'{
+  -H <span class="str">"Authorization: Bearer $API_KEY"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{
     "model": "cm-1o",
     "messages": [
       {"role": "user", "content": "Hello!"}
@@ -602,36 +764,23 @@ response = requests.<span class="f">post</span>(
   </div>
 </section>
 
-<!-- ══ VIDEO ══ -->
-<section class="s video-wrap reveal">
-  <div class="video-inner">
-    <span class="s-label">Product Demo</span>
-    <h2>See CoreMind in Action</h2>
-    <p>Watch how CoreMind transforms the way you work, think, research, and create across every kind of task.</p>
-    <div class="video-placeholder">
-      <div class="play-circle">▶</div>
-      <span>Demo Video Coming Soon</span>
-    </div>
-  </div>
-</section>
-
 <!-- ══ CTA ══ -->
 <section class="s cta-wrap reveal">
   <div class="cta-inner">
     <div class="cta-left">
       <span class="s-label">Get Started</span>
       <h2>Experience the future of AI in Canada.</h2>
-      <p>Join people and organizations using CoreMind to think deeper, create faster, and accomplish more — without ever giving up their data sovereignty.</p>
+      <p>Join people and organizations using CoreMind to think deeper, create faster, and accomplish more, while keeping their core data in Canada.</p>
       <div class="cta-actions">
         <a href="https://coremindx.ai" target="_blank" class="btn-solid">Start Using CoreMind Free →</a>
         <a href="#api" class="btn-outline">Developer API</a>
       </div>
     </div>
     <div class="cta-right">
-      <div class="cta-check"><span class="ck-icon">🇨🇦</span><div><strong>100% Canadian Infrastructure</strong><p>Your data runs on Canadian-owned servers located in Canada — never on AWS, Azure, or Google Cloud.</p></div></div>
-      <div class="cta-check"><span class="ck-icon">🔒</span><div><strong>No CLOUD Act Exposure</strong><p>As a Canadian company, your conversations are never subject to US government data requests.</p></div></div>
-      <div class="cta-check"><span class="ck-icon">🧠</span><div><strong>Three AI Models</strong><p>CM-1 for speed, CM-1o for balance, CM-o1 for deep multi-step reasoning on hard problems.</p></div></div>
-      <div class="cta-check"><span class="ck-icon">💻</span><div><strong>Full Developer API</strong><p>Build your own AI-powered products on the same sovereign infrastructure that powers CoreMind.</p></div></div>
+      <div class="cta-check"><svg class="icon ck-icon"><use href="#i-pin"/></svg><div><strong>Canadian Infrastructure</strong><p>CoreMind's own models and your conversations run on Canadian-owned servers located in Canada.</p></div></div>
+      <div class="cta-check"><svg class="icon ck-icon"><use href="#i-scale"/></svg><div><strong>Governed by Canadian Law</strong><p>Built and operated by a Canadian company, under Canadian privacy law.</p></div></div>
+      <div class="cta-check"><svg class="icon ck-icon"><use href="#i-layers"/></svg><div><strong>Three AI Models</strong><p>CM-1 for speed, CM-1o for balance, CM-o1 for deep multi-step reasoning on hard problems.</p></div></div>
+      <div class="cta-check"><svg class="icon ck-icon"><use href="#i-code"/></svg><div><strong>Full Developer API</strong><p>Build your own AI-powered products on the same Canadian infrastructure that powers CoreMind.</p></div></div>
     </div>
   </div>
 </section>
@@ -641,7 +790,7 @@ response = requests.<span class="f">post</span>(
   <div class="footer-grid">
     <div class="fb">
       <h3>CoreMind</h3>
-      <p>Your privacy-first AI companion. Think deeper, create faster, and accomplish more with 100% Canadian infrastructure and data sovereignty you can actually count on.</p>
+      <p>Your privacy-first AI companion. Think deeper, create faster, and accomplish more, with your core data kept in Canada.</p>
       <address>Fortress Technologies Hub Inc.<br>Suite 2500, 1 Dundas Street West<br>Toronto, Ontario M5G 1Z3, Canada</address>
       <div class="f-socs">
         <a href="https://linkedin.com/company/fortress-technologies-hub" target="_blank" class="f-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -677,6 +826,174 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);obs.unobserve(e.target);}});
 },{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* Animated CoreMind demos */
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const wait=ms=>new Promise(r=>setTimeout(r,reduceMotion?0:ms));
+const scenes=[
+  {
+    product:'Voice',model:'CM-1 · Voice',title:'Just talk to it',
+    desc:'Speak naturally and hear CoreMind answer out loud, with live captions.',
+    user:[{t:'wave'},{t:'text',x:'I have twenty minutes before my interview. Quiz me on the questions I am most likely to get.'}],
+    thinking:['Listening','Choosing common interview questions'],
+    answer:[
+      {t:'speak',x:'Sure. Let\'s start with a classic. Tell me about a project that went wrong and what you did about it. Take your time, I am listening.'},
+      {t:'chip',x:'Speaking aloud · captions on'}
+    ]
+  },
+  {
+    product:'Vision',model:'CM-1o · Vision',title:'Show it what you see',
+    desc:'Share a screenshot or photo and get a clear explanation.',
+    user:[{t:'shot',x:"TypeError: Cannot read properties of undefined (reading 'map')\n    at ProductList (ProductList.jsx:24:18)"},{t:'text',x:'My app crashed after the update. What does this mean?'}],
+    thinking:['Reading the screenshot','Tracing the error to its cause'],
+    answer:[
+      {t:'p',x:'Your component is trying to loop over products before they have loaded. On line 24, products is still undefined during the first render.'},
+      {t:'p',x:'Give it a safe default and the crash goes away:'},
+      {t:'code',x:'const products = data?.products ?? [];'},
+      {t:'p',x:'Want me to check the rest of the file for the same pattern?'}
+    ]
+  },
+  {
+    product:'Documents',model:'CM-1o',title:'From idea to document',
+    desc:'Describe what you need and get a structured, ready-to-use document.',
+    user:[{t:'text',x:'Turn this into a one-page launch plan: we open our second coffee shop in Hamilton on March 1, and the budget is $15,000.'}],
+    thinking:['Outlining a launch timeline','Splitting the budget'],
+    answer:[
+      {t:'p',x:'Here is your one-page plan:'},
+      {t:'doc',title:'Launch Plan: Second Location, Hamilton',meta:'Opening March 1 · Budget $15,000',rows:[
+        ['Weeks 1 to 2','Permits, signage, and hiring two baristas'],
+        ['Weeks 3 to 4','Soft opening for neighbours and local press'],
+        ['Budget','Fit-out $8,000 · Marketing $4,000 · Staffing buffer $3,000'],
+        ['Success check','150 customers a day by week six']
+      ]},
+      {t:'p',x:'Want it as a downloadable document, or should I adjust anything first?'}
+    ]
+  },
+  {
+    product:'Reasoning',model:'CM-o1 · Reasoning',title:'Watch it reason',
+    desc:'For hard problems, CM-o1 shows every step so you can check its work.',
+    user:[{t:'text',x:'A train leaves Toronto at 9:00 at 120 km/h. Another leaves Ottawa at 9:30 at 150 km/h, heading toward Toronto. The cities are 450 km apart. When do they meet?'}],
+    thinking:['Head start: 30 min at 120 km/h = 60 km','Remaining gap: 450 - 60 = 390 km','Closing speed: 120 + 150 = 270 km/h','Time to meet: 390 ÷ 270 ≈ 1 h 27 min after 9:30'],
+    answer:[
+      {t:'p',x:'They meet at about 10:57, roughly 233 km from Toronto.'},
+      {t:'p',x:'Every step is shown above, so you can verify each one yourself.'}
+    ]
+  },
+  {
+    product:'Web research',model:'CM-1o · Live web search',title:'Look it up live',
+    desc:'When you need current information, CoreMind searches the web and cites its sources.',
+    user:[{t:'text',x:'Find recent reviews of standing desks under $500 and tell me what people complain about most.'}],
+    thinking:['Searching the web','Reading 6 reviews','Grouping common complaints'],
+    answer:[
+      {t:'chip',x:'Live web search · 6 sources'},
+      {t:'p',x:'Across the reviews I read, three complaints come up again and again:'},
+      {t:'ul',items:[
+        ['Wobble at full height: ','most common on single-motor desks, especially while typing.'],
+        ['Motor noise: ','several reviewers found it louder than expected in quiet rooms.'],
+        ['Assembly time: ','often over an hour, and two-person setup is recommended.']
+      ]},
+      {t:'p',x:'Each point links to the review it came from. Want me to compare two specific models?'}
+    ]
+  }
+];
+
+(function(){
+  const tabsEl=document.getElementById('demoTabs'),body=document.getElementById('demoBody');
+  const nameEl=document.getElementById('dwName'),badgeEl=document.getElementById('dwBadge');
+  if(!tabsEl||!body)return;
+  let run=0,auto=true,started=false;
+
+  scenes.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.className='demo-tab';b.setAttribute('role','tab');b.setAttribute('aria-selected','false');
+    b.innerHTML='<span class="dt-product"></span><span class="dt-title"></span><span class="dt-desc"></span><span class="dt-bar"></span>';
+    b.querySelector('.dt-product').textContent=s.product;
+    b.querySelector('.dt-title').textContent=s.title;
+    b.querySelector('.dt-desc').textContent=s.desc;
+    b.addEventListener('click',()=>{auto=false;play(i);});
+    tabsEl.appendChild(b);
+  });
+
+  const mk=(tag,cls)=>{const e=document.createElement(tag);if(cls)e.className=cls;return e;};
+  const scroll=()=>{body.scrollTop=body.scrollHeight;};
+  const bars=(n,cls)=>{const w=mk('div',cls);for(let k=0;k<n;k++){const i=mk('i');i.style.animationDelay=(k*0.07%0.9).toFixed(2)+'s';w.appendChild(i);}return w;};
+  async function type(el,text,speed,id){
+    if(reduceMotion){el.textContent+=text;return;}
+    for(const ch of text){if(id!==run)return;el.textContent+=ch;await wait(speed);if(el.textContent.length%24===0)scroll();}
+  }
+
+  async function play(i){
+    const id=++run,s=scenes[i];
+    [...tabsEl.children].forEach((t,n)=>t.setAttribute('aria-selected',n===i?'true':'false'));
+    nameEl.textContent='CoreMind';badgeEl.textContent=s.model;
+    body.innerHTML='';
+
+    const u=mk('div','msg user');body.appendChild(u);
+    let wave=null;
+    for(const part of s.user){
+      if(id!==run)return;
+      if(part.t==='wave'){wave=bars(28,'wave');u.appendChild(wave);await wait(900);}
+      else if(part.t==='shot'){const sh=mk('div','shot');sh.appendChild(bars(3,'shot-bar'));sh.querySelector('.shot-bar').querySelectorAll('i').forEach(x=>x.style.animation='none');const pre=mk('pre');pre.textContent=part.x;sh.appendChild(pre);u.appendChild(sh);await wait(500);}
+      else if(part.t==='text'){const tx=mk('div');u.appendChild(tx);await type(tx,part.x,20,id);}
+    }
+    if(wave)wave.classList.add('stopped');
+    if(id!==run)return;
+    await wait(450);
+
+    const th=mk('div','thinking');const tt=mk('div','th-title');tt.textContent='Thinking';th.appendChild(tt);body.appendChild(th);scroll();
+    for(const step of s.thinking){
+      if(id!==run)return;
+      const st=mk('div','th-step');st.innerHTML='<i></i>';st.append(step);th.appendChild(st);scroll();
+      await wait(950);st.classList.add('done');
+    }
+    if(id!==run)return;
+    tt.textContent='Done';
+    await wait(300);
+
+    const a=mk('div','msg ai');const h=mk('div','ai-head');h.innerHTML='<span class="ai-dot"></span>';h.append('CoreMind');a.appendChild(h);body.appendChild(a);
+    for(const blk of s.answer){
+      if(id!==run)return;
+      if(blk.t==='p'){const p=mk('p');a.appendChild(p);await type(p,blk.x,9,id);}
+      else if(blk.t==='chip'){const c=mk('div','chip');c.textContent=blk.x;a.appendChild(c);await wait(400);}
+      else if(blk.t==='code'){const c=mk('div','codeblk');a.appendChild(c);await type(c,blk.x,12,id);}
+      else if(blk.t==='speak'){
+        const sp=mk('div','speak');sp.appendChild(bars(5,'sbars'));const p=mk('p');sp.appendChild(p);a.appendChild(sp);
+        await type(p,blk.x,28,id);sp.classList.add('done');
+      }
+      else if(blk.t==='doc'){
+        const d=mk('div','doccard');const h5=mk('h5');h5.textContent=blk.title;d.appendChild(h5);
+        const m=mk('div','dc-meta');m.textContent=blk.meta;d.appendChild(m);a.appendChild(d);scroll();
+        for(const [k,v] of blk.rows){
+          if(id!==run)return;
+          const r=mk('div','dc-row');const b=mk('b');b.textContent=k;const sp=mk('span');r.appendChild(b);r.appendChild(sp);d.appendChild(r);
+          await type(sp,v,8,id);scroll();
+        }
+      }
+      else if(blk.t==='ul'){
+        const ul=mk('ul');a.appendChild(ul);
+        for(const [lead,rest] of blk.items){
+          if(id!==run)return;
+          const li=mk('li');const b=mk('b');li.appendChild(b);const sp=mk('span');li.appendChild(sp);ul.appendChild(li);
+          await type(b,lead,9,id);await type(sp,rest,9,id);
+        }
+      }
+      scroll();await wait(200);
+    }
+    if(id===run&&auto){
+      const bar=tabsEl.children[i].querySelector('.dt-bar');
+      if(!reduceMotion){bar.style.transition='none';bar.style.width='0';void bar.offsetWidth;bar.style.transition='width 5s linear';bar.style.width='100%';}
+      await wait(5000);
+      bar.style.transition='none';bar.style.width='0';
+      if(id===run&&auto)play((i+1)%scenes.length);
+    }
+  }
+
+  const start=new IntersectionObserver(es=>{
+    if(es[0].isIntersecting&&!started){started=true;play(0);start.disconnect();}
+  },{threshold:0.3});
+  start.observe(body);
+})();
+
 </script>
 </body>
 </html>

@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Research | CoreMind Labs – Fortress Technologies Hub</title>
+<title>Research | CoreMind Labs | Fortress Technologies Hub</title>
 <meta name="description" content="CoreMind Labs conducts original research to build AI systems that are safe, capable, and aligned with human values. Explore our research areas, philosophy, and upcoming publications.">
 <meta name="keywords" content="AI research, machine learning, AI safety, language models, CoreMind Labs, Canadian AI research, alignment, reasoning, multimodal AI, privacy-preserving AI">
 <meta name="author" content="Fortress Technologies Hub Inc.">
 <meta property="og:title" content="Research | CoreMind Labs">
 <meta property="og:description" content="Original AI research focused on safety, alignment, reasoning, and privacy-preserving intelligence. Built in Canada by Fortress Technologies Hub.">
 <meta property="og:image" content="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png">
-<meta property="og:url" content="https://coremindx.ai/research">
+<meta property="og:url" content="https://fortresstechnologieshub.com/coremind-research">
+<link rel="canonical" href="https://fortresstechnologieshub.com/coremind-research">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892653/Core-Mind-logo_b1qwjz.png">
+<meta name="theme-color" content="#050912">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@fortresstechhub">
@@ -21,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script defer src="https://analytics.coremindx.ai/script.js" data-website-id="22276c35-cfa6-4c15-a811-74e71f872617"></script>
+<script>document.documentElement.classList.add('js');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -34,7 +38,10 @@
   --blue-hi:#2563f0;
   --ice:    #e8f0ff;
   --ice-dim:#8ba4d8;
-  --ice-mute:#3d5280;
+  --ice-mute:#6b80ad;
+  --ice-faint:#3d5280;
+  --blue-soft:#7aa2ff;
+  --green:#22c55e;
   --white:  #ffffff;
   --mono:   'JetBrains Mono',monospace;
 }
@@ -79,10 +86,10 @@ nav a.active{color:var(--white);background:rgba(20,71,230,.15);}
 
 /* ── SHARED ── */
 .s{position:relative;z-index:1;}
-.s-label{font-family:var(--mono);font-size:.65rem;color:var(--blue);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
+.s-label{font-family:var(--mono);font-size:.68rem;color:var(--blue-soft);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
 
 /* ── HERO ── */
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px 80px;border-bottom:1px solid var(--rule);}
+.hero{position:relative;z-index:1;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px 80px;border-bottom:1px solid var(--rule);}
 .hero-deco{position:absolute;right:-20px;top:50%;transform:translateY(-55%);font-family:var(--mono);font-size:28vw;font-weight:700;color:rgba(20,71,230,0.035);line-height:1;pointer-events:none;user-select:none;letter-spacing:-3vw;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;color:var(--ice-mute);letter-spacing:2px;text-transform:uppercase;margin-bottom:32px;flex-wrap:wrap;}
 .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--blue);flex-shrink:0;}
@@ -112,7 +119,7 @@ nav a.active{color:var(--white);background:rgba(20,71,230,.15);}
 .area-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
 .area-cell:hover::before{transform:scaleX(1);}
 .area-num{font-family:var(--mono);font-size:.63rem;color:var(--blue);letter-spacing:1px;margin-bottom:18px;display:block;}
-.area-icon{font-size:1.4rem;margin-bottom:14px;display:block;}
+.area-icon{width:24px;height:24px;margin-bottom:16px;display:block;color:var(--blue-soft);}
 .area-cell h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:10px;}
 .area-cell p{color:var(--ice-mute);font-size:.83rem;line-height:1.7;margin:0;}
 
@@ -156,7 +163,7 @@ nav a.active{color:var(--white);background:rgba(20,71,230,.15);}
 .filter-tab{background:none;border:1px solid var(--rule-2);color:var(--ice-mute);font-family:var(--mono);font-size:.63rem;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:4px;cursor:pointer;transition:all .2s;}
 .filter-tab:hover,.filter-tab.active{border-color:rgba(20,71,230,.4);color:var(--blue);background:rgba(20,71,230,.08);}
 .coming-soon{border:1px solid var(--rule);padding:80px 56px;text-align:center;}
-.cs-icon{font-size:2.5rem;margin-bottom:20px;display:block;opacity:.4;}
+.cs-icon{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;color:var(--blue-soft);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:18px;}
 .coming-soon h3{font-size:1.5rem;font-weight:800;color:var(--white);letter-spacing:-.3px;margin-bottom:12px;}
 .coming-soon p{color:var(--ice-dim);font-size:.95rem;max-width:520px;margin:0 auto 36px;line-height:1.8;}
 .notify-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
@@ -191,7 +198,7 @@ nav a.active{color:var(--white);background:rgba(20,71,230,.15);}
 .commit-cell:hover{background:rgba(20,71,230,.04);}
 .commit-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
 .commit-cell:hover::before{transform:scaleX(1);}
-.commit-icon{font-size:1.4rem;margin-bottom:16px;display:block;}
+.commit-icon{width:24px;height:24px;margin-bottom:16px;display:block;color:var(--blue-soft);}
 .commit-cell h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:10px;}
 .commit-cell p{color:var(--ice-mute);font-size:.83rem;line-height:1.7;margin:0;}
 
@@ -232,8 +239,8 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 .legal a:hover{color:var(--white);}
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
-.reveal.in{opacity:1;transform:translateY(0);}
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.js .reveal.in{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -299,12 +306,36 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   .pubs-top{flex-direction:column;}
   .legal{flex-wrap:wrap;justify-content:center;}
 }
+
+.icon{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+[id]{scroll-margin-top:84px;}
+.live-pip{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pip 2s ease-in-out infinite;display:inline-block;}
+@keyframes pip{0%,100%{opacity:1}50%{opacity:.3}}
+.paper-title{font-size:.95rem;color:var(--ice);font-weight:600;margin-bottom:6px;}
+.notify-msg{margin-top:16px;font-size:.9rem;color:var(--ice-dim);min-height:1.4em;}
+.notify-msg.ok{color:var(--green);}
+.notify-form button:disabled{opacity:.6;cursor:default;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  .js .reveal{opacity:1;transform:none;}
+}
 </style>
 </head>
 <body>
 <div class="grid-bg"></div>
 <div class="glow glow-a"></div>
 <div class="glow glow-b"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-steps" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><path d="M8 6h4a4 4 0 0 1 4 4M16 14a4 4 0 0 1-4 4H8"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3 3 0 0 1 0 6"/><path d="M18 14.5c1.9.8 3 2.8 3 5.5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+</svg>
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -348,25 +379,25 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 <!-- ══ HERO ══ -->
 <section class="hero s">
   <div class="hero-deco">AI</div>
-  <div class="hero-eyebrow">🔬 CoreMind Labs &nbsp;·&nbsp; Research</div>
+  <div class="hero-eyebrow">CoreMind Labs &nbsp;·&nbsp; Research</div>
   <h1>Research at the<br><span class="blue-word">frontier</span><br>of <em>safe AI.</em></h1>
-  <p class="hero-sub">We conduct original research to build AI systems that are safe, capable, and genuinely aligned with human values. Our work spans alignment, reasoning, multimodal intelligence, and privacy-preserving methods — all driven by a commitment to making AI that people can actually trust.</p>
+  <p class="hero-sub">We conduct original research to build AI systems that are safe, capable, and genuinely aligned with human values. Our work spans alignment, reasoning, multimodal intelligence, and privacy-preserving methods, all driven by a commitment to making AI that people can actually trust.</p>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="stat-num">6</div>
-      <div class="stat-lbl">Active Research Areas</div>
+      <div class="stat-lbl">Research Areas</div>
     </div>
     <div class="hero-stat">
       <div class="stat-num">3</div>
-      <div class="stat-lbl">AI Models in Production</div>
+      <div class="stat-lbl">Models in Production</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-num">100%</div>
-      <div class="stat-lbl">Canadian Infrastructure</div>
+      <div class="stat-num">CA</div>
+      <div class="stat-lbl">Core Infrastructure in Canada</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-num">2026</div>
-      <div class="stat-lbl">First Publications Expected</div>
+      <div class="stat-num">Dec 2026</div>
+      <div class="stat-lbl">First Publication Expected</div>
     </div>
   </div>
   <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
@@ -377,15 +408,15 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="areas-header">
     <span class="s-label">Research Areas</span>
     <h2 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:0;">What We Work On</h2>
-    <p>Six active research directions — each addressing a critical challenge in making AI systems that humans can genuinely rely on.</p>
+    <p>Six research directions, each addressing a critical challenge in making AI systems that humans can genuinely rely on.</p>
   </div>
   <div class="areas-grid">
-    <div class="area-cell"><span class="area-num">01</span><span class="area-icon">🎯</span><h3>Alignment and Safety</h3><p>We work to understand the risks of AI systems and develop techniques to ensure our models remain helpful, honest, and harmless — especially as models become more capable over time.</p></div>
-    <div class="area-cell"><span class="area-num">02</span><span class="area-icon">🧠</span><h3>Reasoning and Intelligence</h3><p>We research methods to improve how AI systems reason through complex, multi-step problems. This includes chain-of-thought processes and structured problem decomposition that lets models show their work transparently.</p></div>
-    <div class="area-cell"><span class="area-num">03</span><span class="area-icon">🌐</span><h3>Multimodal Systems</h3><p>We develop AI that seamlessly understands and generates across multiple modalities including text, images, audio, and video — building unified systems that perceive the world in a richer, more human-like way.</p></div>
-    <div class="area-cell"><span class="area-num">04</span><span class="area-icon">🔒</span><h3>Privacy-Preserving AI</h3><p>We pioneer techniques that deliver powerful AI capabilities while protecting user privacy at every level — including how systems learn and improve over time without storing or exploiting sensitive user data.</p></div>
-    <div class="area-cell"><span class="area-num">05</span><span class="area-icon">⚡</span><h3>Efficient Inference</h3><p>Speed and accessibility matter for real-world AI. We research optimization techniques that allow our models to respond quickly on available hardware without sacrificing capability or quality.</p></div>
-    <div class="area-cell"><span class="area-num">06</span><span class="area-icon">🤝</span><h3>Human and AI Collaboration</h3><p>We study how AI can best augment human capabilities rather than replace human judgment — building systems that enhance creativity, accelerate research, and support better decision-making.</p></div>
+    <div class="area-cell" id="alignment"><span class="area-num">01</span><svg class="icon area-icon"><use href="#i-target"/></svg><h3>Alignment and Safety</h3><p>We work to understand the risks of AI systems and develop techniques to ensure our models remain helpful, honest, and harmless, especially as models become more capable over time.</p></div>
+    <div class="area-cell" id="reasoning"><span class="area-num">02</span><svg class="icon area-icon"><use href="#i-steps"/></svg><h3>Reasoning and Intelligence</h3><p>We research methods to improve how AI systems reason through complex, multi-step problems. This includes chain-of-thought processes and structured problem decomposition that lets models show their work transparently.</p></div>
+    <div class="area-cell" id="multimodal"><span class="area-num">03</span><svg class="icon area-icon"><use href="#i-globe"/></svg><h3>Multimodal Systems</h3><p>We develop AI that seamlessly understands and generates across multiple modalities including text, images, audio, and video, building unified systems that perceive the world in a richer, more human-like way.</p></div>
+    <div class="area-cell" id="privacy"><span class="area-num">04</span><svg class="icon area-icon"><use href="#i-lock"/></svg><h3>Privacy-Preserving AI</h3><p>We pioneer techniques that deliver powerful AI capabilities while protecting user privacy at every level, including how systems learn and improve over time without storing or exploiting sensitive user data.</p></div>
+    <div class="area-cell"><span class="area-num">05</span><svg class="icon area-icon"><use href="#i-bolt"/></svg><h3>Efficient Inference</h3><p>Speed and accessibility matter for real-world AI. We research optimization techniques that allow our models to respond quickly on available hardware without sacrificing capability or quality.</p></div>
+    <div class="area-cell"><span class="area-num">06</span><svg class="icon area-icon"><use href="#i-users"/></svg><h3>Human and AI Collaboration</h3><p>We study how AI can best augment human capabilities rather than replace human judgment, building systems that enhance creativity, accelerate research, and support better decision-making.</p></div>
   </div>
 </section>
 
@@ -464,8 +495,8 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
         <span class="feat-cat">Alignment and Safety</span>
         <h3>Building AI Systems That Understand Intent, Not Just Instructions</h3>
         <p>Our approach to alignment focuses on creating AI that deeply understands user intent and broader context rather than following instructions literally. We are developing systems that grasp the underlying goals behind a request and respond appropriately, even when prompts are ambiguous, incomplete, or underspecified.</p>
-        <p>This work directly informs how all three CoreMind models reason about what users actually need — producing outputs that serve the real goal, not just the surface request.</p>
-        <div class="feat-meta">CoreMind Labs Research Team, Fortress Technologies Hub · Publication expected 2026</div>
+        <p>This work directly informs how all three CoreMind models reason about what users actually need, producing outputs that serve the real goal, not just the surface request.</p>
+        <div class="feat-meta">Paper in progress: Intent-Aware Reasoning in Large Language Models<br>CoreMind Labs, Fortress Technologies Hub · First publication expected December 2026</div>
       </div>
     </div>
   </div>
@@ -488,7 +519,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <div class="persp-card">
       <span class="persp-tag">Privacy</span>
       <h3>Canadian Data Sovereignty as a First-Class AI Design Principle</h3>
-      <p>Most AI research treats privacy as a constraint to work around. We treat it as a design goal to optimize for. Building CoreMind entirely on Canadian infrastructure was not a business decision. It was a research commitment. This perspective shapes every architectural choice we make, from model training to inference to memory storage.</p>
+      <p>Most AI research treats privacy as a constraint to work around. We treat it as a design goal to optimize for. Building CoreMind's core on Canadian infrastructure was not just a business decision. It was a research commitment. This perspective shapes every architectural choice we make, from model training to inference to memory storage.</p>
       <span class="persp-meta">CoreMind Labs · 2026</span>
     </div>
     <div class="persp-card">
@@ -511,22 +542,19 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="pubs-inner">
     <div class="pubs-top">
       <h2>Publications</h2>
-      <div class="filter-tabs">
-        <button class="filter-tab active" onclick="setFilter(this)">All</button>
-        <button class="filter-tab" onclick="setFilter(this)">Alignment</button>
-        <button class="filter-tab" onclick="setFilter(this)">Reasoning</button>
-        <button class="filter-tab" onclick="setFilter(this)">Multimodal</button>
-        <button class="filter-tab" onclick="setFilter(this)">Privacy</button>
-      </div>
     </div>
     <div class="coming-soon">
-      <span class="cs-icon">📋</span>
-      <h3>Publications Coming Soon</h3>
-      <p>Our research team is actively working on several papers covering AI safety, transparent reasoning, and privacy-preserving methods. We plan to share our first formal publications with the broader research community later in 2026. Enter your email below to be notified when we publish.</p>
-      <div class="notify-form">
-        <input type="email" placeholder="your@email.com" id="notifyEmail">
-        <button onclick="handleNotify()">Notify Me</button>
-      </div>
+      <span class="cs-icon"><span class="live-pip"></span>In progress</span>
+      <h3>First publication: December 2026</h3>
+      <p class="paper-title">Intent-Aware Reasoning in Large Language Models</p>
+      <p>Our first paper studies how language models can reason about the goal, audience, and context behind a request before they answer. We plan to share it with the research community in December 2026. Leave your email and we will let you know the day it is published.</p>
+      <form class="notify-form" id="notifyForm" name="research-notify" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="research-notify">
+        <label for="notifyEmail" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Email address</label>
+        <input type="email" name="email" id="notifyEmail" placeholder="your@email.com" required>
+        <button type="submit">Notify Me</button>
+      </form>
+      <p class="notify-msg" id="notifyMsg" role="status" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -539,7 +567,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <h2>How We Approach Research</h2>
       <p>At CoreMind Labs, we believe that building powerful AI and building safe AI are not opposing goals. They are deeply intertwined. The most capable AI systems in the long run will be exactly those that humans can trust, verify, and rely on to behave consistently.</p>
       <p>We take an empirical, iterative approach to research. We build systems, study their behaviors carefully, identify where they fall short of our expectations, and refine our methods. This cycle of building and learning drives progress toward AI that genuinely benefits the people who use it.</p>
-      <p>We also believe that publishing what we learn — even when it is uncomfortable — makes the entire field better. AI safety is not a competitive advantage to be hoarded. It is a shared responsibility that every organization building AI systems owes to the people those systems affect.</p>
+      <p>We also believe that publishing what we learn, even when it is uncomfortable, makes the entire field better. AI safety is not a competitive advantage to be hoarded. It is a shared responsibility that every organization building AI systems owes to the people those systems affect.</p>
     </div>
     <div class="phil-right">
       <span class="s-label">Core Principles</span>
@@ -561,9 +589,9 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <h2>What We Stand For</h2>
   </div>
   <div class="commit-grid">
-    <div class="commit-cell"><span class="commit-icon">📚</span><h3>Open Publication</h3><p>We commit to publishing our research findings in peer-reviewed venues and sharing them freely with the research community, regardless of outcome.</p></div>
-    <div class="commit-cell"><span class="commit-icon">🇨🇦</span><h3>Canadian Sovereignty</h3><p>All research infrastructure, model training, and data processing remains on Canadian soil under Canadian jurisdiction. This is a permanent commitment, not a phase.</p></div>
-    <div class="commit-cell"><span class="commit-icon">🛡️</span><h3>Responsible Disclosure</h3><p>When our research uncovers risks or vulnerabilities in AI systems, we disclose them responsibly and work to address them before they can cause harm.</p></div>
+    <div class="commit-cell"><svg class="icon commit-icon"><use href="#i-book"/></svg><h3>Open Publication</h3><p>We commit to publishing our research findings in peer-reviewed venues and sharing them freely with the research community, regardless of outcome.</p></div>
+    <div class="commit-cell"><svg class="icon commit-icon"><use href="#i-pin"/></svg><h3>Canadian Sovereignty</h3><p>Our core models and research infrastructure run on Canadian-owned infrastructure in Canada, under Canadian jurisdiction. This is a long-term commitment, not a phase.</p></div>
+    <div class="commit-cell"><svg class="icon commit-icon"><use href="#i-shield"/></svg><h3>Responsible Disclosure</h3><p>When our research uncovers risks or vulnerabilities in AI systems, we disclose them responsibly and work to address them before they can cause harm.</p></div>
   </div>
 </section>
 
@@ -576,15 +604,14 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <p>Follow our progress, try CoreMind for free, or reach out to discuss research collaboration, publications, or partnerships with CoreMind Labs.</p>
       <div class="cta-actions">
         <a href="https://coremindx.ai" target="_blank" class="btn-solid">Try CoreMind Free →</a>
-        <a href="mailto:research@fortresstechnologieshub.com" class="btn-outline">Contact Research Team</a>
+        <a href="mailto:info@fortresstechnologieshub.com?subject=CoreMind%20Labs%20Research" class="btn-outline">Contact Our Team</a>
       </div>
     </div>
     <div class="cta-right">
-      <div class="cta-stat-row"><span>Research areas active</span><span class="csr-val">6</span></div>
-      <div class="cta-stat-row"><span>AI models in production</span><span class="csr-val">3 (CM-1, CM-1o, CM-o1)</span></div>
-      <div class="cta-stat-row"><span>Infrastructure jurisdiction</span><span class="csr-val">100% Canadian</span></div>
-      <div class="cta-stat-row"><span>CLOUD Act exposure</span><span class="csr-val">Zero</span></div>
-      <div class="cta-stat-row"><span>First publications expected</span><span class="csr-val">2026</span></div>
+      <div class="cta-stat-row"><span>Research areas</span><span class="csr-val">6</span></div>
+      <div class="cta-stat-row"><span>Models in production</span><span class="csr-val">3 (CM-1, CM-1o, CM-o1)</span></div>
+      <div class="cta-stat-row"><span>Core infrastructure</span><span class="csr-val">Canada</span></div>
+      <div class="cta-stat-row"><span>First publication expected</span><span class="csr-val">December 2026</span></div>
     </div>
   </div>
 </section>
@@ -603,7 +630,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
         <a href="https://www.facebook.com/share/1Ax6L2QNua/" target="_blank" class="f-soc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
       </div>
     </div>
-    <div class="fc"><h4>Research</h4><ul><li><a href="#alignment">Alignment and Safety</a></li><li><a href="#reasoning">Reasoning</a></li><li><a href="#multimodal">Multimodal Systems</a></li><li><a href="#privacy">Privacy-Preserving AI</a></li><li><a href="mailto:research@fortresstechnologieshub.com">Contact Research</a></li></ul></div>
+    <div class="fc"><h4>Research</h4><ul><li><a href="#alignment">Alignment and Safety</a></li><li><a href="#reasoning">Reasoning</a></li><li><a href="#multimodal">Multimodal Systems</a></li><li><a href="#privacy">Privacy-Preserving AI</a></li><li><a href="mailto:info@fortresstechnologieshub.com?subject=CoreMind%20Labs%20Research">Contact Research</a></li></ul></div>
     <div class="fc"><h4>Product</h4><ul><li><a href="/coremind">CoreMind</a></li><li><a href="/coremind#features">Features</a></li><li><a href="/coremind#models">AI Models</a></li><li><a href="/coremind#api">Developer API</a></li><li><a href="/coremind#sovereignty">Data Sovereignty</a></li></ul></div>
     <div class="fc"><h4>Company</h4><ul><li><a href="/">Fortress Technologies Hub</a></li><li><a href="/api-fortress">API Fortress</a></li><li><a href="/#about">About Us</a></li><li><a href="/#founder">Founder</a></li><li><a href="/#contact">Contact</a></li></ul></div>
   </div>
@@ -619,19 +646,20 @@ hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mob.classList.tog
 mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mob.classList.remove('open');}));
 document.addEventListener('click',e=>{if(!hbg.contains(e.target)&&!mob.contains(e.target)){hbg.classList.remove('open');mob.classList.remove('open');}});
 
-function setFilter(el){
-  document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-}
-
-function handleNotify(){
-  const email=document.getElementById('notifyEmail').value.trim();
-  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
-  const btn=document.querySelector('.notify-form button');
-  btn.textContent='You are on the list!';
-  btn.disabled=true;
-  btn.style.background='rgba(20,71,230,0.3)';
-  document.getElementById('notifyEmail').disabled=true;
+/* Research notify form (Netlify form: research-notify) */
+const nf=document.getElementById('notifyForm'),nmsg=document.getElementById('notifyMsg');
+if(nf){
+  nf.addEventListener('submit',function(e){
+    e.preventDefault();
+    const btn=nf.querySelector('button[type=submit]');
+    btn.textContent='Sending...';btn.disabled=true;
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(nf)).toString()})
+    .then(r=>{if(!r.ok)throw new Error(r.status);
+      btn.textContent='You are on the list';nf.querySelector('#notifyEmail').disabled=true;
+      nmsg.textContent='Thank you. We will email you when the paper is published.';nmsg.classList.add('ok');})
+    .catch(()=>{btn.textContent='Notify Me';btn.disabled=false;
+      nmsg.textContent='Something went wrong. Please email info@fortresstechnologieshub.com and we will add you.';});
+  });
 }
 
 const obs=new IntersectionObserver(entries=>{

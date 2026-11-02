@@ -3,24 +3,28 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>API Fortress – Enterprise API Security | Fortress Technologies Hub</title>
+<title>API Fortress | Enterprise API Security | Fortress Technologies Hub</title>
 <meta name="description" content="Enterprise-grade API security powered by AI. Protect your APIs with intelligent threat detection, real-time monitoring, zero-trust architecture, WAF, RASP, and penetration testing. Built by Fortress Technologies Hub.">
 <meta name="keywords" content="API security, enterprise API protection, WAF, RASP, zero trust, penetration testing, AI threat detection, API Fortress, Fortress Technologies Hub, Canadian cybersecurity">
 <meta name="author" content="Fortress Technologies Hub Inc.">
-<meta property="og:title" content="API Fortress – Enterprise API Security">
+<meta property="og:title" content="API Fortress: Enterprise API Security">
 <meta property="og:description" content="AI-powered API security with real-time threat detection, zero-trust architecture, WAF, RASP and penetration testing. Protect your APIs before a breach costs you millions.">
 <meta property="og:image" content="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892772/logo_xoq717.png">
-<meta property="og:url" content="https://api-fortress.fortresstechnologieshub.com">
+<meta property="og:url" content="https://fortresstechnologieshub.com/api-fortress">
+<link rel="canonical" href="https://fortresstechnologieshub.com/api-fortress">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892772/logo_xoq717.png">
+<meta name="theme-color" content="#050912">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@fortresstechhub">
-<meta name="twitter:title" content="API Fortress – Enterprise API Security">
+<meta name="twitter:title" content="API Fortress: Enterprise API Security">
 <meta name="twitter:description" content="AI-powered API security. WAF, RASP, Zero Trust, Pen Testing and more. One platform to protect everything.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892772/logo_xoq717.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script defer src="https://analytics.coremindx.ai/script.js" data-website-id="22276c35-cfa6-4c15-a811-74e71f872617"></script>
+<script>document.documentElement.classList.add('js');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -34,7 +38,10 @@
   --blue-hi:#2563f0;
   --ice:    #e8f0ff;
   --ice-dim:#8ba4d8;
-  --ice-mute:#3d5280;
+  --ice-mute:#6b80ad;
+  --ice-faint:#3d5280;
+  --blue-soft:#7aa2ff;
+  --green:#22c55e;
   --red:    #ef4444;
   --amber:  #f59e0b;
   --white:  #ffffff;
@@ -79,11 +86,11 @@ nav a:hover{color:var(--white);background:rgba(255,255,255,.05);}
 
 /* ── SHARED ── */
 .s{position:relative;z-index:1;}
-.s-label{font-family:var(--mono);font-size:.65rem;color:var(--blue);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
+.s-label{font-family:var(--mono);font-size:.68rem;color:var(--blue-soft);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
 .mono{font-family:var(--mono);}
 
 /* ── HERO ── */
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px 80px;border-bottom:1px solid var(--rule);}
+.hero{position:relative;z-index:1;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px 80px;border-bottom:1px solid var(--rule);}
 .hero-deco{position:absolute;right:-20px;top:50%;transform:translateY(-55%);font-family:var(--mono);font-size:32vw;font-weight:700;color:rgba(20,71,230,0.035);line-height:1;pointer-events:none;user-select:none;letter-spacing:-3vw;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;color:var(--ice-mute);letter-spacing:2px;text-transform:uppercase;margin-bottom:32px;flex-wrap:wrap;}
 .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--blue);}
@@ -330,8 +337,8 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 .legal a:hover{color:var(--white);}
 
 /* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
-.reveal.in{opacity:1;transform:translateY(0);}
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.js .reveal.in{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -421,12 +428,111 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   .contact-inner h2{font-size:1.8rem;}
   .legal{flex-wrap:wrap;justify-content:center;}
 }
+
+.icon{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;color:var(--blue-soft);}
+svg.feat-icon,svg.dd-icon,svg.step-icon{width:24px;height:24px;display:block;margin-bottom:16px;}
+svg.t-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px;}
+svg.p-icon{width:24px;height:24px;flex-shrink:0;}
+svg.meta-icon{width:18px;height:18px;flex-shrink:0;}
+.ribbon-sources{position:relative;z-index:1;padding:14px 56px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:.64rem;color:var(--ice-mute);letter-spacing:.5px;}
+.ribbon-sources a{color:var(--ice-dim);}
+.b-src{display:block;margin-top:14px;font-family:var(--mono);font-size:.62rem;color:var(--ice-mute);letter-spacing:.5px;}
+
+/* ── LIVE CONSOLE ── */
+.live-s{border-bottom:1px solid var(--rule);padding:110px 56px;}
+.live-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:48px;}
+.live-head h2{font-size:clamp(2rem,4.5vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:-1.5px;color:var(--white);}
+.live-head h2 .ghost{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.28);}
+.live-head p{color:var(--ice-dim);font-size:1.02rem;line-height:1.8;max-width:540px;}
+.console{border:1px solid var(--rule-2);border-radius:18px;overflow:hidden;background:rgba(8,15,30,.7);}
+.con-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--rule-2);background:rgba(5,9,18,.6);flex-wrap:wrap;}
+.con-title{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.7rem;color:var(--ice-dim);letter-spacing:1px;}
+.con-stats{display:flex;gap:22px;font-family:var(--mono);font-size:.68rem;color:var(--ice-mute);letter-spacing:.5px;}
+.con-stats b{color:var(--white);font-weight:500;margin-left:6px;}
+.con-stats .blk b{color:var(--red);}
+.con-stats .ok b{color:var(--green);}
+.con-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);}
+.con-log{border-right:1px solid var(--rule-2);height:480px;overflow:hidden;padding:10px 0;}
+.lg{display:grid;grid-template-columns:70px 44px minmax(0,1fr) 92px;gap:12px;align-items:center;padding:9px 20px;font-family:var(--mono);font-size:.72rem;color:var(--ice-dim);border-bottom:1px solid var(--rule);animation:slidein .35s ease both;}
+@keyframes slidein{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.lg .t{color:var(--ice-mute);}
+.lg .m{color:var(--ice);font-weight:500;}
+.lg .p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lg .p small{display:block;font-size:.64rem;color:var(--ice-mute);overflow:hidden;text-overflow:ellipsis;}
+.lg .st{justify-self:end;font-size:.62rem;letter-spacing:1px;padding:3px 8px;border-radius:4px;border:1px solid;}
+.lg .st.ok{color:var(--green);border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.06);}
+.lg .st.blk{color:var(--red);border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08);}
+.lg.blocked{background:rgba(239,68,68,.04);}
+.lg.blocked .p small{color:#fca5a5;}
+.con-ai{padding:24px 24px 28px;display:flex;flex-direction:column;gap:14px;height:480px;overflow:hidden;}
+.ai-label{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.66rem;color:var(--ice-mute);letter-spacing:1.5px;text-transform:uppercase;}
+.ai-dot{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--blue-soft),var(--blue));}
+.ai-tag{align-self:flex-start;font-family:var(--mono);font-size:.66rem;color:var(--red);border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);border-radius:6px;padding:4px 9px;letter-spacing:.5px;}
+.ai-title{font-size:1.05rem;font-weight:700;color:var(--white);line-height:1.4;}
+.ai-text{font-size:.9rem;color:var(--ice-dim);line-height:1.7;min-height:4.5em;}
+.ai-fix{font-family:var(--mono);font-size:.74rem;color:var(--ice-dim);background:var(--ink-1);border:1px solid var(--rule-2);border-radius:10px;padding:12px 14px;line-height:1.65;white-space:pre-wrap;}
+.ai-fix b{display:block;color:var(--blue-soft);font-weight:500;font-size:.64rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.ai-wait{color:var(--ice-mute);font-size:.88rem;}
+.live-note{font-family:var(--mono);font-size:.65rem;color:var(--ice-mute);letter-spacing:1px;margin-top:18px;}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  .js .reveal{opacity:1;transform:none;}
+}
+@media(max-width:1100px){
+  .con-grid{grid-template-columns:minmax(0,1fr);}
+  .con-log{border-right:none;border-bottom:1px solid var(--rule-2);height:360px;}
+  .con-ai{height:auto;min-height:360px;}
+}
+@media(max-width:960px){
+  .live-s{padding:72px 24px;}
+  .ribbon-sources{padding:14px 24px;}
+}
+@media(max-width:600px){
+  .lg{grid-template-columns:52px minmax(0,1fr) 74px;padding:9px 14px;gap:8px;}
+  .lg .m{display:none;}
+  .con-stats{gap:14px;}
+}
 </style>
 </head>
 <body>
 <div class="grid-bg"></div>
 <div class="glow glow-a"></div>
 <div class="glow glow-b"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 18a9 9 0 1 1 16 0"/><path d="m12 13 4-4"/><circle cx="12" cy="13" r="1"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4"/></symbol>
+  <symbol id="i-ghost" viewBox="0 0 24 24"><path d="M6 20V10a6 6 0 0 1 12 0v10l-3-2-3 2-3-2z"/><circle cx="10" cy="10" r=".8"/><circle cx="14" cy="10" r=".8"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><path d="M8 6h4a4 4 0 0 1 4 4M16 14a4 4 0 0 1-4 4H8"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-2 2-3 5-3 8a6 6 0 0 0 6 6z"/></symbol>
+  <symbol id="i-crosshair" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/></symbol>
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18 6"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="m8 11 8-4M8 13l8 4"/></symbol>
+  <symbol id="i-graph" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="12" cy="12" r="2"/><path d="M7 12h3M14 11l3.5-4.5M14 13l3.5 4.5"/></symbol>
+  <symbol id="i-pipe" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h10M13 8l4 4-4 4"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</svg>
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -435,6 +541,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <span class="logo-name">API Fortress</span>
   </a>
   <nav>
+    <a href="#live">See it work</a>
     <a href="#features">Features</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#pricing">Pricing</a>
@@ -453,6 +560,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 </header>
 
 <div class="mob-menu" id="mobMenu">
+  <a href="#live">See it work</a>
   <a href="#features">Features</a>
   <a href="#how-it-works">How It Works</a>
   <a href="#pricing">Pricing</a>
@@ -471,12 +579,12 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 <section class="hero s">
   <div class="hero-deco">AF</div>
   <div class="hero-eyebrow"><span class="live-pip"></span>Live and Available Now &nbsp;·&nbsp; Enterprise API Security</div>
-  <h1>One exposed API<br>can cost you <em>millions.</em><br><span class="blue-word">We make sure</span><br>it never happens.</h1>
+  <h1>Every API request,<br><em>inspected.</em><br><span class="blue-word">Every attack,</span><br>explained.</h1>
   <div class="hero-bottom">
-    <p class="hero-desc">AI-powered threat detection, real-time monitoring, zero-trust architecture, and automated defense — in a single platform built for modern teams.</p>
+    <p class="hero-desc">AI-powered threat detection, real-time monitoring, zero-trust architecture, and automated defense, in one platform that tells your team exactly what it stopped and why.</p>
     <div class="hero-actions">
       <a href="https://api-fortress.fortresstechnologieshub.com" target="_blank" class="btn-solid">Start Protecting Now →</a>
-      <a href="#features" class="btn-outline">Explore Features</a>
+      <a href="#live" class="btn-outline">See it work</a>
     </div>
   </div>
   <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
@@ -485,70 +593,101 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 <!-- ══ STAT RIBBON ══ -->
 <div class="ribbon s">
   <div class="ribbon-item">
-    <span class="r-num danger">91%</span>
-    <span class="r-label">API Vulnerability Rate</span>
-    <span class="r-desc">of web applications have exploitable API vulnerabilities right now</span>
+    <span class="r-num danger">99%</span>
+    <span class="r-label">Organizations Affected</span>
+    <span class="r-desc">reported API security issues in the past 12 months</span>
   </div>
   <div class="ribbon-item">
-    <span class="r-num danger">681%</span>
-    <span class="r-label">Attack Increase</span>
-    <span class="r-desc">rise in API-targeted attacks since 2021 per Salt Security</span>
+    <span class="r-num danger">95%</span>
+    <span class="r-label">Authenticated Attacks</span>
+    <span class="r-desc">of API attacks came from authenticated sources, past the login screen</span>
   </div>
   <div class="ribbon-item">
-    <span class="r-num amber">$6.1M</span>
+    <span class="r-num amber">$4.44M</span>
     <span class="r-label">Average Breach Cost</span>
-    <span class="r-desc">average cost of a single data breach in 2024, rising yearly</span>
+    <span class="r-desc">global average cost of a data breach (USD)</span>
   </div>
   <div class="ribbon-item">
-    <span class="r-num blue">41</span>
-    <span class="r-label">Days to Detect</span>
-    <span class="r-desc">average time for organizations to even realize a breach occurred</span>
+    <span class="r-num blue">241</span>
+    <span class="r-label">Days to Contain</span>
+    <span class="r-desc">average time to identify and contain a breach</span>
   </div>
 </div>
+<div class="ribbon-sources">Sources: <a href="https://content.salt.security/state-api-report.html" target="_blank" rel="noopener">Salt Security, State of API Security Report, Q1 2025</a> &nbsp;·&nbsp; <a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener">IBM, Cost of a Data Breach Report 2025</a></div>
+
+<!-- ══ LIVE CONSOLE ══ -->
+<section id="live" class="s live-s">
+  <div class="live-head reveal">
+    <div>
+      <span class="s-label">See it work</span>
+      <h2>Watch the traffic.<br><span class="ghost">Read the reasoning.</span></h2>
+    </div>
+    <p>Clean requests pass straight through. Attacks are stopped inline, and the AI Security Assistant explains each one in plain language, with a fix for the root cause.</p>
+  </div>
+  <div class="console reveal">
+    <div class="con-top">
+      <span class="con-title"><span class="live-pip"></span>API Fortress · production traffic</span>
+      <div class="con-stats">
+        <span>Inspected<b id="cInspected">0</b></span>
+        <span class="ok">Allowed<b id="cAllowed">0</b></span>
+        <span class="blk">Blocked<b id="cBlocked">0</b></span>
+      </div>
+    </div>
+    <div class="con-grid">
+      <div class="con-log" id="conLog" aria-hidden="true"></div>
+      <div class="con-ai" id="conAI" aria-live="polite">
+        <div class="ai-label"><span class="ai-dot"></span>AI Security Assistant</div>
+        <p class="ai-wait">Watching traffic. The next blocked request will be explained here.</p>
+      </div>
+    </div>
+  </div>
+  <p class="live-note">Illustrative simulation. IP addresses are from reserved documentation ranges.</p>
+</section>
 
 <!-- ══ BREACH CASES ══ -->
 <section class="s breach-wrap reveal">
   <div class="breach-header">
     <span class="s-label">Real World Breaches</span>
     <h2 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;">The Cost of Unsecured APIs</h2>
-    <p>These are not hypothetical scenarios. These are real companies that suffered devastating losses because of API security failures that could have been prevented.</p>
+    <p>These are not hypothetical scenarios. In each of these real incidents, a weakness in an API exposed the personal data of millions of people.</p>
   </div>
   <div class="breach-grid">
     <div class="breach-card">
       <div class="b-company">T-Mobile</div>
-      <div class="b-year">Breach Year: 2023</div>
-      <div class="b-impact">37 Million Records Exposed</div>
-      <p>An unsecured API exposed customer names, emails, phone numbers, and account PINs. The fallout cost over $350 million in settlements and a complete security overhaul.</p>
+      <div class="b-year">Disclosed: 2023</div>
+      <div class="b-impact">37 Million Accounts Exposed</div>
+      <p>An attacker abused a single API for about six weeks before it was detected, pulling names, billing addresses, emails, phone numbers, and dates of birth.</p>
+      <span class="b-src">Source: T-Mobile SEC filing, January 2023</span>
     </div>
     <div class="breach-card">
       <div class="b-company">Optus (Australia)</div>
-      <div class="b-year">Breach Year: 2022</div>
-      <div class="b-impact">9.8 Million Customers Affected</div>
-      <p>An exposed API endpoint with no authentication allowed attackers to harvest personal data including passport numbers and driver's licenses of nearly 10 million people.</p>
+      <div class="b-year">Disclosed: 2022</div>
+      <div class="b-impact">Up to 9.8 Million Customers</div>
+      <p>An exposed API endpoint that did not require authentication was reported as the entry point, exposing personal data including passport and driver's licence numbers for millions of customers.</p>
     </div>
     <div class="breach-card">
       <div class="b-company">Twitter</div>
-      <div class="b-year">Breach Year: 2022</div>
+      <div class="b-year">Disclosed: 2022</div>
       <div class="b-impact">5.4 Million Accounts Scraped</div>
-      <p>A vulnerable API allowed attackers to submit phone numbers and email addresses to retrieve private account information, exposing millions of users to targeted attacks.</p>
+      <p>An API vulnerability let attackers submit phone numbers and email addresses and get back the matching accounts, linking private contact details to public profiles.</p>
     </div>
     <div class="breach-card">
       <div class="b-company">Peloton</div>
-      <div class="b-year">Breach Year: 2021</div>
-      <div class="b-impact">Entire User Database Exposed</div>
-      <p>Unauthenticated API endpoints exposed user profiles, workout history, and location data of millions of users including high-profile individuals.</p>
+      <div class="b-year">Disclosed: 2021</div>
+      <div class="b-impact">Private Profile Data Exposed</div>
+      <p>Security researchers found API endpoints that returned users' private profile data, including age, gender, city, and workout statistics, even for accounts set to private.</p>
     </div>
     <div class="breach-card">
       <div class="b-company">Facebook</div>
-      <div class="b-year">Breach Year: 2021</div>
-      <div class="b-impact">533 Million Users Compromised</div>
-      <p>An API vulnerability in the contact sync feature was exploited to scrape phone numbers and personal data from over half a billion users across 106 countries.</p>
+      <div class="b-year">Leaked: 2021</div>
+      <div class="b-impact">533 Million Users' Data</div>
+      <p>Data scraped through a contact import feature was posted publicly in 2021, including phone numbers and personal details of users across 106 countries.</p>
     </div>
     <div class="breach-card">
       <div class="b-company">Experian</div>
-      <div class="b-year">Breach Year: 2021</div>
-      <div class="b-impact">Credit Scores Openly Exposed</div>
-      <p>An API used by third parties leaked credit scores simply by providing a name and address, with no authentication required whatsoever.</p>
+      <div class="b-year">Disclosed: 2021</div>
+      <div class="b-impact">Credit Scores Exposed</div>
+      <p>An API used by a partner website returned people's credit scores with little more than a name and mailing address, showing how weak API checks can leak sensitive financial data.</p>
     </div>
   </div>
 </section>
@@ -565,18 +704,18 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <p>In 2026, an unsecured API is not just a technical problem. It is an existential business risk.</p>
       <div class="why-quote">
         <blockquote>"The best security is invisible. It protects without friction, defends without disruption, and never sleeps. That is exactly what API Fortress delivers."</blockquote>
-        <cite>— Jubril Akanbi, Founder, President and CEO, Fortress Technologies Hub</cite>
+        <cite>Jubril Akanbi, Founder, President and CEO, Fortress Technologies Hub</cite>
       </div>
     </div>
     <div class="why-right">
       <span class="s-label">Threats We Stop</span>
       <div class="threat-list">
-        <div class="threat-row"><span class="t-num">01</span><span class="t-icon">🎯</span><div><h4>Injection Attacks</h4><p>SQL, NoSQL, and command injection delivered through API parameters and request bodies</p></div></div>
-        <div class="threat-row"><span class="t-num">02</span><span class="t-icon">🔓</span><div><h4>Broken Authentication</h4><p>Weak tokens, session hijacking, credential stuffing, and expired token reuse</p></div></div>
-        <div class="threat-row"><span class="t-num">03</span><span class="t-icon">📊</span><div><h4>Excessive Data Exposure</h4><p>APIs returning more data than clients need, creating unintended information leaks</p></div></div>
-        <div class="threat-row"><span class="t-num">04</span><span class="t-icon">⚡</span><div><h4>Rate Limit Abuse</h4><p>Brute force attacks, credential enumeration, and resource exhaustion through volume</p></div></div>
-        <div class="threat-row"><span class="t-num">05</span><span class="t-icon">🔄</span><div><h4>BOLA and IDOR</h4><p>Broken object-level authorization that allows users to access other users' data</p></div></div>
-        <div class="threat-row"><span class="t-num">06</span><span class="t-icon">👻</span><div><h4>Shadow APIs</h4><p>Undocumented and forgotten endpoints that exist outside your security perimeter</p></div></div>
+        <div class="threat-row"><span class="t-num">01</span><svg class="icon t-icon"><use href="#i-target"/></svg><div><h4>Injection Attacks</h4><p>SQL, NoSQL, and command injection delivered through API parameters and request bodies</p></div></div>
+        <div class="threat-row"><span class="t-num">02</span><svg class="icon t-icon"><use href="#i-unlock"/></svg><div><h4>Broken Authentication</h4><p>Weak tokens, session hijacking, credential stuffing, and expired token reuse</p></div></div>
+        <div class="threat-row"><span class="t-num">03</span><svg class="icon t-icon"><use href="#i-eye"/></svg><div><h4>Excessive Data Exposure</h4><p>APIs returning more data than clients need, creating unintended information leaks</p></div></div>
+        <div class="threat-row"><span class="t-num">04</span><svg class="icon t-icon"><use href="#i-gauge"/></svg><div><h4>Rate Limit Abuse</h4><p>Brute force attacks, credential enumeration, and resource exhaustion through volume</p></div></div>
+        <div class="threat-row"><span class="t-num">05</span><svg class="icon t-icon"><use href="#i-refresh"/></svg><div><h4>BOLA and IDOR</h4><p>Broken object-level authorization that allows users to access other users' data</p></div></div>
+        <div class="threat-row"><span class="t-num">06</span><svg class="icon t-icon"><use href="#i-ghost"/></svg><div><h4>Shadow APIs</h4><p>Undocumented and forgotten endpoints that exist outside your security perimeter</p></div></div>
       </div>
     </div>
   </div>
@@ -586,14 +725,14 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 <section id="how-it-works" class="s how-wrap reveal">
   <div class="how-header">
     <span class="s-label">How It Works</span>
-    <h2 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:12px;">Set Up in Minutes.<br>Protected for Life.</h2>
+    <h2 style="font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:12px;">Set Up in Minutes.<br>Protected Around the Clock.</h2>
     <p style="color:var(--ice-dim);font-size:.97rem;max-width:520px;line-height:1.8;">API Fortress sits in front of your APIs as a reverse proxy, inspecting every request in real time before it ever reaches your backend systems.</p>
   </div>
   <div class="how-steps">
-    <div class="how-step"><span class="step-n">STEP 01</span><span class="step-icon">🔗</span><h4>Connect Your API</h4><p>Point your domain or service to API Fortress. DNS mode or direct proxy — both work in minutes with no code changes required.</p></div>
-    <div class="how-step"><span class="step-n">STEP 02</span><span class="step-icon">⚙️</span><h4>Configure Your Policies</h4><p>Set your security rules, rate limits, zero-trust policies, and allowed IP ranges through the intuitive dashboard.</p></div>
-    <div class="how-step"><span class="step-n">STEP 03</span><span class="step-icon">🤖</span><h4>AI Starts Learning</h4><p>The AI engine analyzes your traffic patterns and starts identifying anomalies, building a behavioral baseline unique to your application.</p></div>
-    <div class="how-step"><span class="step-n">STEP 04</span><span class="step-icon">🛡️</span><h4>Threats Get Blocked</h4><p>Malicious requests are blocked in real time before they touch your servers. You get alerts, logs, and AI-generated fix suggestions automatically.</p></div>
+    <div class="how-step"><span class="step-n">STEP 01</span><svg class="icon step-icon"><use href="#i-link"/></svg><h4>Connect Your API</h4><p>Point your domain or service to API Fortress. DNS mode or direct proxy: both work in minutes with no code changes required.</p></div>
+    <div class="how-step"><span class="step-n">STEP 02</span><svg class="icon step-icon"><use href="#i-sliders"/></svg><h4>Configure Your Policies</h4><p>Set your security rules, rate limits, zero-trust policies, and allowed IP ranges through the intuitive dashboard.</p></div>
+    <div class="how-step"><span class="step-n">STEP 03</span><svg class="icon step-icon"><use href="#i-cpu"/></svg><h4>AI Starts Learning</h4><p>The AI engine analyzes your traffic patterns and starts identifying anomalies, building a behavioral baseline unique to your application.</p></div>
+    <div class="how-step"><span class="step-n">STEP 04</span><svg class="icon step-icon"><use href="#i-shield"/></svg><h4>Threats Get Blocked</h4><p>Malicious requests are blocked in real time before they touch your servers. You get alerts, logs, and AI-generated fix suggestions automatically.</p></div>
   </div>
 </section>
 
@@ -603,22 +742,22 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     <div class="proxy-left">
       <span class="s-label">Architecture</span>
       <h2 class="dh-sm">The Reverse Proxy<br>Model Explained</h2>
-      <p>API Fortress acts as an intelligent gatekeeper between the world and your backend. Every request passes through it — nothing gets through that should not.</p>
+      <p>API Fortress acts as an intelligent gatekeeper between the world and your backend. Every request passes through it first, so threats are stopped before they reach your systems.</p>
       <p>Every single request from the internet passes through API Fortress first. The AI engine inspects headers, payloads, tokens, rate patterns, and behavioral signals in milliseconds. Only clean, verified traffic reaches your backend. Attacks never get that far.</p>
     </div>
     <div class="proxy-diagram">
       <div class="proxy-node-row">
-        <span class="p-icon">🌐</span>
-        <div><div class="p-name">Internet</div><div class="p-desc">All incoming requests — clean and malicious</div></div>
+        <svg class="icon p-icon"><use href="#i-globe"/></svg>
+        <div><div class="p-name">Internet</div><div class="p-desc">All incoming requests, clean and malicious</div></div>
       </div>
       <div class="proxy-arrow-row"><span>↓ &nbsp; every request passes through</span></div>
       <div class="proxy-node-row fortress-row">
-        <span class="p-icon">🛡️</span>
+        <svg class="icon p-icon"><use href="#i-shield"/></svg>
         <div><div class="p-name">API Fortress</div><div class="p-desc">Inspect · Analyze · Filter · Block · Log</div></div>
       </div>
       <div class="proxy-arrow-row"><span>↓ &nbsp; clean traffic only</span></div>
       <div class="proxy-node-row">
-        <span class="p-icon">⚙️</span>
+        <svg class="icon p-icon"><use href="#i-server"/></svg>
         <div><div class="p-name">Your Backend</div><div class="p-desc">Receives only safe, verified requests</div></div>
       </div>
     </div>
@@ -630,15 +769,15 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="deepdive-header">
     <span class="s-label">What Makes Us Different</span>
     <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:0;">Not Just a Firewall.<br>An Intelligent Defense System.</h2>
-    <p>Traditional security tools block threats they already know about. API Fortress learns the behavior of your legitimate traffic and flags anything that deviates — including zero-day threats no signature database has ever seen.</p>
+    <p>Traditional security tools block threats they already know about. API Fortress learns the behavior of your legitimate traffic and flags anything that deviates, including new attack patterns that signature lists miss.</p>
   </div>
   <div class="deepdive-grid">
-    <div class="dd-cell"><span class="dd-num">01</span><span class="dd-icon">🧠</span><h4>Behavioral Baseline Learning</h4><p>The AI builds a model of normal traffic for your app and flags deviations, catching threats that no signature list would ever find.</p></div>
-    <div class="dd-cell"><span class="dd-num">02</span><span class="dd-icon">⚡</span><h4>Sub-Millisecond Decisions</h4><p>Threat decisions happen in real time with zero perceptible latency added to your API responses for legitimate users.</p></div>
-    <div class="dd-cell"><span class="dd-num">03</span><span class="dd-icon">🔍</span><h4>Full Request Visibility</h4><p>Every request is logged with full detail including headers, payloads, IP reputation, geolocation, and AI-assigned risk tags.</p></div>
-    <div class="dd-cell"><span class="dd-num">04</span><span class="dd-icon">💡</span><h4>AI-Generated Fix Suggestions</h4><p>When vulnerabilities are found, the AI explains exactly what is wrong and suggests specific code-level fixes your team can act on immediately.</p></div>
-    <div class="dd-cell"><span class="dd-num">05</span><span class="dd-icon">🔗</span><h4>Multi-Endpoint Support</h4><p>Protect multiple APIs and services under a single account with per-service policies, logs, and threat intelligence that never bleeds across tenants.</p></div>
-    <div class="dd-cell"><span class="dd-num">06</span><span class="dd-icon">📋</span><h4>Compliance-Ready Reporting</h4><p>Exportable reports and SIEM-ready logs designed to satisfy audit requirements for SOC 2, PCI-DSS, HIPAA, and PIPEDA.</p></div>
+    <div class="dd-cell"><span class="dd-num">01</span><svg class="icon dd-icon"><use href="#i-brain"/></svg><h4>Behavioral Baseline Learning</h4><p>The AI builds a model of normal traffic for your app and flags deviations, catching threats that no signature list would ever find.</p></div>
+    <div class="dd-cell"><span class="dd-num">02</span><svg class="icon dd-icon"><use href="#i-zap"/></svg><h4>Real-Time Decisions</h4><p>Every request is evaluated inline, in real time, and designed to add minimal latency for legitimate users.</p></div>
+    <div class="dd-cell"><span class="dd-num">03</span><svg class="icon dd-icon"><use href="#i-search"/></svg><h4>Full Request Visibility</h4><p>Every request is logged with full detail including headers, payloads, IP reputation, geolocation, and AI-assigned risk tags.</p></div>
+    <div class="dd-cell"><span class="dd-num">04</span><svg class="icon dd-icon"><use href="#i-bulb"/></svg><h4>AI-Generated Fix Suggestions</h4><p>When vulnerabilities are found, the AI explains exactly what is wrong and suggests specific code-level fixes your team can act on immediately.</p></div>
+    <div class="dd-cell"><span class="dd-num">05</span><svg class="icon dd-icon"><use href="#i-layers"/></svg><h4>Multi-Endpoint Support</h4><p>Protect multiple APIs and services under a single account with per-service policies, logs, and threat intelligence that never bleeds across tenants.</p></div>
+    <div class="dd-cell"><span class="dd-num">06</span><svg class="icon dd-icon"><use href="#i-clipboard"/></svg><h4>Compliance-Ready Reporting</h4><p>Exportable reports and SIEM-ready logs that support your audits under frameworks such as SOC 2, PCI-DSS, HIPAA, and PIPEDA.</p></div>
   </div>
 </section>
 
@@ -652,40 +791,40 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="feat-category">
     <div class="feat-cat-label"><span>Defense and Blocking</span></div>
     <div class="feat-grid feat-grid-4">
-      <div class="feat-cell"><span class="feat-icon">🤖</span><h3>AI Auto-Blocking</h3><p>Machine learning detects and blocks malicious patterns in real time with adaptive threat response that improves as it learns your traffic.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🛡️</span><h3>RASP Protection</h3><p>Runtime Application Self-Protection defends your backend from active exploitation attempts happening inside the application itself.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🔥</span><h3>WAF Integration</h3><p>Web Application Firewall filters known exploits, bad actors, malicious payloads, and OWASP Top 10 attack patterns automatically.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🚦</span><h3>Smart Rate Limiting</h3><p>Intelligent traffic control per IP, token, or user to prevent brute force attacks and resource exhaustion with minimal legitimate user impact.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🎭</span><h3>Token Replay Protection</h3><p>Block reused JWTs and leaked tokens to prevent replay attacks and session hijacking before they reach your application layer.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🔐</span><h3>Zero Trust Configuration</h3><p>Enforce least-privilege access with time-based, IP-based, and role-based restrictions. Trust nothing, verify everything.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-cpu"/></svg><h3>AI Auto-Blocking</h3><p>Machine learning detects and blocks malicious patterns in real time with adaptive threat response that improves as it learns your traffic.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-shield"/></svg><h3>RASP Protection</h3><p>Runtime Application Self-Protection defends your backend from active exploitation attempts happening inside the application itself.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-flame"/></svg><h3>WAF Integration</h3><p>Web Application Firewall filters known exploits, bad actors, malicious payloads, and OWASP Top 10 attack patterns automatically.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-gauge"/></svg><h3>Smart Rate Limiting</h3><p>Intelligent traffic control per IP, token, or user to prevent brute force attacks and resource exhaustion with minimal legitimate user impact.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-refresh"/></svg><h3>Token Replay Protection</h3><p>Block reused JWTs and leaked tokens to prevent replay attacks and session hijacking before they reach your application layer.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-lock"/></svg><h3>Zero Trust Configuration</h3><p>Enforce least-privilege access with time-based, IP-based, and role-based restrictions. Trust nothing, verify everything.</p></div>
     </div>
   </div>
 
   <div class="feat-category">
     <div class="feat-cat-label"><span>Testing and Discovery</span></div>
     <div class="feat-grid feat-grid-4-sm">
-      <div class="feat-cell"><span class="feat-icon">⚔️</span><h3>Penetration Testing</h3><p>Simulate real-world attacks against your APIs to uncover vulnerabilities before actual attackers find them first.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🔍</span><h3>Vulnerability Scanning</h3><p>Automated scanning finds weaknesses in endpoints, authentication logic, header configurations, and data exposure patterns.</p></div>
-      <div class="feat-cell"><span class="feat-icon">📡</span><h3>API Discovery</h3><p>Automatically discover and inventory all APIs in your environment including shadow APIs and forgotten legacy endpoints.</p></div>
-      <div class="feat-cell"><span class="feat-icon">🔑</span><h3>Authentication Testing</h3><p>Deep testing of OAuth flows, JWT validation, API key management, and session handling to find broken auth before attackers do.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-crosshair"/></svg><h3>Penetration Testing</h3><p>Simulate real-world attacks against your APIs to uncover vulnerabilities before actual attackers find them first.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-search"/></svg><h3>Vulnerability Scanning</h3><p>Automated scanning finds weaknesses in endpoints, authentication logic, header configurations, and data exposure patterns.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-radar"/></svg><h3>API Discovery</h3><p>Automatically discover and inventory all APIs in your environment including shadow APIs and forgotten legacy endpoints.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-key"/></svg><h3>Authentication Testing</h3><p>Deep testing of OAuth flows, JWT validation, API key management, and session handling to find broken auth before attackers do.</p></div>
     </div>
   </div>
 
   <div class="feat-category">
     <div class="feat-cat-label"><span>AI Insights and Intelligence</span></div>
     <div class="feat-grid feat-grid-3">
-      <div class="feat-cell"><span class="feat-icon">💬</span><h3>AI Security Assistant</h3><p>Ask questions about your security posture in plain English and get instant AI-generated insights, risk summaries, and actionable recommendations.</p></div>
-      <div class="feat-cell"><span class="feat-icon">📊</span><h3>Behavior Logger</h3><p>Every request is logged with full context, AI risk tags, anomaly flags, and remediation suggestions so your team knows exactly what happened and why.</p></div>
-      <div class="feat-cell"><span class="feat-icon">📋</span><h3>SIEM Integration</h3><p>Export security events and threat intelligence directly into your existing SIEM, SOAR, or logging infrastructure for unified visibility.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-chat"/></svg><h3>AI Security Assistant</h3><p>Ask questions about your security posture in plain English and get instant AI-generated insights, risk summaries, and actionable recommendations.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-list"/></svg><h3>Behavior Logger</h3><p>Every request is logged with full context, AI risk tags, anomaly flags, and remediation suggestions so your team knows exactly what happened and why.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-share"/></svg><h3>SIEM Integration</h3><p>Export security events and threat intelligence directly into your existing SIEM, SOAR, or logging infrastructure for unified visibility.</p></div>
     </div>
   </div>
 
   <div class="feat-category" style="border-bottom:none;">
     <div class="feat-cat-label"><span>Infrastructure and Integrations</span></div>
     <div class="feat-grid feat-grid-3">
-      <div class="feat-cell"><span class="feat-icon">📊</span><h3>GraphQL Security</h3><p>Protect GraphQL APIs from introspection abuse, deeply nested query attacks, field-level data leaks, and schema exposure.</p></div>
-      <div class="feat-cell"><span class="feat-icon">⚙️</span><h3>CI/CD Integration</h3><p>Shift security left. Scan APIs automatically in your deployment pipeline and catch vulnerabilities before they reach production.</p></div>
-      <div class="feat-cell"><span class="feat-icon">📦</span><h3>SAST and Dependency Scan</h3><p>Static analysis and dependency scanning to catch insecure code patterns and vulnerable third-party libraries before deployment.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-graph"/></svg><h3>GraphQL Security</h3><p>Protect GraphQL APIs from introspection abuse, deeply nested query attacks, field-level data leaks, and schema exposure.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-pipe"/></svg><h3>CI/CD Integration</h3><p>Shift security left. Scan APIs automatically in your deployment pipeline and catch vulnerabilities before they reach production.</p></div>
+      <div class="feat-cell"><svg class="icon feat-icon"><use href="#i-box"/></svg><h3>SAST and Dependency Scan</h3><p>Static analysis and dependency scanning to catch insecure code patterns and vulnerable third-party libraries before deployment.</p></div>
     </div>
   </div>
 </section>
@@ -724,7 +863,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <p class="plan-desc">For startups and small teams getting started with API security</p>
       <div class="price-monthly"><span class="price-big">$699<sub>/mo</sub></span></div>
       <div class="price-annual"><span class="price-big">$6,990<sub>/yr</sub></span></div>
-      <div class="annual-note">Billed annually — you save $1,398</div>
+      <div class="annual-note">Billed annually, you save $1,398</div>
       <div class="plan-divider"></div>
       <div class="feat-list">
         <div class="feat-item">Manual IP Blocking</div>
@@ -743,7 +882,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <p class="plan-desc">For growing teams that need full-stack API protection</p>
       <div class="price-monthly"><span class="price-big">$1,999<sub>/mo</sub></span></div>
       <div class="price-annual"><span class="price-big">$19,990<sub>/yr</sub></span></div>
-      <div class="annual-note">Billed annually — you save $3,998</div>
+      <div class="annual-note">Billed annually, you save $3,998</div>
       <div class="plan-divider"></div>
       <div class="feat-list">
         <div class="feat-item">Everything in Starter</div>
@@ -764,7 +903,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <p class="plan-desc">For enterprises that need the complete security stack</p>
       <div class="price-monthly"><span class="price-big">$4,999<sub>/mo</sub></span></div>
       <div class="price-annual"><span class="price-big">$49,990<sub>/yr</sub></span></div>
-      <div class="annual-note">Billed annually — you save $9,998</div>
+      <div class="annual-note">Billed annually, you save $9,998</div>
       <div class="plan-divider"></div>
       <div class="feat-list">
         <div class="feat-item">Everything in Professional</div>
@@ -791,10 +930,10 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <h2>Talk to Our Sales Team</h2>
       <p>Interested in API Fortress for your organization? Fill out the form and our team will get back to you within 24 hours.</p>
       <div class="contact-meta">
-        <div class="meta-row"><span class="meta-icon">📧</span><span>info@fortresstechnologieshub.com</span></div>
-        <div class="meta-row"><span class="meta-icon">📞</span><span>+1 (647) 375-1373</span></div>
-        <div class="meta-row"><span class="meta-icon">⏱️</span><span>Response within 24 hours</span></div>
-        <div class="meta-row"><span class="meta-icon">🇨🇦</span><span>Toronto, Ontario, Canada</span></div>
+        <div class="meta-row"><svg class="icon meta-icon"><use href="#i-mail"/></svg><span>info@fortresstechnologieshub.com</span></div>
+        <div class="meta-row"><svg class="icon meta-icon"><use href="#i-phone"/></svg><span>+1 (647) 375-1373</span></div>
+        <div class="meta-row"><svg class="icon meta-icon"><use href="#i-clock"/></svg><span>Response within 24 hours</span></div>
+        <div class="meta-row"><svg class="icon meta-icon"><use href="#i-pin"/></svg><span>Toronto, Ontario, Canada</span></div>
       </div>
     </div>
     <div>
@@ -828,9 +967,9 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
 <section class="s cta-wrap reveal">
   <div class="cta-inner">
     <div class="cta-left">
-      <span class="s-label">Do Not Wait</span>
-      <h2>Every day without protection is another day your APIs are exposed.</h2>
-      <p>An attacker is looking right now for the endpoint you have not locked down. Start securing your APIs before a breach costs you everything.</p>
+      <span class="s-label">Get Started</span>
+      <h2>Know what is reaching your APIs. Stop what should not.</h2>
+      <p>Put API Fortress in front of your most important services and see every request, every block, and every fix in one place.</p>
       <div class="cta-actions">
         <a href="https://api-fortress.fortresstechnologieshub.com" target="_blank" class="btn-solid">Protect Your APIs Today →</a>
         <a href="#contact" class="btn-outline">Talk to Sales</a>
@@ -838,11 +977,11 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     </div>
     <div class="cta-right">
       <div class="stat-line"><span>Setup time</span><span class="sv">Under 10 minutes</span></div>
-      <div class="stat-line"><span>Code changes required</span><span class="sv">Zero</span></div>
-      <div class="stat-line"><span>Latency added</span><span class="sv">Sub-millisecond</span></div>
-      <div class="stat-line"><span>Threats blocked in real time</span><span class="sv">100%</span></div>
-      <div class="stat-line"><span>CLOUD Act exposure</span><span class="sv">None</span></div>
-      <div class="stat-line"><span>Data sovereignty</span><span class="sv">100% Canadian</span></div>
+      <div class="stat-line"><span>Code changes required</span><span class="sv">None in proxy mode</span></div>
+      <div class="stat-line"><span>Inspection</span><span class="sv">Inline, in real time</span></div>
+      <div class="stat-line"><span>Every block</span><span class="sv">Logged and explained</span></div>
+      <div class="stat-line"><span>Billing</span><span class="sv">Canadian dollars</span></div>
+      <div class="stat-line"><span>Built by</span><span class="sv">A Canadian company, Toronto</span></div>
     </div>
   </div>
 </section>
@@ -901,6 +1040,100 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);obs.unobserve(e.target);}});
 },{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* Live traffic console (illustrative simulation) */
+(function(){
+  const log=document.getElementById('conLog'),ai=document.getElementById('conAI');
+  if(!log||!ai)return;
+  const cI=document.getElementById('cInspected'),cA=document.getElementById('cAllowed'),cB=document.getElementById('cBlocked');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait=ms=>new Promise(r=>setTimeout(r,reduce?0:ms));
+  let inspected=0,allowed=0,blocked=0;
+
+  const clean=[
+    ['GET','/api/v1/products?page=2'],['POST','/api/v1/cart/items'],['GET','/api/v1/orders/8812'],
+    ['GET','/api/v1/users/me'],['PATCH','/api/v1/users/me/settings'],['GET','/api/v1/search?q=desk'],
+    ['POST','/api/v1/auth/refresh'],['GET','/api/v1/inventory/sku-4471'],['POST','/api/v1/checkout'],
+    ['GET','/api/v1/products/1203/reviews'],['DELETE','/api/v1/cart/items/77'],['GET','/api/v1/health']
+  ];
+  const cleanIps=['192.0.2.14','192.0.2.88','198.51.100.21','198.51.100.140','192.0.2.201'];
+  const attacks=[
+    {m:'GET',p:"/api/v1/products?id=1' OR '1'='1",ip:'203.0.113.42',tag:'SQL injection',
+     title:'SQL injection attempt on the products endpoint',
+     text:'This request tried to rewrite your database query through the id parameter. It was blocked before it reached your backend, and nothing was returned.',
+     fix:'Use parameterized queries for this endpoint and validate that id is a number.'},
+    {m:'GET',p:'/api/v1/users/1042',ip:'203.0.113.77',tag:'BOLA enumeration',
+     title:'Someone is stepping through user IDs',
+     text:'This address requested 140 different user records in under a minute, each one belonging to another account. API Fortress recognized the pattern and blocked the rest.',
+     fix:'if (req.user.id !== req.params.id && !req.user.isAdmin) {\n  return res.status(403).end();\n}'},
+    {m:'POST',p:'/api/v1/auth/login',ip:'203.0.113.9',tag:'Credential stuffing',
+     title:'Credential stuffing against your login',
+     text:'38 failed logins in 60 seconds from one address, each with a different username. Rate limits were tightened for this address automatically.',
+     fix:'Require multi-factor authentication for admin accounts and alert on repeated failures.'},
+    {m:'GET',p:'/api/v1/orders',ip:'203.0.113.150',tag:'Token replay',
+     title:'A stolen token was reused',
+     text:'This token was already used from a different address four minutes earlier. The second use was rejected, and the token was flagged for revocation.',
+     fix:'Shorten token lifetimes and bind tokens to the client that requested them.'},
+    {m:'GET',p:'/api/v0/admin/export',ip:'203.0.113.61',tag:'Shadow API',
+     title:'Request to a forgotten legacy endpoint',
+     text:'This route is not in your API inventory and has no policy attached. It was blocked by default, and it now appears in your discovery report.',
+     fix:'Retire /api/v0, or add it to your inventory with authentication and a policy.'}
+  ];
+  let atk=0;
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  const fmt=n=>n.toLocaleString('en-CA');
+  const now=()=>{const d=new Date();return d.toTimeString().slice(0,8);};
+
+  function addLine(m,p,ip,isBlock,tag){
+    const r=document.createElement('div');r.className='lg'+(isBlock?' blocked':'');
+    const t=document.createElement('span');t.className='t';t.textContent=now();
+    const mm=document.createElement('span');mm.className='m';mm.textContent=m;
+    const pp=document.createElement('span');pp.className='p';pp.textContent=p;
+    const sm=document.createElement('small');sm.textContent=ip+(isBlock?'  ·  '+tag:'');pp.appendChild(sm);
+    const st=document.createElement('span');st.className='st '+(isBlock?'blk':'ok');st.textContent=isBlock?'BLOCKED':'ALLOWED';
+    r.append(t,mm,pp,st);log.prepend(r);
+    while(log.children.length>14)log.lastChild.remove();
+    inspected++;isBlock?blocked++:allowed++;
+    cI.textContent=fmt(inspected);cA.textContent=fmt(allowed);cB.textContent=fmt(blocked);
+  }
+
+  async function explain(a,id){
+    ai.innerHTML='';
+    const lbl=document.createElement('div');lbl.className='ai-label';lbl.innerHTML='<span class="ai-dot"></span>AI Security Assistant';
+    const tag=document.createElement('span');tag.className='ai-tag';tag.textContent='Blocked · '+a.tag+' · '+a.ip;
+    const h=document.createElement('div');h.className='ai-title';h.textContent=a.title;
+    const p=document.createElement('p');p.className='ai-text';
+    const fx=document.createElement('div');fx.className='ai-fix';
+    ai.append(lbl,tag,h,p);
+    for(const ch of a.text){if(id!==busy)return;p.textContent+=ch;await wait(10);}
+    const b=document.createElement('b');b.textContent='Suggested fix';fx.appendChild(b);
+    const code=document.createElement('span');fx.appendChild(code);ai.appendChild(fx);
+    for(const ch of a.fix){if(id!==busy)return;code.textContent+=ch;await wait(10);}
+  }
+
+  let busy=0;
+  async function loop(){
+    // seed a few lines so the console never looks empty
+    for(let k=0;k<6;k++){const c=pick(clean);addLine(c[0],c[1],pick(cleanIps),false);}
+    if(reduce){const a=attacks[0];addLine(a.m,a.p,a.ip,true,a.tag);explain(a,++busy);return;}
+    let sinceBlock=0;
+    while(true){
+      await wait(700+Math.random()*600);
+      if(sinceBlock>=5&&Math.random()<0.45){
+        const a=attacks[atk%attacks.length];atk++;sinceBlock=0;
+        addLine(a.m,a.p,a.ip,true,a.tag);
+        explain(a,++busy);
+      }else{
+        const c=pick(clean);addLine(c[0],c[1],pick(cleanIps),false);sinceBlock++;
+      }
+    }
+  }
+
+  let started=false;
+  const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!started){started=true;loop();io.disconnect();}},{threshold:0.25});
+  io.observe(log);
+})();
+
 </script>
 </body>
 </html>
