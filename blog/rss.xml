@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Fortress Technologies Hub Blog</title>
+  <link>https://fortresstechnologieshub.com/blog/</link>
+  <description>News, product updates, research, and security insights from Fortress Technologies Hub.</description>
+  <language>en-ca</language>
+  <item>
+    <title>Introducing Fortress Technologies Hub</title>
+    <link>https://fortresstechnologieshub.com/blog/introducing-fortress-technologies-hub</link>
+    <guid>https://fortresstechnologieshub.com/blog/introducing-fortress-technologies-hub</guid>
+    <pubDate>Mon, 02 Nov 2026 12:00:00 -0500</pubDate>
+    <category>Company</category>
+    <description>We are a Canadian company building privacy-first AI and enterprise API security. Here is who we are, what we believe, and what we are building.</description>
+  </item>
+  <item>
+    <title>CoreMind: A Privacy-First AI Assistant, Built in Canada</title>
+    <link>https://fortresstechnologieshub.com/blog/introducing-coremind</link>
+    <guid>https://fortresstechnologieshub.com/blog/introducing-coremind</guid>
+    <pubDate>Mon, 02 Nov 2026 12:00:00 -0500</pubDate>
+    <category>CoreMind</category>
+    <description>Powerful AI should not require giving up control of your data. Here is what CoreMind does, and exactly what data sovereignty means in practice.</description>
+  </item>
+  <item>
+    <title>Introducing API Fortress: AI-Powered API Security That Explains Itself</title>
+    <link>https://fortresstechnologieshub.com/blog/introducing-api-fortress</link>
+    <guid>https://fortresstechnologieshub.com/blog/introducing-api-fortress</guid>
+    <pubDate>Mon, 02 Nov 2026 12:00:00 -0500</pubDate>
+    <category>API Fortress</category>
+    <description>APIs power almost everything, and attackers know it. Here is how API Fortress protects them, and why every block comes with an explanation.</description>
+  </item>
+  <item>
+    <title>Our First Research Paper Is Coming in December 2026</title>
+    <link>https://fortresstechnologieshub.com/blog/first-research-paper-intent-aware-reasoning</link>
+    <guid>https://fortresstechnologieshub.com/blog/first-research-paper-intent-aware-reasoning</guid>
+    <pubDate>Mon, 02 Nov 2026 12:00:00 -0500</pubDate>
+    <category>Research</category>
+    <description>CoreMind Labs is preparing its first paper, on intent-aware reasoning in large language models. Here is the question it explores, and why it matters.</description>
+  </item>
+</channel>
+</rss>

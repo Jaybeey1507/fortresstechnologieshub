@@ -399,6 +399,10 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   .pnum-big{min-width:100px;font-size:2rem;}
   .legal{flex-wrap:wrap;justify-content:center;}
 }
+
+/* keep the header nav on one line at laptop widths */
+@media(max-width:1360px){header .socials-row,header .nav-sep{display:none;}}
+@media(max-width:1200px){header nav{display:none;}header .hamburger{display:flex;}}
 </style>
 </head>
 <body>
@@ -435,6 +439,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
     </div>
     <a href="#demos">See it work</a>
     <a href="/coremind-research">Research</a>
+    <a href="/blog/">Blog</a>
     <a href="#sovereignty">Data in Canada</a>
     <a href="#about">Company</a>
     <a href="careers">Careers</a>
@@ -456,6 +461,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <a href="api-fortress">API Fortress</a>
   <a href="#demos">See it work</a>
   <a href="/coremind-research">Research</a>
+  <a href="/blog/">Blog</a>
   <a href="#sovereignty">Data in Canada</a>
   <a href="#about">Company</a>
   <a href="careers">Careers</a>
@@ -595,7 +601,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       </div>
       <div class="sov-pt">
         <span class="sov-num">04</span>
-        <div><h4>Clear about the exceptions</h4><p>A few optional features, such as live web search and video generation, rely on trusted external services. They are clearly disclosed in our <a href="privacy-policy">Privacy Policy</a>, and you choose when to use them.</p></div>
+        <div><h4>Clear about the exceptions</h4><p>A few optional features, such as live web search, image generation, and video generation, rely on trusted external services. They are clearly disclosed in our <a href="privacy-policy">Privacy Policy</a>, and you choose when to use them.</p></div>
       </div>
     </div>
   </div>
@@ -765,7 +771,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       </div>
     </div>
     <div class="fc"><h4>Products</h4><ul><li><a href="coremind">CoreMind</a></li><li><a href="api-fortress">API Fortress</a></li><li><a href="https://coremindx.ai" target="_blank" rel="noopener">Try CoreMind Free</a></li><li><a href="https://api-fortress.fortresstechnologieshub.com" target="_blank" rel="noopener">API Fortress Platform</a></li></ul></div>
-    <div class="fc"><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#founder">Leadership</a></li><li><a href="/coremind-research">Research</a></li><li><a href="#sovereignty">Data Sovereignty</a></li><li><a href="careers">Careers</a></li><li><a href="#partners">Sales Partners</a></li></ul></div>
+    <div class="fc"><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#founder">Leadership</a></li><li><a href="/coremind-research">Research</a></li><li><a href="/blog/">Blog</a></li><li><a href="#sovereignty">Data Sovereignty</a></li><li><a href="careers">Careers</a></li><li><a href="#partners">Sales Partners</a></li></ul></div>
     <div class="fc"><h4>Contact</h4><ul><li><a href="mailto:info@fortresstechnologieshub.com">info@fortresstechnologieshub.com</a></li><li><a href="tel:+16473751373">+1 (647) 375-1373</a></li><li>Toronto, Ontario, Canada</li></ul></div>
   </div>
   <div class="footer-bottom">
