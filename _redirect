@@ -8,3 +8,5 @@
 /careers                /careers.html                200
 /partner-onboarding     /partner-onboarding.html      200
 /blog/*                 /blog/:splat.html            200
+/careers/sales-development-representative   /sales-development-representative.html   200
+/careers/sales-partner                      /sales-partner.html                      200

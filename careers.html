@@ -4,11 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Careers | Fortress Technologies Hub Inc.</title>
-<meta name="description" content="Join Fortress Technologies Hub. Explore career opportunities and our Sales Partner Program for API Fortress. Earn recurring monthly commission as an independent sales partner across Canada.">
-<meta name="keywords" content="Fortress Technologies Hub careers, API Fortress sales partner, commission sales Canada, tech careers Toronto, Canadian AI company jobs">
+<meta name="description" content="Join Fortress Technologies Hub, a Canadian AI and cybersecurity company in Toronto. Explore open roles in sales, including our Sales Development Representative role and Independent Sales Partner Program.">
+<meta name="keywords" content="Fortress Technologies Hub careers, tech careers Toronto, sales jobs Toronto, API Fortress sales partner, Canadian AI company jobs">
 <meta name="author" content="Fortress Technologies Hub Inc.">
 <meta property="og:title" content="Careers | Fortress Technologies Hub Inc.">
-<meta property="og:description" content="Join Fortress Technologies Hub. Sales Partner Program now open across Canada. Earn recurring monthly commission on every client you bring.">
+<meta property="og:description" content="Join Fortress Technologies Hub, a Canadian AI and cybersecurity company. Explore our open roles.">
 <meta property="og:image" content="https://res.cloudinary.com/dto5xuo7t/image/upload/v1773892772/logo_xoq717.png">
 <meta property="og:url" content="https://fortresstechnologieshub.com/careers">
 <meta property="og:type" content="website">
@@ -271,6 +271,39 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   .legal{flex-wrap:wrap;justify-content:center;}
   .future-badges{gap:6px;}
 }
+
+/* ── ADDED: three column pay ribbon, comparison table, file input, form error ── */
+.earn-ribbon.three{grid-template-columns:repeat(3,1fr);}
+.compare-wrap{padding:0 56px 64px;border-bottom:1px solid var(--rule);}
+.compare{display:grid;grid-template-columns:1.1fr 1fr 1fr;border:1px solid var(--rule);}
+.compare > div{padding:16px 22px;border-bottom:1px solid var(--rule);font-size:.9rem;color:var(--ice-dim);}
+.compare > div:nth-last-child(-n+3){border-bottom:none;}
+.compare .c-head{font-weight:700;color:var(--white);background:rgba(20,71,230,.06);}
+.compare .c-key{font-family:var(--mono);font-size:.63rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--ice-mute);display:flex;align-items:center;}
+.compare .c-head.c-key{background:transparent;}
+.role-body p.price-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.5px;color:var(--ice-mute);margin-top:-20px;margin-bottom:28px;}
+.form-group input[type="file"]{padding:10px 12px;cursor:pointer;color:var(--ice-dim);}
+.form-group input[type="file"]::file-selector-button{background:rgba(20,71,230,.15);color:var(--white);border:1px solid rgba(20,71,230,.35);border-radius:5px;padding:6px 12px;margin-right:12px;font-family:'Outfit',sans-serif;font-weight:600;cursor:pointer;}
+.form-error{display:none;color:#fca5a5;font-size:.85rem;line-height:1.6;}
+.form-error.show{display:block;}
+.form-inner > p.access-note{color:var(--ice-mute);font-size:.8rem;line-height:1.6;margin-top:-36px;margin-bottom:48px;max-width:560px;}
+@media(max-width:960px){
+  .earn-ribbon.three{grid-template-columns:1fr;}
+  .compare-wrap{padding:0 24px 48px;}
+  .compare{grid-template-columns:1fr 1fr 1fr;font-size:.82rem;}
+  .compare > div{padding:12px 12px;}
+}
+@media(max-width:600px){
+  .compare > div{font-size:.78rem;padding:10px 8px;}
+}
+
+
+.role-page{padding-top:64px;}
+.back-row{padding:40px 56px 0;}
+.back-link{font-family:var(--mono);font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--ice-dim);text-decoration:none;transition:color .2s;}
+.back-link:hover{color:var(--white);}
+.role-card-sum{color:var(--ice-dim);font-size:.97rem;line-height:1.85;max-width:760px;}
+@media(max-width:960px){.back-row{padding:32px 24px 0;}}
 </style>
 </head>
 <body>
@@ -319,23 +352,35 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   </div>
 </div>
 
+
+<!--
+  CAREERS OVERVIEW PAGE
+  Role details and application forms live on their own pages:
+    /careers/sales-development-representative  (sales-development-representative.html)
+    /careers/sales-partner                     (sales-partner.html)
+  To close the employee role after hiring:
+    1. Delete the block between "EMPLOYEE ROLE START" and "EMPLOYEE ROLE END" below.
+    2. Change the Open Roles number from 2 to 1 at "EDIT AFTER HIRING".
+    3. Delete sales-development-representative.html and its line in the _redirects file.
+-->
 <!-- ══ HERO ══ -->
 <section class="hero s">
-  <div class="hero-eyebrow">🇨🇦 Now Recruiting Across Canada</div>
+  <div class="hero-eyebrow">🇨🇦 Now Hiring Across Canada</div>
   <h1>Build Something <em>Real</em><br>with <span class="blue-word">Fortress</span><br>Technologies Hub.</h1>
-  <p class="hero-sub">We are a Canadian AI and cybersecurity company growing fast. Whether you want to partner with us as an independent sales professional or join the team full time in the future — this is where your journey starts.</p>
+  <p class="hero-sub">We are a Canadian AI and cybersecurity company growing fast. We build products that protect businesses and respect people's privacy, and we are looking for people who want to help take them further. Explore our open roles below and find where you fit.</p>
   <div class="hero-bottom">
     <div class="hero-stat">
-      <div class="stat-num">1</div>
-      <div class="stat-lbl">Active Opening</div>
+      <!-- EDIT AFTER HIRING: change 2 to 1 -->
+      <div class="stat-num">2</div>
+      <div class="stat-lbl">Open Roles</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-num">~30%</div>
-      <div class="stat-lbl">Recurring Commission</div>
+      <div class="stat-num">Toronto</div>
+      <div class="stat-lbl">Headquarters</div>
     </div>
     <div class="hero-stat">
-      <div class="stat-num">$1,499</div>
-      <div class="stat-lbl">Max Per Client / Month</div>
+      <div class="stat-num">Canada</div>
+      <div class="stat-lbl">Built and Run Here</div>
     </div>
   </div>
 </section>
@@ -345,12 +390,30 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="openings-header reveal">
     <span class="s-label">Open Opportunities</span>
     <h2>Current Openings</h2>
-    <p>We currently have one active opportunity open to applicants across Canada. Follow us on <a href="https://linkedin.com/company/fortress-technologies-hub" target="_blank" rel="noopener">LinkedIn</a> to be the first to know when new positions open up.</p>
+    <p>Choose a role to see the full details and apply. Follow us on <a href="https://linkedin.com/company/fortress-technologies-hub" target="_blank" rel="noopener">LinkedIn</a> to be the first to know when new positions open up.</p>
   </div>
 
-  <!-- ROLE CARD -->
-  <div class="role-section reveal" id="partner-role">
-    <div class="role-top">
+  <!-- EMPLOYEE ROLE START -->
+  <div class="role-section reveal">
+    <div class="role-top" style="margin-bottom:20px;">
+      <div class="role-left">
+        <h2>Sales Development Representative</h2>
+        <div class="role-tags">
+          <span class="r-tag type">Part-Time Employee</span>
+          <span class="r-tag loc">📍 Remote, Greater Toronto Area</span>
+          <span class="r-tag open"><span class="open-pip"></span>Actively Hiring</span>
+        </div>
+      </div>
+      <div class="role-right">
+        <a href="/careers/sales-development-representative" class="apply-anchor">View Role and Apply →</a>
+      </div>
+    </div>
+    <p class="role-card-sum">Find the right companies, start conversations with technical decision makers, and book demos of API Fortress, our enterprise API security platform.</p>
+  </div>
+  <!-- EMPLOYEE ROLE END -->
+
+  <div class="role-section reveal">
+    <div class="role-top" style="margin-bottom:20px;">
       <div class="role-left">
         <h2>Independent Sales Partner</h2>
         <div class="role-tags">
@@ -360,52 +423,17 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
         </div>
       </div>
       <div class="role-right">
-        <a href="#apply" class="apply-anchor">Apply for This Role →</a>
+        <a href="/careers/sales-partner" class="apply-anchor">View Role and Apply →</a>
       </div>
     </div>
-
-    <div class="role-body">
-      <p>We are looking for motivated, professional, and well-connected individuals across Canada to join our Sales Partner Program for API Fortress — our enterprise API security platform. This is a commission-only independent contractor role with no ceiling on earnings. You bring the clients, we handle everything else, and you earn a recurring monthly commission for as long as each client stays active. The more clients you build in your portfolio, the more you earn every single month without doing additional work.</p>
-
-      <div class="earn-ribbon">
-        <div class="earn-cell">
-          <div class="earn-num">~30%</div>
-          <div class="earn-lbl">Recurring commission rate across all tiers</div>
-        </div>
-        <div class="earn-cell">
-          <div class="earn-num">Up to $1,499</div>
-          <div class="earn-lbl">Per active client per month</div>
-        </div>
-      </div>
-
-      <div class="role-subsection">
-        <h4>What you will be doing</h4>
-        <div class="role-points">
-          <div class="role-pt">Identify and reach out to businesses, startups, and enterprises that could benefit from API Fortress, our AI-powered API security platform.</div>
-          <div class="role-pt">Present the product, answer initial questions using our provided pitch materials, and bring prospects to the point of signing up.</div>
-          <div class="role-pt">Earn a recurring monthly commission on every active paying client you onboard, for as long as they remain subscribed. Starter clients ($699/mo) earn you $209. Professional ($1,999/mo) earns you $599. Enterprise ($4,999/mo) earns you $1,499. Every month. As long as they stay.</div>
-          <div class="role-pt">Work fully remotely on your own schedule with no fixed hours, no quotas, and complete control over your approach.</div>
-          <div class="role-pt">Build a growing portfolio of active clients so your monthly earnings compound over time without proportional extra effort.</div>
-        </div>
-      </div>
-
-      <div class="role-subsection">
-        <h4>Who we are looking for</h4>
-        <div class="role-points">
-          <div class="role-pt">Someone with a background in B2B sales, business development, account management, or a strong professional network in the tech, fintech, healthcare, or enterprise space.</div>
-          <div class="role-pt">A self-starter who understands how to identify decision-makers and have credible conversations with CTOs, IT directors, and heads of engineering.</div>
-          <div class="role-pt">Someone based in Canada who takes this seriously as a genuine income opportunity, not a side experiment.</div>
-          <div class="role-pt">Honest, professional, and comfortable representing a technology brand with integrity.</div>
-        </div>
-      </div>
-    </div>
+    <p class="role-card-sum">Bring businesses to API Fortress on your own schedule and build a portfolio of clients that pays you recurring commission every month.</p>
   </div>
 
   <!-- FUTURE ROLES -->
   <div class="future-wrap reveal">
     <div class="future-text">
       <h3>More Roles Coming Soon</h3>
-      <p>As Fortress Technologies Hub continues to grow, we will be adding full-time positions across engineering, product, design, and operations. Check back here regularly or apply below to express general interest.</p>
+      <p>As Fortress Technologies Hub continues to grow, we will be adding full-time positions across engineering, product, design, and operations. Check back here regularly or follow us on LinkedIn.</p>
     </div>
     <div class="future-badges">
       <span class="f-badge">Software Engineering</span>
@@ -415,6 +443,7 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
       <span class="f-badge">Marketing</span>
     </div>
   </div>
+
 </section>
 
 <!-- ══ WHY FORTRESS ══ -->
@@ -427,136 +456,11 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   <div class="why-grid">
     <div class="why-cell"><span class="why-icon">🇨🇦</span><h4>Proudly Canadian</h4><p>Federally incorporated in Canada, headquartered in Toronto. We believe in Canadian data sovereignty and we build accordingly.</p></div>
     <div class="why-cell"><span class="why-icon">🎯</span><h4>Real Products, Real Impact</h4><p>CoreMind and API Fortress are live, production-ready platforms. You will be part of something that already exists and is growing.</p></div>
-    <div class="why-cell"><span class="why-icon">🔓</span><h4>No Ceiling on What You Can Build</h4><p>We are early enough that the people who join now will shape how this company grows. There is room to own things and make a real difference.</p></div>
-    <div class="why-cell"><span class="why-icon">🤝</span><h4>Straight Dealing</h4><p>We say what we mean. Commission structures are clear, expectations are honest, and we do not waste your time with vague promises.</p></div>
+    <div class="why-cell"><span class="why-icon">🔓</span><h4>Room to Grow</h4><p>We are early enough that the people who join now will shape how this company grows. There is room to own things and make a real difference.</p></div>
+    <div class="why-cell"><span class="why-icon">🤝</span><h4>Straight Dealing</h4><p>We say what we mean. Pay and commission structures are clear, expectations are honest, and we do not waste your time with vague promises.</p></div>
   </div>
 </section>
 
-<!-- ══ APPLICATION FORM ══ -->
-<section class="s form-wrap" id="apply">
-  <div class="form-inner reveal">
-    <span class="s-label">Apply Now</span>
-    <h2>Partner Program Application</h2>
-    <p>Fill out the form below to apply for the Independent Sales Partner role. We review every application personally and will follow up with shortlisted candidates within 5 business days.</p>
-
-    <!-- ⚠️ NETLIFY FORM — do not change name, form-name, or data-netlify attributes -->
-    <form
-      class="app-form"
-      id="partner-application"
-      name="sales-partner-application"
-      method="POST"
-      data-netlify="true"
-    >
-      <input type="hidden" name="form-name" value="sales-partner-application"/>
-
-      <!-- PERSONAL INFO -->
-      <div class="form-block-title">Personal Information</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="full_name">Full Legal Name <span class="req">*</span></label>
-          <input type="text" id="full_name" name="full_name" placeholder="Your full legal name" required/>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required/>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone">Phone Number <span class="req">*</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890" required/>
-        </div>
-        <div class="form-group">
-          <label for="province">Province <span class="req">*</span></label>
-          <select id="province" name="province" required>
-            <option value="" disabled selected>Select your province</option>
-            <option value="Ontario">Ontario</option>
-            <option value="British Columbia">British Columbia</option>
-            <option value="Alberta">Alberta</option>
-            <option value="Quebec">Quebec</option>
-            <option value="Manitoba">Manitoba</option>
-            <option value="Saskatchewan">Saskatchewan</option>
-            <option value="Nova Scotia">Nova Scotia</option>
-            <option value="New Brunswick">New Brunswick</option>
-            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-            <option value="Prince Edward Island">Prince Edward Island</option>
-            <option value="Northwest Territories">Northwest Territories</option>
-            <option value="Yukon">Yukon</option>
-            <option value="Nunavut">Nunavut</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="linkedin">LinkedIn Profile URL <span class="req">*</span></label>
-        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" required/>
-        <span class="form-hint">We use your LinkedIn to understand your professional background and network. Make sure your profile is up to date before applying.</span>
-      </div>
-
-      <hr class="form-divider"/>
-
-      <!-- BACKGROUND -->
-      <div class="form-block-title">Your Background</div>
-      <div class="form-group">
-        <label for="sales_background">Describe your background in sales or business development <span class="req">*</span></label>
-        <textarea id="sales_background" name="sales_background" placeholder="Tell us about your experience in B2B sales, business development, account management, or any role where you built commercial relationships. Include industries, types of clients, and what you achieved." required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="network">What does your professional network look like and what industries does it cover? <span class="req">*</span></label>
-        <textarea id="network" name="network" placeholder="Describe who you know and in what capacity. For example: tech startup founders, IT directors at mid-sized companies, fintech executives, healthcare operators, etc. Be specific about the depth and relevance of your network." required></textarea>
-      </div>
-
-      <hr class="form-divider"/>
-
-      <!-- MOTIVATION -->
-      <div class="form-block-title">Your Motivation and Approach</div>
-      <div class="form-group">
-        <label for="why_fortress">Why do you want to partner with Fortress Technologies Hub specifically? <span class="req">*</span></label>
-        <textarea id="why_fortress" name="why_fortress" placeholder="We want to understand what drew you to this opportunity and why you believe it is a good fit for you. Be honest and specific." required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="client_approach">How do you plan to identify and approach potential API Fortress clients? <span class="req">*</span></label>
-        <textarea id="client_approach" name="client_approach" placeholder="Walk us through your strategy. Where will you look for prospects? How will you reach out? How will you qualify whether someone is a good fit for API Fortress? This is the most important question in the application." required></textarea>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="target_tier">Which client tier do you feel most confident targeting? <span class="req">*</span></label>
-          <select id="target_tier" name="target_tier" required>
-            <option value="" disabled selected>Select a tier</option>
-            <option value="Starter ($699/mo)">Starter ($699/mo) for startups and small businesses</option>
-            <option value="Professional ($1,999/mo)">Professional ($1,999/mo) for growing mid-market companies</option>
-            <option value="Enterprise ($4,999/mo)">Enterprise ($4,999/mo) for large enterprises</option>
-            <option value="Mix of tiers">A mix across all tiers</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="availability">How much time can you dedicate to this per week? <span class="req">*</span></label>
-          <select id="availability" name="availability" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="Less than 5 hours">Less than 5 hours per week</option>
-            <option value="5 to 10 hours">5 to 10 hours per week</option>
-            <option value="10 to 20 hours">10 to 20 hours per week</option>
-            <option value="More than 20 hours">More than 20 hours per week</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="additional">Anything else you want us to know? <span class="opt">(Optional)</span></label>
-        <textarea id="additional" name="additional" placeholder="Any other context, questions, or information you think is relevant to your application." style="min-height:100px;"></textarea>
-      </div>
-
-      <div class="submit-row">
-        <button type="submit" class="submit-btn" id="submit-btn">Submit Application</button>
-        <p class="submit-note">We review every application personally. Shortlisted candidates will be contacted within 5 business days to arrange a video call.</p>
-      </div>
-    </form>
-
-    <div class="form-success" id="form-success">
-      <div class="success-icon">✓</div>
-      <h3>Application Received</h3>
-      <p>Thank you for applying. We have received your application and will review it carefully. If you are shortlisted, you will hear from us within 5 business days at the email address you provided.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ══ FOOTER ══ -->
 <footer class="s">
@@ -582,39 +486,12 @@ footer{position:relative;z-index:1;padding:72px 56px 40px;}
   </div>
 </footer>
 
+
 <script>
 const hbg=document.getElementById('hbg'),mob=document.getElementById('mobMenu');
 hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mob.classList.toggle('open');});
 mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mob.classList.remove('open');}));
 document.addEventListener('click',e=>{if(!hbg.contains(e.target)&&!mob.contains(e.target)){hbg.classList.remove('open');mob.classList.remove('open');}});
-
-// ── NETLIFY FORM SUBMISSION ──
-// Preserving exact Netlify form handling from original
-const form=document.getElementById('partner-application');
-const formSuccess=document.getElementById('form-success');
-const submitBtn=document.getElementById('submit-btn');
-
-form.addEventListener('submit',function(e){
-  e.preventDefault();
-  submitBtn.textContent='Submitting...';
-  submitBtn.disabled=true;
-  const formData=new FormData(form);
-  fetch('/',{
-    method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:new URLSearchParams(formData).toString()
-  })
-  .then(()=>{
-    form.style.display='none';
-    formSuccess.classList.add('show');
-    window.scrollTo({top:document.getElementById('apply').offsetTop-80,behavior:'smooth'});
-  })
-  .catch(()=>{
-    submitBtn.textContent='Submit Application';
-    submitBtn.disabled=false;
-    alert('There was an error submitting your application. Please email us directly at info@fortresstechnologieshub.com');
-  });
-});
 
 // Scroll reveal
 const obs=new IntersectionObserver(entries=>{
